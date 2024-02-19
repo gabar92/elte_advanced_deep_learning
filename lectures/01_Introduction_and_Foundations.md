@@ -99,28 +99,28 @@ Here, we introduce and walk around a couple of challenges specific to NLP, some 
 * **Discrete data**: NLP deals with text data, which is inherently discrete (we have characters, words, sub-words).
 Other domains like Computer Vision (CV) deal with continuous data which has a couple of advantages.
 In terms of representation complexity, discrete symbols do not have a natural, ordered relationship that numerical data in images have, which makes it difficult to represent semantic relationships.
-  * <u>Solution</u>: Embeddings: mapping tokens into a continuous vector space, where closeness captures similarities and relationships.
+  * <ins>Solution</ins>: Embeddings: mapping tokens into a continuous vector space, where closeness captures similarities and relationships.
 
 * **Lack of standard representation**:
   * <ins>Solution</ins>:
 
 * **Lack of inherent structure**:
-  * <u>Solution</u>:
+  * <ins>Solution</ins>:
 
 * **Sparsity of data**:
-  * <u>Solution</u>:
+  * <ins>Solution</ins>:
 
 * **Variable length of input**:
-  * <u>Solution</u>:
+  * <ins>Solution</ins>:
 
 * **Handling long-range inputs and capturing long-range dependencies**:
-  * <u>Solution</u>:
+  * <ins>Solution</ins>:
 
 * **Labeling for some tasks is very challenging (costly, hard)**:
-  * <u>Solution</u>:
+  * <ins>Solution</ins>:
 
 * **Evaluation of downstream tasks**:
-  * <u>Solution</u>:
+  * <ins>Solution</ins>:
 
 
 
