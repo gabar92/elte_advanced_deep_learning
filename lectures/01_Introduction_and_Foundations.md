@@ -24,7 +24,8 @@ This lecture tries to answer the following questions:
       3. How text embeddings opened the door for great applications?
 
 ## Contents:
-* Motivation and Demo
+* Motivation
+  * Demo of latest NLP-based achievements and applications
 * Definition of NLP
 * Why is NLP so successful
 * NLP-specific challenges
@@ -38,3 +39,40 @@ This lecture tries to answer the following questions:
   * Tokenization
   * Embeddings
   * Text embeddings
+
+
+## Motivation
+
+### Demo of recent NLP applications
+
+* ChatGPT:
+  * DALL-E 3 integration
+  * ChatGPT Store
+  * Sora (not integrated)
+* BARD - Gemini:
+* Samsung Galaxy S24 Ultra - AI capabilities:
+* Microsoft CoPilot:
+* GitHub CoPilot:
+* Adobe FireFly:
+* NLP-based 
+
+
+## Definition of NLP
+
+The Natural Language Processing (NLP) domain sites at the junction of the fields of Computer Science, Artificial Intelligence (AI), and Linguistics.
+* **Computer Science**: the study of computer systems, algorithms with the goal of developing technologies and applications to solve complex problems.
+* **Artificial Intelligence**: the study of creating machines capable of performing tasks that normally require human intelligence.
+* **Linguistics**: the study of language and its structure, including the analysis of syntax, semantics, and more, with the aim of understanding how languages are formed, used, and change over time.
+
+The goal of NLP: enabling computers to understand, interpret, and generate human language.
+* *Understanding* langauge: grasping the meaning of words, phrases, or larger units of text.
+* *Interpreting* langauge: extracting deeper meaning, context, or intent in text and comprehending it.
+* *Generating* text: producing human-like text
+
+By having high-quality NLP systems:
+* computers can perform a variety of tasks useful for humans
+* using Natural Language humans can seamlessly and effectively communicate and instruct (API) machines
+
+
+## Reasons behind the rapid success of NLP
+
