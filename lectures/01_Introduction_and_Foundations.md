@@ -102,7 +102,7 @@ In terms of representation complexity, discrete symbols do not have a natural, o
   * <u>Solution</u>: Embeddings: mapping tokens into a continuous vector space, where closeness captures similarities and relationships.
 
 * **Lack of standard representation**:
-  * <u>Solution</u>:
+  * <ins>Solution</ins>:
 
 * **Lack of inherent structure**:
   * <u>Solution</u>:
