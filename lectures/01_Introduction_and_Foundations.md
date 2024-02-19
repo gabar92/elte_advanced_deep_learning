@@ -101,26 +101,37 @@ Other domains like Computer Vision (CV) deal with continuous data which has a co
 In terms of representation complexity, discrete symbols do not have a natural, ordered relationship that numerical data in images have, which makes it difficult to represent semantic relationships.
   * <ins>Solution</ins>: Embeddings: mapping tokens into a continuous vector space, where closeness captures similarities and relationships.
 
-* **Lack of standard representation**:
+* **Lack of standard representation**: Opposed to Computer Vision, where the data is inherently encoded by numbers, textual data needs to be transformed / mapped to scalar or vector data.
+This process converts discrete tokens (word, sub-words) into a continuous vector space.
+Difficulties arise when we have to handle how to encode the diverse and complex features of language into a vector format.
+Ambiguity and Polysemy: words can have multiple meanings based on the context, making it hard to represent a rod’s meaning consistently across different uses.
+  * <ins>Solution</ins>: using contextual word embeddings, representations are generated dynamically based on the surrounding text, capturing the meaning.
+Dynamic representations instead of static representations generate embeddings on-the-fly, considering the entire sentence or document.
+
+* **Lack of inherent structure**: unlike structured data (database tables), freeform text data is unstructured data.
   * <ins>Solution</ins>:
 
-* **Lack of inherent structure**:
-  * <ins>Solution</ins>:
+* **Sparsity of data**: the discrete nature of text leads to sparsity issues.
+The vast majority of possible word combinations are never observed, making it hard to learn from.
+  * <ins>Solution</ins>: tokenization can reduce the vocabulary size and handle out-of-vocabulary cases.
 
-* **Sparsity of data**:
-  * <ins>Solution</ins>:
+* **Variable length of input**: text data comes in variable lengths (unlike images which are typically resized to fixed dimensions.)
+Model architectures are required to handle varying size of the input.
+  * <ins>Solution</ins>: applying RNNs (LSTM, GRU) or Transformer networks which inherently handle sequential input with varying length.
 
-* **Variable length of input**:
-  * <ins>Solution</ins>:
+* **Handling long-range inputs and capturing long-range dependencies**: important information in text can be separated by long distances, which is challenging for being captured.
+Vanilla architectures for modelling sequences (RNNs: LSTMs, GRUs) are limited in capturing long-term dependencies.
+  * <ins>Solution</ins>: using the Transformer architectures which can handle long-range information efficiently.
+Also, there are different trick for limiting the attention mask to reduce the resource-requirements of the model. 
 
-* **Handling long-range inputs and capturing long-range dependencies**:
-  * <ins>Solution</ins>:
+* **Labeling for some tasks is very challenging (costly, hard)**: for those tasks require text generation as output, creating these labeled training examples is extremely challenging.
+The creation of these labels (ground truth output text) frequently requires qualified labelers, and the generation is very laborious.
+This is especially hold for fine-tuning dataset, where high quality is extremely important.
+  * <ins>Solution</ins>: applying different training setup (e.g., RLHF).
 
-* **Labeling for some tasks is very challenging (costly, hard)**:
-  * <ins>Solution</ins>:
-
-* **Evaluation of downstream tasks**:
-  * <ins>Solution</ins>:
+* **Evaluation of downstream tasks**: classification tasks are easy to evaluate.
+However, tasks where the generated text does not have a single form, but there can be multiple perfect outputs are challenging to evaluate.
+  * <ins>Solution</ins>: applying proxy measures (e.g. LM objective), or developing task-specific measures handling this challenge well (e.g. BLEU).
 
 
 
