@@ -31,15 +31,16 @@ This lecture tries to answer the following questions:
 * [Bird's Eye View](#birds-eye-view)
   * [NLP-specific challenges](#nlp-specific-challenges)
   * [NLP-specific advantages](#nlp-specific-advantages)
-  * [Converging paths - adopting techniques between NLP and CV](#converging-paths-adopting-techniques-between-nlp-and-cv)
-* The soul / gist of NLP models: Next word prediction
-* A list of Tasks and Application in NLP
-* Classical methods (outdated methods)
-* Character Encoding Standards
-* Tokenization and Embeddings
-  * Tokenization
-  * Embeddings
-  * Text embeddings
+  * [Converging paths: adopting techniques between NLP and CV](#converging-paths-adopting-techniques-between-nlp-and-cv)
+  * [The gist of NLP models: Next word prediction](#the-gist-of-nlp-models-next-word-prediction)
+  * [A list of Tasks and Applications in NLP](#a-list-of-tasks-and-applications-in-nlp)
+* [Details](#details)
+  * [Classical methods (outdated methods)](#classical-methods)
+  * [Character Encoding Standards](#character-encoding-standards)
+  * [Tokenization and Embeddings](#tokenization-and-embeddings)
+    * [Tokenization](#tokenization)
+    * [Embeddings](#embeddings)
+    * [Text embeddings](#text-embeddings)
 
 
 ## Motivation
@@ -181,6 +182,14 @@ The input image is divided into patches, and the transformer processes these pat
   * CLIP? (TODO)
 
 
-## General framework of current models:
+### General framework of current models
+### The gist of NLP models: Next word prediction
+### A list of Tasks and Applications in NLP
 
-
+## Details
+### Classical methods
+### Character Encoding Standards
+### Tokenization and Embeddings
+#### Tokenization
+#### Embeddings
+#### Text embeddings
