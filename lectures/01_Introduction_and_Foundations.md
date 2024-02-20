@@ -82,6 +82,38 @@ This lecture tries to answer the following questions:
     </div>
 </div>
 
+### Text and Video<br>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+    <div style="margin: 5px; width: 300px;"> <!-- Fixed width for container -->
+        <a href="https://youtu.be/HK6y8DAPN_0?t=9">
+            <img src="https://img.youtube.com/vi/HK6y8DAPN_0/0.jpg" style="width: 100%; height: auto;">
+        </a>
+        <p style="text-align: center;">
+          OpenAI's Sora<br>
+          Generating video from text.<br>
+          Not integrated into the ChatGPT.
+        </p>
+    </div>
+    <div style="margin: 5px; width: 300px;"> <!-- Fixed width for container -->
+        <a href="https://youtu.be/UIZAiXYceBI?t=151">
+            <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" style="width: 100%; height: auto;">
+        </a>
+        <p style="text-align: center;">
+          Google's BARD with the Gemini model<br>
+          Gemini understands image and video input as well.<br>
+          Not available yet.
+        </p>
+    </div>
+    <!-- Invisible placeholder to maintain spacing for the third image -->
+    <div style="margin: 5px; width: 300px; visibility: hidden;"> <!-- Fixed width for container -->
+        <a href="#">
+            <img src="" style="width: 100%; height: auto;">
+        </a>
+        <p style="text-align: center;">
+        </p>
+    </div>
+</div>
+
 
 
 ### Text and Video<br>
@@ -115,42 +147,6 @@ This lecture tries to answer the following questions:
           </p>
       </div>
   </div>
-
-  <table style="width: 100%;">
-    <tr>
-      <!-- First Column -->
-      <td style="width: 33.333%;">
-        <a href="https://youtu.be/HK6y8DAPN_0?t=9">
-          <img src="https://img.youtube.com/vi/HK6y8DAPN_0/0.jpg" style="width: 100%; height: auto;">
-        </a>
-        <p style="text-align: center;">
-          OpenAI's Sora<br>
-          Generating video from text. <br>
-          Not integrated into the ChatGPT.
-        </p>
-      </td>
-      <!-- Second Column -->
-      <td style="width: 33.333%;">
-        <a href="https://youtu.be/UIZAiXYceBI?t=151">
-          <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" style="width: 100%; height: auto;">
-        </a>
-        <p style="text-align: center;">
-          Google's BARD with the Gemini model <br>
-          Gemini understands image and video input as well. <br>
-          Not available yet.
-        </p>
-      </td>
-      <!-- Third Column (Invisible Placeholder) -->
-      <td style="width: 33.333%; visibility: hidden;">
-        <a href="#">
-          <img src="" style="width: 100%; height: auto;">
-        </a>
-        <p style="text-align: center;">
-        </p>
-      </td>
-    </tr>
-  </table>
-
 
 
 ### Voice-to-Text and Text-to-Voice<br>
