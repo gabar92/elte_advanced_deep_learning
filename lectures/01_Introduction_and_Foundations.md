@@ -25,7 +25,7 @@ This lecture tries to answer the following questions:
 
 ## Contents:
 * [Motivation](#motivation)
-  * [Demo of recent NLP applications](#demo-of-recent-nlp-applications)
+  * [Demo of recent NLP related applications](#demo-of-recent-nlp-related-applications)
   * [Definition of NLP](#definition-of-nlp)
   * [Reasons behind the success of NLP](#reasons-behind-the-success-of-nlp)
 * [Bird's Eye View](#birds-eye-view)
@@ -45,37 +45,117 @@ This lecture tries to answer the following questions:
 
 ## Motivation
 
-### Demo of recent NLP applications
+### Demo of recent NLP-related applications
 
-* ChatGPT: DALL-E 3 and Sora <br>
-    <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
-      <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" width="30%" height="30%">
-    </a>
-    <a href="https://www.youtube.com/watch?v=HK6y8DAPN_0">
-      <img src="https://img.youtube.com/vi/HK6y8DAPN_0/0.jpg" width="30%" height="30%">
-    </a>
-* BARD - Gemini: <br>
-  <a href="https://www.youtube.com/watch?v=UIZAiXYceBI">
-    <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" width="30%" height="30%">
-  </a>
-* Samsung Galaxy S24 Ultra: <br>
-  <a href="https://www.youtube.com/watch?v=3hPoEmlBQdY">
-    <img src="https://img.youtube.com/vi/3hPoEmlBQdY/0.jpg" width="30%" height="30%">
-  </a>
-* Microsoft CoPilot & GitHub CoPilot: <br>
-  <a href="https://www.youtube.com/watch?v=S7xTBa93TX8">
-    <img src="https://img.youtube.com/vi/S7xTBa93TX8/0.jpg" width="30%" height="30%">
-  </a>
-  <a href="https://www.youtube.com/watch?v=4RfD5JiXt3A">
-    <img src="https://img.youtube.com/vi/4RfD5JiXt3A/0.jpg" width="30%" height="30%">
-  </a>
-* Adobe FireFly: <br>
-  <a href="https://www.youtube.com/watch?v=NPJNPrshhTo">
-    <img src="https://img.youtube.com/vi/NPJNPrshhTo/0.jpg" width="30%" height="30%">
-  </a>
-  <a href="https://www.youtube.com/watch?v=DvBRj--sUMU">
-    <img src="https://img.youtube.com/vi/DvBRj--sUMU/0.jpg" width="30%" height="30%">
-  </a>
+### Text-to-Image generation<br>
+  <div style="display: flex; justify-content: space-around; align-items: center;">
+      <div>
+          <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
+              <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" width="100%" height="100%">
+          </a>
+          <p style="text-align: center;">
+            DALL-E 3<br>
+            Generating image from text. <br>
+            Integrated into the ChatGPT.
+          </p>
+      </div>
+      <div>
+          <a href="https://youtu.be/NPJNPrshhTo?t=14">
+              <img src="https://img.youtube.com/vi/NPJNPrshhTo/0.jpg" width="100%" height="100%">
+          </a>
+          <p style="text-align: center;">
+            Adobe FireFly <br>
+            Generating images described by text. <br>
+            Modifying images based on description.
+          </p>
+      </div>
+      <div>
+          <a href="https://www.youtube.com/watch?v=DvBRj--sUMU">
+              <img src="https://img.youtube.com/vi/DvBRj--sUMU/0.jpg" width="100%" height="100%">
+          </a>
+          <p style="text-align: center;">
+            Adobe FireFly <br>
+            Generating images described by text. <br>
+            Modifying images based on description.
+          </p>
+      </div>
+  </div>
+
+
+### Text-to-Video generation<br>
+  <div style="display: flex; justify-content: space-around; align-items: center;">
+      <div>
+          <a href="https://youtu.be/HK6y8DAPN_0?t=9">
+              <img src="https://img.youtube.com/vi/HK6y8DAPN_0/0.jpg" width="100%" height="100%">
+          </a>
+          <p style="text-align: center;">
+            OpenAI's Sora<br>
+            Generating video from text. <br>
+            Not integrated into the ChatGPT.
+          </p>
+      </div>
+      <div>
+          <a href="https://youtu.be/UIZAiXYceBI?t=151">
+              <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" width="100%" height="100%">
+          </a>
+          <p style="text-align: center;">
+            Google's BARD with the Gemini model <br>
+            Gemini understands image and video input as well. <br>
+            Not available yet.
+          </p>
+      </div>
+</div>
+
+### Language model with multimodal data<br>
+  <div style="display: flex; justify-content: space-around; align-items: center;">
+      <div>
+          <a href="https://youtu.be/UIZAiXYceBI?t=151">
+              <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" width="100%" height="100%">
+          </a>
+          <p style="text-align: center;">
+            Google's BARD with the Gemini model <br>
+            Gemini understands image and video input as well.
+          </p>
+      </div>
+  </div>
+
+### Voice-to-Text and Text-to-Voice<br>
+  <div style="display: flex; justify-content: space-around; align-items: center;">
+      <div>
+          <a href="https://youtu.be/3hPoEmlBQdY?t=50">
+              <img src="https://img.youtube.com/vi/3hPoEmlBQdY/0.jpg" width="100%" height="100%">
+          </a>
+          <p style="text-align: center;">
+            Samsung's Galaxy S24 Ultra with AI features <br>
+            During a call it transcribes the talk. <br>
+            It translates on-the-fly in either text or voice.
+          </p>
+      </div>
+      <div>
+          <a href="https://www.youtube.com/watch?v=N1gpkk-MwpY">
+              <img src="https://img.youtube.com/vi/N1gpkk-MwpY/0.jpg" width="100%" height="100%">
+          </a>
+          <p style="text-align: center;">
+            Microsoft's CoPilot <br>
+            During a meeting it transcribes the talk. <br>
+            It creates a summary of the content.
+          </p>
+      </div>
+  </div>
+
+
+### Code generation <br>
+  <div style="display: flex; justify-content: space-around; align-items: center;">
+      <div>
+          <a href="https://www.youtube.com/watch?v=4RfD5JiXt3A">
+              <img src="https://img.youtube.com/vi/4RfD5JiXt3A/0.jpg" width="100%" height="100%">
+          </a>
+          <p style="text-align: center;">
+            GitHub's CoPilot <br>
+            Can generate code based on an instruction.
+          </p>
+      </div>
+  </div>
 
 
 ### Definition of NLP
