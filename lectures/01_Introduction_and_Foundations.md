@@ -137,7 +137,7 @@ This lecture tries to answer the following questions:
       <p style="text-align: center;">
         Samsung Galaxy S24 Ultra with AI features<br>
         During a call, it transcribes the talk.<br>
-        It translates on-the-fly in either text or voice.
+        It translates live in either text or voice.
       </p>
     </td>
     <td style="padding: 5px;">
