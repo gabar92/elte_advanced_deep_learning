@@ -49,6 +49,8 @@ This lecture tries to answer the following questions:
 
 
 
+![DALL-E 3](https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg) ![Adobe FireFly](https://img.youtube.com/vi/NPJNPrshhTo/0.jpg)
+
 
 ### Text-to-Image generation
 
