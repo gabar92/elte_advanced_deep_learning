@@ -49,17 +49,17 @@ This lecture tries to answer the following questions:
 
 * ChatGPT:
   * DALL-E 3: <br>
-  <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
-    <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" width="30%" height="30%">
-  </a>
+    <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
+      <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" width="30%" height="30%">
+    </a>
   * ChatGPT Store: https://chat.openai.com/gpts <br>
-  <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
-    <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" width="30%" height="30%">
-  </a>
+    <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
+      <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" width="30%" height="30%">
+    </a>
   * Sora (not integrated): <br>
-  <a href="https://www.youtube.com/watch?v=HK6y8DAPN_0">
-    <img src="https://img.youtube.com/vi/HK6y8DAPN_0/0.jpg" width="30%" height="30%">
-  </a>
+    <a href="https://www.youtube.com/watch?v=HK6y8DAPN_0">
+      <img src="https://img.youtube.com/vi/HK6y8DAPN_0/0.jpg" width="30%" height="30%">
+    </a>
 * BARD - Gemini: <br>
   <a href="https://www.youtube.com/watch?v=UIZAiXYceBI">
     <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" width="30%" height="30%">
