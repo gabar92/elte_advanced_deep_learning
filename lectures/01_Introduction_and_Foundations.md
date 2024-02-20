@@ -49,6 +49,117 @@ This lecture tries to answer the following questions:
 
 ### Text-to-Image generation
 
+<table style="width: 100%;">
+  <tr>
+    <td style="width: 33.333%; padding: 5px;">
+      <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
+        <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" style="width: 100%; height: auto;">
+      </a>
+      <p style="text-align: center;">
+        DALL-E 3<br>
+        Generating images from text. <br>
+        Integrated into the ChatGPT.
+      </p>
+    </td>
+    <td style="width: 33.333%; padding: 5px;">
+      <a href="https://youtu.be/NPJNPrshhTo?t=14">
+        <img src="https://img.youtube.com/vi/NPJNPrshhTo/0.jpg" style="width: 100%; height: auto;">
+      </a>
+      <p style="text-align: center;">
+        Adobe FireFly <br>
+        Generating images described by text. <br>
+        Modifying images based on description.
+      </p>
+    </td>
+    <td style="width: 33.333%; padding: 5px;">
+      <a href="https://www.youtube.com/watch?v=DvBRj--sUMU">
+        <img src="https://img.youtube.com/vi/DvBRj--sUMU/0.jpg" style="width: 100%; height: auto;">
+      </a>
+      <p style="text-align: center;">
+        Adobe FireFly <br>
+        Generating images described by text. <br>
+        Modifying images based on description.
+      </p>
+    </td>
+  </tr>
+</table>
+
+### Text and Video<br>
+<table style="width: 100%;">
+  <tr>
+    <td style="width: 33.333%; padding: 5px;">
+      <a href="https://youtu.be/HK6y8DAPN_0?t=9">
+        <img src="https://img.youtube.com/vi/HK6y8DAPN_0/0.jpg" style="width: 100%; height: auto;">
+      </a>
+      <p style="text-align: center;">
+        OpenAI's Sora<br>
+        Generating video from text. <br>
+        Not integrated into the ChatGPT.
+      </p>
+    </td>
+    <td style="width: 33.333%; padding: 5px;">
+      <a href="https://youtu.be/UIZAiXYceBI?t=151">
+        <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" style="width: 100%; height: auto;">
+      </a>
+      <p style="text-align: center;">
+        Google's BARD with the Gemini model <br>
+        Gemini understands image and video input as well. <br>
+        Not available yet.
+      </p>
+    </td>
+    <td style="width: 33.333%; padding: 5px; visibility: hidden;">
+      <!-- Invisible placeholder to maintain table structure -->
+    </td>
+  </tr>
+</table>
+
+### Voice-to-Text and Text-to-Voice<br>
+<table style="width: 100%;">
+  <tr>
+    <td style="width: 33.333%; padding: 5px;">
+      <a href="https://youtu.be/3hPoEmlBQdY?t=50">
+        <img src="https://img.youtube.com/vi/3hPoEmlBQdY/0.jpg" style="width: 100%; height: auto;">
+      </a>
+      <p style="text-align: center;">
+        Samsung's Galaxy S24 Ultra with AI features <br>
+        During a call it transcribes the talk. <br>
+        It translates on-the-fly in either text or voice.
+      </p>
+    </td>
+    <td style="width: 33.333%; padding: 5px;">
+      <a href="https://www.youtube.com/watch?v=N1gpkk-MwpY">
+        <img src="https://img.youtube.com/vi/N1gpkk-MwpY/0.jpg" style="width: 100%; height: auto;">
+      </a>
+      <p style="text-align: center;">
+        Microsoft's CoPilot <br>
+        During a meeting
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Text-to-Image generation
+
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
     <div style="flex: 1; max-width: calc(33.333% - 10px); margin: 5px;">
         <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
@@ -81,39 +192,6 @@ This lecture tries to answer the following questions:
         </p>
     </div>
 </div>
-
-### Text and Video<br>
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-    <div style="margin: 5px; width: 300px;"> <!-- Fixed width for container -->
-        <a href="https://youtu.be/HK6y8DAPN_0?t=9">
-            <img src="https://img.youtube.com/vi/HK6y8DAPN_0/0.jpg" style="width: 100%; height: auto;">
-        </a>
-        <p style="text-align: center;">
-          OpenAI's Sora<br>
-          Generating video from text.<br>
-          Not integrated into the ChatGPT.
-        </p>
-    </div>
-    <div style="margin: 5px; width: 300px;"> <!-- Fixed width for container -->
-        <a href="https://youtu.be/UIZAiXYceBI?t=151">
-            <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" style="width: 100%; height: auto;">
-        </a>
-        <p style="text-align: center;">
-          Google's BARD with the Gemini model<br>
-          Gemini understands image and video input as well.<br>
-          Not available yet.
-        </p>
-    </div>
-    <!-- Invisible placeholder to maintain spacing for the third image -->
-    <div style="margin: 5px; width: 300px; visibility: hidden;"> <!-- Fixed width for container -->
-        <a href="#">
-            <img src="" style="width: 100%; height: auto;">
-        </a>
-        <p style="text-align: center;">
-        </p>
-    </div>
-</div>
-
 
 
 ### Text and Video<br>
