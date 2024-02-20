@@ -167,7 +167,7 @@ This lecture tries to answer the following questions:
         <img src="https://img.youtube.com/vi/4RfD5JiXt3A/0.jpg" style="width: 100%; height: auto;">
       </a>
       <p style="text-align: center;">
-        GitHub's CoPilot
+        GitHub's CoPilot <br>
         Can generate code based on an instruction.
       </p>
     </td>
@@ -179,42 +179,6 @@ This lecture tries to answer the following questions:
     </td>
   </tr>
 </table>table>
-
-
-### Text-to-Image generation
-
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-    <div style="flex: 1; max-width: calc(33.333% - 10px); margin: 5px;">
-        <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
-            <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" style="width: 100%; height: auto;">
-        </a>
-        <p style="text-align: center;">
-          DALL-E 3<br>
-          Generating images from text. <br>
-          Integrated into the ChatGPT.
-        </p>
-    </div>
-    <div style="flex: 1; max-width: calc(33.333% - 10px); margin: 5px;">
-        <a href="https://youtu.be/NPJNPrshhTo?t=14">
-            <img src="https://img.youtube.com/vi/NPJNPrshhTo/0.jpg" style="width: 100%; height: auto;">
-        </a>
-        <p style="text-align: center;">
-          Adobe FireFly <br>
-          Generating images described by text. <br>
-          Modifying images based on description.
-        </p>
-    </div>
-    <div style="flex: 1; max-width: calc(33.333% - 10px); margin: 5px;">
-        <a href="https://www.youtube.com/watch?v=DvBRj--sUMU">
-            <img src="https://img.youtube.com/vi/DvBRj--sUMU/0.jpg" style="width: 100%; height: auto;">
-        </a>
-        <p style="text-align: center;">
-          Adobe FireFly <br>
-          Generating images described by text. <br>
-          Modifying images based on description.
-        </p>
-    </div>
-</div>
 
 
 ### Definition of NLP
