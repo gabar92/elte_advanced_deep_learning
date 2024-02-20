@@ -25,12 +25,12 @@ This lecture tries to answer the following questions:
 
 ## Contents:
 * [Motivation](#motivation)
-  * Demo of latest NLP-based achievements and applications
-* Definition of NLP
-* Why is NLP so successful
-* NLP-specific challenges
-* NLP-specific advantages
-* Converging paths: adopting techniques between NLP and Computer Vision (CV)
+  * [Demo of recent NLP applications](#demo-of-recent-nlp-applications)
+* [Definition of NLP](#definition-of-nlp)
+* [Reasons behind the success of NLP](#reasons-behind-the-success-of-nlp)
+* [NLP-specific challenges](#nlp-specific-challenges)
+* [NLP-specific advantages](#nlp-specific-advantages)
+* [Converging paths: adopting techniques between NLP and CV](#converging-paths:-adopting-techniques-between-nlp-and-cv)
 * The soul / gist of NLP models: Next word prediction
 * A list of Tasks and Application in NLP
 * Classical methods (outdated methods)
@@ -73,7 +73,7 @@ By having high-quality NLP systems:
 * using Natural Language humans can seamlessly and effectively communicate and instruct (API) machines
 
 
-## Reasons behind the rapid success of NLP
+## Reasons behind the success of NLP
 
 For those who are not deeply involved in the field, with the arrival of ChatGPT it might seem like Artificial Intelligence appeared out of nowhere, and immediately has been integrated into our daily routines.
 However, the development of AI has been a more gradual journey. So, what gives the impression of this abrupt leap in its utilization?
@@ -89,7 +89,6 @@ Main aspects behind the success:
 * Multilanguage abilities for the same tasks.
 * Applying these models have a very productive outcome.
 * And last but not least, the surprisingly complex tasks, and highly sophisticated solutions LLMs can provide us, not only in specific pre-defined domains but almost in any field.
-
 
 
 ## NLP-specific challenges
