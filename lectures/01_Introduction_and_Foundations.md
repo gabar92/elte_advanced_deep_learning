@@ -47,111 +47,119 @@ This lecture tries to answer the following questions:
 
 ### Demo of recent NLP-related applications
 
-### Text-to-Image generation
+
+
+
+
+
+### Videos Collection
 
 <table style="width: 100%;">
+  <!-- Row 1: Text-to-Image generation -->
   <tr>
-    <td style="width: 33.333%; padding: 5px;">
+    <td style="padding: 5px;">
       <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
         <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" style="width: 100%; height: auto;">
       </a>
       <p style="text-align: center;">
         DALL-E 3<br>
-        Generating images from text. <br>
+        Generating images from text.<br>
         Integrated into the ChatGPT.
       </p>
     </td>
-    <td style="width: 33.333%; padding: 5px;">
+    <td style="padding: 5px;">
       <a href="https://youtu.be/NPJNPrshhTo?t=14">
         <img src="https://img.youtube.com/vi/NPJNPrshhTo/0.jpg" style="width: 100%; height: auto;">
       </a>
       <p style="text-align: center;">
-        Adobe FireFly <br>
-        Generating images described by text. <br>
+        Adobe FireFly<br>
+        Generating images described by text.<br>
         Modifying images based on description.
       </p>
     </td>
-    <td style="width: 33.333%; padding: 5px;">
+    <td style="padding: 5px;">
       <a href="https://www.youtube.com/watch?v=DvBRj--sUMU">
         <img src="https://img.youtube.com/vi/DvBRj--sUMU/0.jpg" style="width: 100%; height: auto;">
       </a>
       <p style="text-align: center;">
-        Adobe FireFly <br>
-        Generating images described by text. <br>
+        Adobe FireFly<br>
+        Generating images described by text.<br>
         Modifying images based on description.
       </p>
     </td>
   </tr>
-</table>
-
-### Text and Video<br>
-<table style="width: 100%;">
+  <!-- Row 2: Text and Video -->
   <tr>
-    <td style="width: 33.333%; padding: 5px;">
+    <td style="padding: 5px;">
       <a href="https://youtu.be/HK6y8DAPN_0?t=9">
         <img src="https://img.youtube.com/vi/HK6y8DAPN_0/0.jpg" style="width: 100%; height: auto;">
       </a>
       <p style="text-align: center;">
         OpenAI's Sora<br>
-        Generating video from text. <br>
+        Generating video from text.<br>
         Not integrated into the ChatGPT.
       </p>
     </td>
-    <td style="width: 33.333%; padding: 5px;">
+    <td style="padding: 5px;">
       <a href="https://youtu.be/UIZAiXYceBI?t=151">
         <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" style="width: 100%; height: auto;">
       </a>
       <p style="text-align: center;">
-        Google's BARD with the Gemini model <br>
-        Gemini understands image and video input as well. <br>
+        Google's BARD with the Gemini model<br>
+        Gemini understands image and video input as well.<br>
         Not available yet.
       </p>
     </td>
-    <td style="width: 33.333%; padding: 5px; visibility: hidden;">
-      <!-- Invisible placeholder to maintain table structure -->
+    <td style="padding: 5px;">
+      <!-- Placeholder for alignment -->
     </td>
   </tr>
-</table>
-
-### Voice-to-Text and Text-to-Voice<br>
-<table style="width: 100%;">
+  <!-- Row 3: Voice-to-Text and Text-to-Voice -->
   <tr>
-    <td style="width: 33.333%; padding: 5px;">
+    <td style="padding: 5px;">
       <a href="https://youtu.be/3hPoEmlBQdY?t=50">
         <img src="https://img.youtube.com/vi/3hPoEmlBQdY/0.jpg" style="width: 100%; height: auto;">
       </a>
       <p style="text-align: center;">
-        Samsung's Galaxy S24 Ultra with AI features <br>
-        During a call it transcribes the talk. <br>
+        Samsung's Galaxy S24 Ultra with AI features<br>
+        During a call, it transcribes the talk.<br>
         It translates on-the-fly in either text or voice.
       </p>
     </td>
-    <td style="width: 33.333%; padding: 5px;">
+    <td style="padding: 5px;">
       <a href="https://www.youtube.com/watch?v=N1gpkk-MwpY">
         <img src="https://img.youtube.com/vi/N1gpkk-MwpY/0.jpg" style="width: 100%; height: auto;">
       </a>
       <p style="text-align: center;">
-        Microsoft's CoPilot <br>
-        During a meeting
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        Microsoft's CoPilot<br>
+        During a meeting, it transcribes the talk.<br>
+        It creates a summary of the content.
+      </p>
+    </td>
+    <td style="padding: 5px;">
+      <!-- Placeholder for alignment -->
+    </td>
+  </tr>
+  <!-- Row 4: Code generation -->
+  <tr>
+    <td style="padding: 5px;">
+      <a href="https://www.youtube.com/watch?v=4RfD5JiXt3A">
+        <img src="https://img.youtube.com/vi/4RfD5JiXt3A/0.jpg" style="width: 100%; height: auto;">
+      </a>
+      <p style="text-align: center;">
+        Samsung's Galaxy S24 Ultra with AI features<br>
+        During a call, it transcribes the talk.<br>
+        It translates on-the-fly in either text or voice.
+      </p>
+    </td>
+    <td style="padding: 5px;">
+      <!-- Placeholder for alignment -->
+    </td>
+    <td style="padding: 5px;">
+      <!-- Placeholder for alignment -->
+    </td>
+  </tr>
+</table>table>
 
 
 
