@@ -49,7 +49,13 @@ This lecture tries to answer the following questions:
 
 
 
-![DALL-E 3](https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg) ![Adobe FireFly](https://img.youtube.com/vi/NPJNPrshhTo/0.jpg)
+### Text-to-Image generation
+
+|     |     |     |
+| :-: | :-: | :-: |
+| ![DALL-E 3](https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg) | ![Adobe FireFly](https://img.youtube.com/vi/NPJNPrshhTo/0.jpg) | ![Placeholder](https://via.placeholder.com/480x270.png?text=+) |
+| [DALL-E 3<br>Generating image from text.<br>Integrated into the ChatGPT.](https://www.youtube.com/watch?v=sqQrN0iZBs0) | [Adobe FireFly<br>Generating images described by text.<br>Modifying images based on description.](https://youtu.be/NPJNPrshhTo?t=14) | Placeholder for future content |
+
 
 
 ### Text-to-Image generation
