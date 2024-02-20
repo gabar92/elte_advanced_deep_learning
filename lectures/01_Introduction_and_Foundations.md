@@ -51,7 +51,7 @@ This lecture tries to answer the following questions:
   <div style="display: flex; justify-content: space-around; align-items: center;">
       <div>
           <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
-              <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" width="100%" height="100%">
+              <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" width="30%" height="30%">
           </a>
           <p style="text-align: center;">
             DALL-E 3<br>
@@ -61,7 +61,7 @@ This lecture tries to answer the following questions:
       </div>
       <div>
           <a href="https://youtu.be/NPJNPrshhTo?t=14">
-              <img src="https://img.youtube.com/vi/NPJNPrshhTo/0.jpg" width="100%" height="100%">
+              <img src="https://img.youtube.com/vi/NPJNPrshhTo/0.jpg" width="30%" height="30%">
           </a>
           <p style="text-align: center;">
             Adobe FireFly <br>
@@ -71,7 +71,7 @@ This lecture tries to answer the following questions:
       </div>
       <div>
           <a href="https://www.youtube.com/watch?v=DvBRj--sUMU">
-              <img src="https://img.youtube.com/vi/DvBRj--sUMU/0.jpg" width="100%" height="100%">
+              <img src="https://img.youtube.com/vi/DvBRj--sUMU/0.jpg" width="30%" height="30%">
           </a>
           <p style="text-align: center;">
             Adobe FireFly <br>
