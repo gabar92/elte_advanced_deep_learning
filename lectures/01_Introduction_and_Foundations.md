@@ -53,7 +53,7 @@ This lecture tries to answer the following questions:
 <table style="width: 100%;">
   <!-- Title Row: Text-to-Image generation -->
   <tr>
-    <td colspan="3" style="text-align: center; padding: 5px; font-size: 20px;">
+    <td colspan="3" style="text-align: center; padding: 5px; font-size: 20px !important;">
       <b>Text-to-Image generation</b>
     </td>
   </tr>
