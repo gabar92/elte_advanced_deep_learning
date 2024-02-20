@@ -48,15 +48,21 @@ This lecture tries to answer the following questions:
 ### Demo of recent NLP applications
 
 * ChatGPT:
-  * DALL-E 3 integration
-  * ChatGPT Store
-  * Sora (not integrated)
+  * DALL-E 3: https://www.youtube.com/watch?v=sqQrN0iZBs0
+  * ChatGPT Store: https://chat.openai.com/gpts
+  * Sora (not integrated): https://www.youtube.com/watch?v=HK6y8DAPN_0
 * BARD - Gemini:
-* Samsung Galaxy S24 Ultra - AI capabilities:
+  * https://www.youtube.com/watch?v=UIZAiXYceBI
+* Samsung Galaxy S24 Ultra:
+  * https://www.youtube.com/watch?v=3hPoEmlBQdY
 * Microsoft CoPilot:
+  * https://www.youtube.com/watch?v=S7xTBa93TX8
 * GitHub CoPilot:
+  * https://www.youtube.com/watch?v=4RfD5JiXt3A
 * Adobe FireFly:
-
+  * https://www.youtube.com/watch?v=NPJNPrshhTo
+  * https://www.youtube.com/watch?v=DvBRj--sUMU
+  * 
 ### Definition of NLP
 
 The Natural Language Processing (NLP) domain sites at the junction of the fields of:
