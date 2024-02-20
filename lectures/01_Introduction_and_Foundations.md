@@ -49,20 +49,26 @@ This lecture tries to answer the following questions:
 
 * ChatGPT:
   * DALL-E 3: <br>
-[![Milyen szöveg jöjjön ide?](https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg)](https://www.youtube.com/watch?v=sqQrN0iZBs0)
-  * ChatGPT Store: https://chat.openai.com/gpts
-  * Sora (not integrated): https://www.youtube.com/watch?v=HK6y8DAPN_0
+  <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
+    <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" width="30%" height="30%">
+  </a>
+  * DALL-E 3: <br>
+  [![](https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg)](https://www.youtube.com/watch?v=sqQrN0iZBs0)
+  * ChatGPT Store: https://chat.openai.com/gpts <br>
+  [![](https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg)](https://www.youtube.com/watch?v=sqQrN0iZBs0)
+  * Sora (not integrated): <br>
+  [![](https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg)](https://www.youtube.com/watch?v=HK6y8DAPN_0)
 * BARD - Gemini: <br>
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/UIZAiXYceBI/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
+[![](https://img.youtube.com/vi/UIZAiXYceBI/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
 * Samsung Galaxy S24 Ultra: <br>
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/3hPoEmlBQdY/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
+[![](https://img.youtube.com/vi/3hPoEmlBQdY/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
 * Microsoft CoPilot: <br>
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/S7xTBa93TX8/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
+[![](https://img.youtube.com/vi/S7xTBa93TX8/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
 * GitHub CoPilot: <br>
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/4RfD5JiXt3A/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
+[![](https://img.youtube.com/vi/4RfD5JiXt3A/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
 * Adobe FireFly: <br>
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/NPJNPrshhTo/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/DvBRj--sUMU/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
+[![](https://img.youtube.com/vi/NPJNPrshhTo/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
+[![](https://img.youtube.com/vi/DvBRj--sUMU/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
 
 
 ### Definition of NLP
