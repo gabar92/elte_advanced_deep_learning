@@ -48,22 +48,21 @@ This lecture tries to answer the following questions:
 ### Demo of recent NLP applications
 
 * ChatGPT:
-  * DALL-E 3: https://www.youtube.com/watch?v=sqQrN0iZBs0
+  * DALL-E 3: <br>
+[![Milyen szöveg jöjjön ide?](https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg)](https://www.youtube.com/watch?v=sqQrN0iZBs0)
   * ChatGPT Store: https://chat.openai.com/gpts
   * Sora (not integrated): https://www.youtube.com/watch?v=HK6y8DAPN_0
-* BARD - Gemini:
-  * https://www.youtube.com/watch?v=UIZAiXYceBI
-* Samsung Galaxy S24 Ultra:
-  * https://www.youtube.com/watch?v=3hPoEmlBQdY
-* Microsoft CoPilot:
-  * https://www.youtube.com/watch?v=S7xTBa93TX8
-* GitHub CoPilot:
-  * https://www.youtube.com/watch?v=4RfD5JiXt3A
-* Adobe FireFly:
-  * https://www.youtube.com/watch?v=NPJNPrshhTo
-  * https://www.youtube.com/watch?v=DvBRj--sUMU
-
-![](https://www.youtube.com/watch?v=S7xTBa93TX8)
+* BARD - Gemini: <br>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/UIZAiXYceBI/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
+* Samsung Galaxy S24 Ultra: <br>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/3hPoEmlBQdY/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
+* Microsoft CoPilot: <br>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/S7xTBa93TX8/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
+* GitHub CoPilot: <br>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/4RfD5JiXt3A/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
+* Adobe FireFly: <br>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/NPJNPrshhTo/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/DvBRj--sUMU/0.jpg)](https://www.youtube.com/watch?v=UIZAiXYceBI)
 
 
 ### Definition of NLP
