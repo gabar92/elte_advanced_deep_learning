@@ -47,17 +47,6 @@ This lecture tries to answer the following questions:
 
 ### Demo of recent NLP-related applications
 
-
-
-### Text-to-Image generation
-
-|     |     |     |
-| :-: | :-: | :-: |
-| ![DALL-E 3](https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg) | ![Adobe FireFly](https://img.youtube.com/vi/NPJNPrshhTo/0.jpg) | ![Placeholder](https://via.placeholder.com/480x270.png?text=+) |
-| [DALL-E 3<br>Generating image from text.<br>Integrated into the ChatGPT.](https://www.youtube.com/watch?v=sqQrN0iZBs0) | [Adobe FireFly<br>Generating images described by text.<br>Modifying images based on description.](https://youtu.be/NPJNPrshhTo?t=14) | Placeholder for future content |
-
-
-
 ### Text-to-Image generation
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
@@ -126,6 +115,42 @@ This lecture tries to answer the following questions:
           </p>
       </div>
   </div>
+
+  <table style="width: 100%;">
+    <tr>
+      <!-- First Column -->
+      <td style="width: 33.333%;">
+        <a href="https://youtu.be/HK6y8DAPN_0?t=9">
+          <img src="https://img.youtube.com/vi/HK6y8DAPN_0/0.jpg" style="width: 100%; height: auto;">
+        </a>
+        <p style="text-align: center;">
+          OpenAI's Sora<br>
+          Generating video from text. <br>
+          Not integrated into the ChatGPT.
+        </p>
+      </td>
+      <!-- Second Column -->
+      <td style="width: 33.333%;">
+        <a href="https://youtu.be/UIZAiXYceBI?t=151">
+          <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" style="width: 100%; height: auto;">
+        </a>
+        <p style="text-align: center;">
+          Google's BARD with the Gemini model <br>
+          Gemini understands image and video input as well. <br>
+          Not available yet.
+        </p>
+      </td>
+      <!-- Third Column (Invisible Placeholder) -->
+      <td style="width: 33.333%; visibility: hidden;">
+        <a href="#">
+          <img src="" style="width: 100%; height: auto;">
+        </a>
+        <p style="text-align: center;">
+        </p>
+      </td>
+    </tr>
+  </table>
+
 
 
 ### Voice-to-Text and Text-to-Voice<br>
