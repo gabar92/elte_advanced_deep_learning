@@ -82,7 +82,7 @@ This lecture tries to answer the following questions:
   </div>
 
 
-### Text-to-Video generation<br>
+### Text and Video<br>
   <div style="display: flex; justify-content: space-around; align-items: center;">
       <div>
           <a href="https://youtu.be/HK6y8DAPN_0?t=9">
@@ -106,18 +106,6 @@ This lecture tries to answer the following questions:
       </div>
 </div>
 
-### Language model with multimodal data<br>
-  <div style="display: flex; justify-content: space-around; align-items: center;">
-      <div>
-          <a href="https://youtu.be/UIZAiXYceBI?t=151">
-              <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" width="100%" height="100%">
-          </a>
-          <p style="text-align: center;">
-            Google's BARD with the Gemini model <br>
-            Gemini understands image and video input as well.
-          </p>
-      </div>
-  </div>
 
 ### Voice-to-Text and Text-to-Voice<br>
   <div style="display: flex; justify-content: space-around; align-items: center;">
@@ -345,9 +333,11 @@ There are a couple of terms that are general enough to collect them into a gloss
 
 * **Embedding**: what value to assign, vector database
 
+
 * **Part of Speech (PoS) tagging**: assigning parts of speech to each word in the text (e.g., noun, verb, adj), based on its definition and contexts.
 
 * **Named Entity Recognition (NER)**: identifying and classifying named entities in text into predefined categories (e.g., names of persons, organizations, locations). It is essential for information extraction tasks to identify important elements in the text.
+
 
 * **Bag of Words**: a kind of representation of a text, getting by transforming it into fixed-length vectors by counting how many times each word appears. It disregards the order of words but allows for the comparison of different texts based on their content. (maybe put into hand-crafted embeddings)
 
@@ -718,3 +708,77 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 
 ### Text embeddings
 
+> TL;DR: TODO
+> What is text embedding about. In which domains are used? (RAG)
+
+
+Implementations:
+* OpenAI: Embeddings - documentation: https://platform.openai.com/docs/guides/embeddings
+
+
+* turning not only tokens but larger segment of text (sentence, text-chunk, document) into an embedding vector
+* unlocking use cases like search
+* we can measure the relatedness of texts
+* assigning an embedded vector with fixed size to an arbitrary text
+* similar to meaning in mathematical techniques
+* An embedding is a vector (list) of floating point numbers
+* the distance between two vectors measure their relatedness
+* embedding methods:
+  * length:
+    * 1536 for text-embedding-3-small
+    * 3072 for text-embedding-3-large
+    * vertexai.language_models import TextEmbeddingModel
+      * vector dimension: 768
+  * embedding models:
+  * V3 and V2 generations: 8191 max input tokens, tokenizer: cl100k_base, September 2021
+  * priced per input token: 1$ (~800 tokens per page):
+    * text-embedding-3-large: 62 500 pages
+    * text-embedding-3-small: 9 615 pages
+    * tiktoken tokenizer can split text to tokens to get the number of tokens in Python
+
+
+Application:
+  * Search: results are ranked by relevance to a query string
+  * Clustering: text strings are grouped by similarity
+  * Anomaly / Outlier detection: outliers with little relatedness are identified
+  * Diversity measurement: similarity distributions are analyzed
+  * Classification: text strings are classified by their most similar label
+  * Semantic Search:
+  * Recommendations: items with related text strings are recommended
+
+Demo for use cases:
+ * Question answering using embeddings-based search
+ * Text search using embeddings
+ * Recommendations using embeddings
+ * Classification using the embedding features
+ * Clustering
+ * RAG
+ 
+
+Manipulation and usage embeddings, Metrics: measuring similarity
+* cosine similarity
+* euclidean distance
+* dot-product: cosine * length of both vectors
+  * equivalent to cosine similarity when vectors are normalized to 1
+* Which distance function should be used?
+  * cosine similarity is recommended
+  * OPenAI embeddings are normalized to length 1
+  * cosine similarity can be computed slightly faster using just a dot product
+  * cosine similarities and Euclidean distance will result in the identical rankings
+
+Embedding demo:
+* similarity in the space
+* heatmap visualization
+* PCA and t-SNE
+
+
+How we create text-embedding models? 
+* Simple method: averaging word embeddings
+  * naive approach
+* Modern method: using a transformer to compute a context-aware representation of each word, then take an average of the context-aware representations
+
+Features of text embeddings:
+* Native support for shortening embeddings:
+* using larger embeddings: generally costs more and consumes more compute, memory and storage
+* the new embedding models were trained with a technique that allows developers to trade-off performance and cost of using embeddings
+* developers can shorten embeddings (i.e., remove some numbers from the end of the sequence) without the embedding losing its concept-representing properties by passing in the dimensions
