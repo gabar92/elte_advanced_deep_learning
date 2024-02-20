@@ -52,7 +52,7 @@ This lecture tries to answer the following questions:
     <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
       <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" width="30%" height="30%">
     </a>
-  * ChatGPT Store: https://chat.openai.com/gpts <br>
+  * ChatGPT Store: <br>
     <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
       <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" width="30%" height="30%">
     </a>
