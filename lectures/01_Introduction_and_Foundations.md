@@ -526,7 +526,9 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 
 #### Classical methods:
 * TF-IDF: Term Frequency - Inverse Document Frequency
-  * Demo: https://remykarem.github.io/tfidf-demo/
+  * Resources:
+    * Paper: TODO
+    * Demo: https://remykarem.github.io/tfidf-demo/
   * a numerical statistic
   * reflecting how important a word is to a document in a collection or corpus
   * Term Frequency: the number of times a term occurs in a document
@@ -534,7 +536,9 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
   * Application:
   * information retrieval: query to a text
 * n-gram:
-  * Demo: https://www.reuneker.nl/files/ngram/
+  * Resources:
+    * Paper: TODO
+    * Demo: https://www.reuneker.nl/files/ngram/
   * General meaning of n-gram:
     * n-gram is a series of n adjacent letters, syllables, or rarely whole words found in a language dataset
     * an n-gram is a sequence of n words, characters, or other linguistic items
@@ -555,6 +559,8 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 * Bag-of-Words (BoW):
   * TODO
 * BM25
+  * Resources:
+    * Paper: TODO
   * Best Match 25
   * ranking algorithm
 * Skip-gram?
@@ -562,7 +568,9 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 
 #### Deep Learning-based methods:
 * Word2Vec (Google - 2013):
-  * Demo: https://remykarem.github.io/word2vec-demo/
+  * Resources:
+    * Paper: TODO 
+    * Demo: https://remykarem.github.io/word2vec-demo/
   * first method captioning algebraic representation
   * using shallot feed-forward networks
   * 2 methods:
@@ -571,13 +579,17 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
     * Continuous Skip-Gram model
       * predicting the context of a given word
   * NN models to learn representations (mappings)
-  * representations are distributed
+    * representations are distributed
 * GloVe (Stanford - 2014):
+  * Resources:
+      * Paper: TODO
   * GloVe = Global Vectors for Word Representations
   * 2 methods:
     * Global Matrix Factorization
     * Local context window-based method
 * CoVe (2018):
+  * Resources:
+      * Paper: TODO
   * CoVe = Contextualized word Vectors
   * encoder-decoder architecture
     * Encoder: 2-layer bidirectional LSTM
@@ -585,6 +597,8 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
   * attentional sequence-to-sequence model
   * used with GloVe (?) concatenated
 * ELMo (2018):
+  * Resources:
+      * Paper: TODO
   * Embeddings from Language Models
   * deep contextualized word representation
     * polysemy: same word can get different representations based on its context
@@ -596,10 +610,10 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
     * deep representations:
       * linear function of all the internal layers of the biLM model
 * BERT:
+  * Resources:
+      * Paper: TODO
   * transformer-based solution
   * deeply bidirectional
-* FastText:
-* ?
 
 ### Text embeddings
 
