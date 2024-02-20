@@ -47,16 +47,10 @@ This lecture tries to answer the following questions:
 
 ### Demo of recent NLP applications
 
-* ChatGPT:
-  * DALL-E 3: <br>
+* ChatGPT: DALL-E 3 and Sora <br>
     <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
       <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" width="30%" height="30%">
     </a>
-  * ChatGPT Store: <br>
-    <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
-      <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" width="30%" height="30%">
-    </a>
-  * Sora (not integrated): <br>
     <a href="https://www.youtube.com/watch?v=HK6y8DAPN_0">
       <img src="https://img.youtube.com/vi/HK6y8DAPN_0/0.jpg" width="30%" height="30%">
     </a>
@@ -65,23 +59,22 @@ This lecture tries to answer the following questions:
     <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" width="30%" height="30%">
   </a>
 * Samsung Galaxy S24 Ultra: <br>
-  <a href="https://www.youtube.com/watch?v=UIZAiXYceBI">
-    <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" width="30%" height="30%">
+  <a href="https://www.youtube.com/watch?v=3hPoEmlBQdY">
+    <img src="https://img.youtube.com/vi/3hPoEmlBQdY/0.jpg" width="30%" height="30%">
   </a>
-* Microsoft CoPilot: <br>
-  <a href="https://www.youtube.com/watch?v=UIZAiXYceBI">
-    <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" width="30%" height="30%">
+* Microsoft CoPilot & GitHub CoPilot: <br>
+  <a href="https://www.youtube.com/watch?v=S7xTBa93TX8">
+    <img src="https://img.youtube.com/vi/S7xTBa93TX8/0.jpg" width="30%" height="30%">
   </a>
-* GitHub CoPilot: <br>
-  <a href="https://www.youtube.com/watch?v=UIZAiXYceBI">
-    <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" width="30%" height="30%">
+  <a href="https://www.youtube.com/watch?v=4RfD5JiXt3A">
+    <img src="https://img.youtube.com/vi/4RfD5JiXt3A/0.jpg" width="30%" height="30%">
   </a>
 * Adobe FireFly: <br>
-  <a href="https://www.youtube.com/watch?v=UIZAiXYceBI">
-    <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" width="30%" height="30%">
+  <a href="https://www.youtube.com/watch?v=NPJNPrshhTo">
+    <img src="https://img.youtube.com/vi/NPJNPrshhTo/0.jpg" width="30%" height="30%">
   </a>
-  <a href="https://www.youtube.com/watch?v=UIZAiXYceBI">
-    <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" width="30%" height="30%">
+  <a href="https://www.youtube.com/watch?v=DvBRj--sUMU">
+    <img src="https://img.youtube.com/vi/DvBRj--sUMU/0.jpg" width="30%" height="30%">
   </a>
 
 
