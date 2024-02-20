@@ -53,7 +53,7 @@ This lecture tries to answer the following questions:
 <table style="width: 100%;">
   <!-- Title Row: Text-to-Image generation -->
   <tr>
-    <td colspan="3" style="text-align: center; padding: 5px;">
+    <td colspan="3" style="text-align: center; padding: 5px; font-size: 20px;">
       <b>Text-to-Image generation</b>
     </td>
   </tr>
@@ -92,7 +92,7 @@ This lecture tries to answer the following questions:
   </tr>
   <!-- Title Row: Text-to-Video generation -->
   <tr>
-    <td colspan="3" style="text-align: center; padding: 5px;">
+    <td colspan="3" style="text-align: center; padding: 5px; font-size: 20px;">
      <b>Text-to-Video generation</b>
     </td>
   </tr>
@@ -124,7 +124,7 @@ This lecture tries to answer the following questions:
   </tr>
   <!-- Title Row: Voice-to-Text and Text-to-Voice -->
   <tr>
-    <td colspan="3" style="text-align: center; padding: 5px;">
+    <td colspan="3" style="text-align: center; padding: 5px; font-size: 20px;">
       <b>Voice-to-Text and Text-to-Voice</b>
     </td>
   </tr>
@@ -156,7 +156,7 @@ This lecture tries to answer the following questions:
   </tr>
   <!-- Title Row: Code generation -->
   <tr>
-    <td colspan="3" style="text-align: center; padding: 5px;">
+    <td colspan="3" style="text-align: center; padding: 5px; font-size: 20px;">
       <b>Code generation</b>
     </td>
   </tr>
