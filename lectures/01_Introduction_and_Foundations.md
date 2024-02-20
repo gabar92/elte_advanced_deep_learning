@@ -62,7 +62,10 @@ This lecture tries to answer the following questions:
 * Adobe FireFly:
   * https://www.youtube.com/watch?v=NPJNPrshhTo
   * https://www.youtube.com/watch?v=DvBRj--sUMU
-  * 
+
+https://www.youtube.com/watch?v=S7xTBa93TX8
+
+
 ### Definition of NLP
 
 The Natural Language Processing (NLP) domain sites at the junction of the fields of:
