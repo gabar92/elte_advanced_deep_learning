@@ -55,6 +55,12 @@ This lecture tries to answer the following questions:
 ### Videos Collection
 
 <table style="width: 100%;">
+  <!-- Title Row: Text-to-Image generation -->
+  <tr>
+    <td colspan="3" style="text-align: center; padding: 5px;">
+      Row 1: Text-to-Image generation
+    </td>
+  </tr>
   <!-- Row 1: Text-to-Image generation -->
   <tr>
     <td style="padding: 5px;">
@@ -88,6 +94,12 @@ This lecture tries to answer the following questions:
       </p>
     </td>
   </tr>
+  <!-- Title Row: Text-to-Video generation -->
+  <tr>
+    <td colspan="3" style="text-align: center; padding: 5px;">
+      Row 1: Text-to-Video generation
+    </td>
+  </tr>
   <!-- Row 2: Text and Video -->
   <tr>
     <td style="padding: 5px;">
@@ -106,12 +118,18 @@ This lecture tries to answer the following questions:
       </a>
       <p style="text-align: center;">
         Google's BARD with the Gemini model<br>
-        Gemini understands image and video input as well.<br>
+        Gemini understands image and video input.<br>
         Not available yet.
       </p>
     </td>
     <td style="padding: 5px;">
       <!-- Placeholder for alignment -->
+    </td>
+  </tr>
+  <!-- Title Row: Voice-to-Text and Text-to-Voice -->
+  <tr>
+    <td colspan="3" style="text-align: center; padding: 5px;">
+      Row 1: Voice-to-Text and Text-to-Voice
     </td>
   </tr>
   <!-- Row 3: Voice-to-Text and Text-to-Voice -->
@@ -138,6 +156,12 @@ This lecture tries to answer the following questions:
     </td>
     <td style="padding: 5px;">
       <!-- Placeholder for alignment -->
+    </td>
+  </tr>
+  <!-- Title Row: Code generation -->
+  <tr>
+    <td colspan="3" style="text-align: center; padding: 5px;">
+      Row 1: Code generation
     </td>
   </tr>
   <!-- Row 4: Code generation -->
