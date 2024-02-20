@@ -398,12 +398,96 @@ Online tokenizer demos:
 ### Tokenization methods
 
 **Byte Pair Encoding** (BPE) [2015]:
+* Literature:
+  * Paper: https://arxiv.org/abs/1508.07909
+  * A blogpost: https://towardsdatascience.com/byte-pair-encoding-the-dark-horse-of-modern-nlp-eb36c7df4f10
+  * Demo: 
+* BPE originally is a data compression technique
+* adopted for text tokenization in Natural Language Processing in 2015
+* Title of the paper: Neural Machine Translation of Rare Words with Subword Units
+* basically solving the rare words problem for tokenization
+* sub-word based tokenization method, balancing the granularity of language representations
+* an initial solution for the problem of encoding the rare words
+* the fundamental idea is to replace often occurring character pairs with a new, single token, enhancing the model’s efficiency in representing complex words or phrases
+* How it works?
+  * starting with each character in the training data treated as a separate token
+  * counting the frequency of each adjacent character (or byte) pair in the dataset
+  * merging the most frequent adjacent character pair into a new token (merged items are kept as well)
+  * the process of counting and merging continues until reaching a specified vocabulary size
+* Models using this method:
+  * RoBERTa, GPT-2, …
+* proven to be effective in handling morphologically rich languages and improving the generalization capability of models to unseen words
+* the vocabulary sizes for BPE typically ranges from 10K - 100K subword units
+* Versions:
+  * character-based or byte-based implementations of BPE
+  * Problem with the character-based implementation of BPE:
+    * unicode characters can account for a sizeable portion of this vocabulary when modeling large and diverse corpora
+    * the implementation would require including the full space of Unicode symbols in order to model all Unicode strings, which would result in a base vocabulary of over 130,000 tokens before any multi-symbol tokens are added
+  * Byte-based implementation of BPE: (RoBERTa paper [1], GPT-2 paper [2])
+    * using bytes instead of unicode characters as the base subword units
+    * byte-level version of BPE only requires a base vocabulary of size 256
+    * directly applying BPE to the byte sequence results in a suboptimal merges due to BPE using a greedy frequency based heuristic for building the token vocabulary
+      * resulting in a suboptimal allocation of limited vocabulary slots and model capacity
+      * “dog”, “dog.”, “dog,”, “dog!”, …
+      * to avoid this: prevent BPE from merging across character categories for any byte sequence
+      * exception is for spaces which significantly improves the compression efficiency
+    * making it possible to learn a subword vocabulary of a modest size (50K units), that can still encode any input text without introducing any “unknown” tokens
 
 **WordPiece** (Google) [2016]:
+* Literature:
+  * Paper: https://arxiv.org/abs/1609.08144v2
+  * Blogpost: https://blog.research.google/2021/12/a-fast-wordpiece-tokenization-system.html?m=1
+  * Demo:
+* a subword tokenization algorithm
+* special word boundary symbols used
+* data-driven approach is used to generate the wordpiece model
+* similar to BPE
+* WordPiece first initializes the vocabulary to include every character present in the training data corpus
+* progressively learns a given number of merge rules
+* BPE: choosing the most frequent symbol pair
+* WordPiece: choosing that symbol pair, that maximizes the likelihood of the training data once added to the vocabulary
+* evaluating what it loses by merging 2 symbols to ensure it’s worth it
+* Models: BERT, DistillBERT, Electra
 
 **Unigram** (Google) [2018]:
+* Literature:
+  * Paper: https://arxiv.org/abs/1804.10959
+  * Blogpost:
+  * Demo:
+* BPE and WordPiece is based on merge rules
+* a subword tokenization algorithm
+* initializing the base vocabulary to a large number of symbols and progressively trims down each symbol to obtain a smaller vocabulary
+* the base vocabulary could correspond to all pre-tokenized words and the most common substrings
+* at each step: Unigram algorithm defines a loss (often defined as log-likelihood) over the training data given the current vocabulary and a unigram language model
+* for each symbol in the vocabulary, the algorithm computes how mch the overall loss would increase if the symbol was to be removed from the vocabulary
+* removing p percent of the symbols whose loss increase is the lowers (least affecting the overall loss over the training data)
+* the process is repeated until the desired vocabulary size is reached
+* since Unigram is not based on merge rules, the algorithm has several ways of tokenizing new text after training
+* the algorithm simply picks the most likely tokenization in practive
+* probabilities of each possible tokenization can be computed
+* Unigram saves the probability of each token in the training corpus 
+* Models: not used directly for any of the models, but it’s used in conjunction with SentencePiece
+* TODO
 
 **SentencePiece** (Google) [2018]:
+* Literature:
+  * Paper: https://arxiv.org/abs/1808.06226
+  * Github: https://github.com/google/sentencepiece
+  * Demo:
+* previous tokenizations have the same problem: it is assumed that the input text uses spaces to separate words
+* not all languages use spaces to separate words
+* one possible choice: using language specific tokenizer (e.g., XLM model)
+* solving this problem more generally: SentencePiece
+* treating the input as a raw input stream, thus including the space in the set of characters to use
+* then using the BPE or unigram algorithm to construct the appropriate vocabulary
+* language independent subword tokenized and detokenizer
+* language agnostic approach
+* 4 components:
+  * Normalizer
+  * Trainer
+  * Encoder
+  * Decoder
+* Models: ALBERT, XLNet, T5
 
 #### Good to know:
 * Tokenizers are usually trained on English datasets, or multi-language datasets where english text is overrepresented. Due to this, English text is handled more efficiently, which in practice means that the same sentence in english will be tokenized into fewer tokens than the hungarian translation of that sentence. (Suppose a translation consists of the same number of words and characters.)
@@ -420,6 +504,102 @@ Early NLP methods utilized human-engineered (hand-crafted) descriptors and featu
 As Deep Learning methods evolved, embeddings (vector representations of words or tokens) began to be learned through Neural Networks.
 This paradigm shift has led to remarkable improvements in representation learning, enabling the derived embeddings to capture more nuanced semantic features, including abstract meanings and similarity between words, or encoding the context for addressing polymorphism.
 
+
+Required features of embeddings:
+* embeddings should encode abstract meaning of words
+  * words with similar meaning should be close in the vector space
+  * words with different meaning should be distant in the vector space
+* semantic relationships should be encoded in the vector space structure
+  * “Queen relates to King in the same way as Woman relates to Man”
+* distributed representations
+* context-dependent representations to handle polymorphism
+
+Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
+
+### Embedding methods:
+* One-hot encoding:
+  * does not really make sense, but demonstrates the problem with sparse representations
+    * no meaning encoded in any way
+    * not scalable: vocabulary with 40,000 words → vectors with size of 40,000 dimensions
+    * sparse
+  * distributed representations are preferred 
+
+#### Classical methods:
+* TF-IDF: Term Frequency - Inverse Document Frequency
+  * Demo: https://remykarem.github.io/tfidf-demo/
+  * a numerical statistic
+  * reflecting how important a word is to a document in a collection or corpus
+  * Term Frequency: the number of times a term occurs in a document
+  * Inverse Document Frequency: diminishes the weight of terms that occur very frequently in the document set and increases the weight of terms that occur rarely
+  * Application:
+  * information retrieval: query to a text
+* n-gram:
+  * Demo: https://www.reuneker.nl/files/ngram/
+  * General meaning of n-gram:
+    * n-gram is a series of n adjacent letters, syllables, or rarely whole words found in a language dataset
+    * an n-gram is a sequence of n words, characters, or other linguistic items
+  * conditional probability of a words given the previous (N - 1) words
+  * P(word_n | word_n-1, …, word_n-N+1)
+    * bigram model: P(word_n | word_n-1)
+    * trigram model: P(word_n | word_n-1, word_n-2)
+  * Disadvantages:
+    * not taking into account context farther than N
+    * not taking into account the “similarity” between words
+  * Application:
+    * Word n-gram Language Model:
+      * a purely statistical model of language
+      * superseded by RNNs
+    * the probability of the next word in a sequence depends only on a fixed size window of previous words
+  * Connection:
+    * Markov property?
+* Bag-of-Words (BoW):
+  * TODO
+* BM25
+  * Best Match 25
+  * ranking algorithm
+* Skip-gram?
+  * wikipedia: TODO
+
+#### Deep Learning-based methods:
+* Word2Vec (Google - 2013):
+  * Demo: https://remykarem.github.io/word2vec-demo/
+  * first method captioning algebraic representation
+  * using shallot feed-forward networks
+  * 2 methods:
+    * Continuous Bag of Words (CBOW)
+      * predicting a word based on its context
+    * Continuous Skip-Gram model
+      * predicting the context of a given word
+  * NN models to learn representations (mappings)
+  * representations are distributed
+* GloVe (Stanford - 2014):
+  * GloVe = Global Vectors for Word Representations
+  * 2 methods:
+    * Global Matrix Factorization
+    * Local context window-based method
+* CoVe (2018):
+  * CoVe = Contextualized word Vectors
+  * encoder-decoder architecture
+    * Encoder: 2-layer bidirectional LSTM
+    * Decoder: 
+  * attentional sequence-to-sequence model
+  * used with GloVe (?) concatenated
+* ELMo (2018):
+  * Embeddings from Language Models
+  * deep contextualized word representation
+    * polysemy: same word can get different representations based on its context
+    * the representation of a token is the function of the entire input sequence
+  * model: bidirectional LM (LSTM)
+    * forward LM (LSTM)
+    * backward LM (LSTM)
+    * shallow concatenation (compared to BERT)
+    * deep representations:
+      * linear function of all the internal layers of the biLM model
+* BERT:
+  * transformer-based solution
+  * deeply bidirectional
+* FastText:
+* ?
 
 ### Text embeddings
 
