@@ -47,46 +47,51 @@ This lecture tries to answer the following questions:
 
 ### Demo of recent NLP-related applications
 
-### Text-to-Image generation<br>
-  <div style="display: flex; justify-content: space-around; align-items: center;">
-      <div>
-          <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
-              <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" width="30%" height="30%">
-          </a>
-          <p style="text-align: center;">
-            DALL-E 3<br>
-            Generating image from text. <br>
-            Integrated into the ChatGPT.
-          </p>
-      </div>
-      <div>
-          <a href="https://youtu.be/NPJNPrshhTo?t=14">
-              <img src="https://img.youtube.com/vi/NPJNPrshhTo/0.jpg" width="30%" height="30%">
-          </a>
-          <p style="text-align: center;">
-            Adobe FireFly <br>
-            Generating images described by text. <br>
-            Modifying images based on description.
-          </p>
-      </div>
-      <div>
-          <a href="https://www.youtube.com/watch?v=DvBRj--sUMU">
-              <img src="https://img.youtube.com/vi/DvBRj--sUMU/0.jpg" width="30%" height="30%">
-          </a>
-          <p style="text-align: center;">
-            Adobe FireFly <br>
-            Generating images described by text. <br>
-            Modifying images based on description.
-          </p>
-      </div>
-  </div>
+
+
+
+### Text-to-Image generation
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+    <div style="flex: 1; max-width: calc(33.333% - 10px); margin: 5px;">
+        <a href="https://www.youtube.com/watch?v=sqQrN0iZBs0">
+            <img src="https://img.youtube.com/vi/sqQrN0iZBs0/0.jpg" style="width: 100%; height: auto;">
+        </a>
+        <p style="text-align: center;">
+          DALL-E 3<br>
+          Generating images from text. <br>
+          Integrated into the ChatGPT.
+        </p>
+    </div>
+    <div style="flex: 1; max-width: calc(33.333% - 10px); margin: 5px;">
+        <a href="https://youtu.be/NPJNPrshhTo?t=14">
+            <img src="https://img.youtube.com/vi/NPJNPrshhTo/0.jpg" style="width: 100%; height: auto;">
+        </a>
+        <p style="text-align: center;">
+          Adobe FireFly <br>
+          Generating images described by text. <br>
+          Modifying images based on description.
+        </p>
+    </div>
+    <div style="flex: 1; max-width: calc(33.333% - 10px); margin: 5px;">
+        <a href="https://www.youtube.com/watch?v=DvBRj--sUMU">
+            <img src="https://img.youtube.com/vi/DvBRj--sUMU/0.jpg" style="width: 100%; height: auto;">
+        </a>
+        <p style="text-align: center;">
+          Adobe FireFly <br>
+          Generating images described by text. <br>
+          Modifying images based on description.
+        </p>
+    </div>
+</div>
+
 
 
 ### Text and Video<br>
-  <div style="display: flex; justify-content: space-around; align-items: center;">
-      <div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+      <div style="flex: 0 1 calc(33.333% - 10px); margin: 5px;">
           <a href="https://youtu.be/HK6y8DAPN_0?t=9">
-              <img src="https://img.youtube.com/vi/HK6y8DAPN_0/0.jpg" width="100%" height="100%">
+              <img src="https://img.youtube.com/vi/HK6y8DAPN_0/0.jpg" style="width: 100%; height: auto;">
           </a>
           <p style="text-align: center;">
             OpenAI's Sora<br>
@@ -94,9 +99,9 @@ This lecture tries to answer the following questions:
             Not integrated into the ChatGPT.
           </p>
       </div>
-      <div>
+      <div style="flex: 0 1 calc(33.333% - 10px); margin: 5px;">
           <a href="https://youtu.be/UIZAiXYceBI?t=151">
-              <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" width="100%" height="100%">
+              <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" style="width: 100%; height: auto;">
           </a>
           <p style="text-align: center;">
             Google's BARD with the Gemini model <br>
@@ -104,14 +109,22 @@ This lecture tries to answer the following questions:
             Not available yet.
           </p>
       </div>
-</div>
+      <!-- Invisible placeholder to maintain spacing for the third image -->
+      <div style="flex: 0 1 calc(33.333% - 10px); margin: 5px; visibility: hidden;">
+          <a href="#">
+              <img src="" style="width: 100%; height: auto;">
+          </a>
+          <p style="text-align: center;">
+          </p>
+      </div>
+  </div>
 
 
 ### Voice-to-Text and Text-to-Voice<br>
-  <div style="display: flex; justify-content: space-around; align-items: center;">
-      <div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+      <div style="flex: 0 1 calc(33.333% - 10px); margin: 5px;">
           <a href="https://youtu.be/3hPoEmlBQdY?t=50">
-              <img src="https://img.youtube.com/vi/3hPoEmlBQdY/0.jpg" width="100%" height="100%">
+              <img src="https://img.youtube.com/vi/3hPoEmlBQdY/0.jpg" style="width: 100%; height: auto;">
           </a>
           <p style="text-align: center;">
             Samsung's Galaxy S24 Ultra with AI features <br>
@@ -119,9 +132,9 @@ This lecture tries to answer the following questions:
             It translates on-the-fly in either text or voice.
           </p>
       </div>
-      <div>
+      <div style="flex: 0 1 calc(33.333% - 10px); margin: 5px;">
           <a href="https://www.youtube.com/watch?v=N1gpkk-MwpY">
-              <img src="https://img.youtube.com/vi/N1gpkk-MwpY/0.jpg" width="100%" height="100%">
+              <img src="https://img.youtube.com/vi/N1gpkk-MwpY/0.jpg" style="width: 100%; height: auto;">
           </a>
           <p style="text-align: center;">
             Microsoft's CoPilot <br>
@@ -129,18 +142,42 @@ This lecture tries to answer the following questions:
             It creates a summary of the content.
           </p>
       </div>
+      <!-- Invisible placeholder to maintain spacing for the third image -->
+      <div style="flex: 0 1 calc(33.333% - 10px); margin: 5px; visibility: hidden;">
+          <a href="#">
+              <img src="" style="width: 100%; height: auto;">
+          </a>
+          <p style="text-align: center;">
+          </p>
+      </div>
   </div>
 
 
 ### Code generation <br>
-  <div style="display: flex; justify-content: space-around; align-items: center;">
-      <div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+      <div style="flex: 0 1 calc(33.333% - 10px); margin: 5px;">
           <a href="https://www.youtube.com/watch?v=4RfD5JiXt3A">
-              <img src="https://img.youtube.com/vi/4RfD5JiXt3A/0.jpg" width="100%" height="100%">
+              <img src="https://img.youtube.com/vi/4RfD5JiXt3A/0.jpg" style="width: 100%; height: auto;">
           </a>
           <p style="text-align: center;">
             GitHub's CoPilot <br>
             Can generate code based on an instruction.
+          </p>
+      </div>
+      <!-- Invisible placeholder to maintain spacing for the third image -->
+      <div style="flex: 0 1 calc(33.333% - 10px); margin: 5px; visibility: hidden;">
+          <a href="#">
+              <img src="" style="width: 100%; height: auto;">
+          </a>
+          <p style="text-align: center;">
+          </p>
+      </div>
+      <!-- Invisible placeholder to maintain spacing for the third image -->
+      <div style="flex: 0 1 calc(33.333% - 10px); margin: 5px; visibility: hidden;">
+          <a href="#">
+              <img src="" style="width: 100%; height: auto;">
+          </a>
+          <p style="text-align: center;">
           </p>
       </div>
   </div>
