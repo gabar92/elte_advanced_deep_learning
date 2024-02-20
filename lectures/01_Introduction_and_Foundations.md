@@ -63,7 +63,7 @@ This lecture tries to answer the following questions:
   * https://www.youtube.com/watch?v=NPJNPrshhTo
   * https://www.youtube.com/watch?v=DvBRj--sUMU
 
-https://www.youtube.com/watch?v=S7xTBa93TX8
+![](https://www.youtube.com/watch?v=S7xTBa93TX8)
 
 
 ### Definition of NLP
