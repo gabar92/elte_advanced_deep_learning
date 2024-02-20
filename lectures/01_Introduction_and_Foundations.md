@@ -183,13 +183,160 @@ The input image is divided into patches, and the transformer processes these pat
 
 
 ### General framework of current models
+
 ### The gist of NLP models: Next word prediction
+
 ### A list of Tasks and Applications in NLP
 
+* Classification:
+  * Text classification:
+    * Spam detection
+    * Sentiment Analysis
+  * Word / Token classification:
+    * Named Entity Recognition (NER)
+* Question Answering (QA):
+  * Assistant
+  * Reading comprehension
+* Machine Translation:
+* Summarization:
+* Conversation:
+  * Dialogue system / Chatbot
+* Embedding learning:
+  * Word embedding
+  * Sentence embedding
+  * Document embedding
+* Information Retrieval (IR):
+  * Search Engines
+  * Retrival Augmented Generation (RAG)
+* Text Generation
+* Natural Language Understanding
+* Code Generation
+* Multimodal:
+  * Visual Question Answering (VQA)
+  * Text-to-Image
+  * Image-to-Text
+  * Video-to-Text
+  * Text-to-Video
+  * Audio-to-Text
+* Prompt Engineering
+
+Sources:
+* 
+
+
+
+
 ## Details
+
 ### Classical methods
+
+There are a couple of terms that are general enough to collect them into a glossary and describe separately.
+
+* **Tokenization**: the process of splitting text into individual units called tokens, which can be words, phrases, or symbols.
+
+* **Stemming**: the process of reducing words to their base or root form. Example: running, rungs, and ran → run.
+
+* **Lemmatization**: similar to stemming, but lemmatization also reduces words to their base form, but it does so by using a vocabulary and morphological analysis of words, aiming to remove inflectional endings only and return the base or dictionary form of a word, which is known as the lemma. It is more accurate than stemming as it uses a knowledge base to obtain the correct base forms.
+
+* **Chunking**: aka. shallow parsing, chunking is the process of extracting phrases from unstructured text and grouping together the words into chunks based on their part of speech tags.
+
+* **Stop Word removal**: words that are filtered out before or after processing of natural language data (text) because they are insignificant
+
+* **Embedding**: what value to assign, vector database
+
+* **Part of Speech (PoS) tagging**: assigning parts of speech to each word in the text (e.g., noun, verb, adj), based on its definition and contexts.
+
+* **Named Entity Recognition (NER)**: identifying and classifying named entities in text into predefined categories (e.g., names of persons, organizations, locations). It is essential for information extraction tasks to identify important elements in the text.
+
+* **Bag of Words**: a kind of representation of a text, getting by transforming it into fixed-length vectors by counting how many times each word appears. It disregards the order of words but allows for the comparison of different texts based on their content. (maybe put into hand-crafted embeddings)
+
+* **n-grams**: continuous sequences of n items from a given sample of text or speech. They help in capturing the context of words in a document by considering a contiguous sequence of items. Useful for prediction and classification tasks.
+
+
 ### Character Encoding Standards
+
+Characters are symbols but machines understand numeric data (binary data).
+Thus we need to map characters into numeric values (codes).
+Character encoding deals with problems by defining a table (mapping) with the corresponding character and its code.
+Here we briefly introduce some of the most prominent character encoding standards created for different requirements.
+
+* **Character set**:
+  * a defined collection of characters (‘a’, ‘b’, …), symbols (‘$’, ‘♣’, ‘§’’, …), and control codes (NUL ‘\0’, TAB ‘\t’, LF ‘\n’, …)
+  * Examples: ASCII character set, Unicode character set.
+* **Character encoding**:
+  * the process of assigning numbers (code point) to a character set
+  * allowing them to be stored, transmitted, and transformed using digital computers
+  * establishing the rules for converting characters into binary code and back
+* **Character encoding standard**:
+  * a specific character encoding
+  * Examples: ASCII, Unicode
+  * think of it as a table, which enumerates characters supported, and their belonging unique numbers (code points)
+* **Encoding Scheme**:
+  * specifying how the code points are represented in binary
+  * defining the rules for converting characters into byte sequences and vice versa
+  * Examples: UTF-8, UTF-16, ISO-8859-1
+* **Fixed-length vs. Variable-length encodings**:
+  * **Fixed-length encoding**: each character is represented by the same number of bytes
+    * Example: UTF-32
+  * **Variable-length encoding**: different characters may have different byte lengths
+    * Example: UTF-8, UTF-16
+
+Character Encoding Standards:
+* **ASCII** (American Standard Code for Information Interchange):
+  * in the 1960s
+  * using 7-bit code points
+    * can represent 128 different characters
+* **extended ASCII**:
+  * using 8-bit code points
+    * can represent 256 different characters
+  * new microprocessors (1970s) preferred to work with power of 2
+  * characters 128-255 were never standardized
+* **ISO 8859-1** (Latin-1):
+  * in the late 1990s
+  * 15 different 8-bit character sets were created to cover many alphabets
+  * lacks a couple of hungarian letters ('ő', 'ű')
+* **ISO 8859-2** (Latin-2):
+  * generally intended for Central or Eastern European languages that are written in the Latin script
+  * supports Hungarian langauge
+* **Unicode**:
+
+
 ### Tokenization and Embeddings
+
+When working with text, we need to convert human-readable text (strings) into the form which can be processed by Neural Networks.
+Since these models work with numerical vectors, we need a method to perform this mapping.
+However, there are a couple of design decisions we have to make: which part of the text should be represented by a single vector: a character, a word, or something between?
+Tokenization is dealing with this problem.
+How to map the tokens to vector representations?
+What features of the text do we want to capture by the vector space?
+The topic of embeddings focuses on these considerations.
+
+**Summary and Glossary**:
+
+Mapping text into vector representations:
+* <ins>Text</ins>: a complex assembly of words and sentences, characterized by a well-defined structure that encapsulates a lot of connections and relationships between different parts.
+* <ins>Vectors</ins>: Neural Networks require scalar values (vectors, matrices, tensors) as input data. 
+So we have to transform textual data into vector represented data by not leaving the structure and rich information encoded in.
+We want a vector belonging to a token (e.g. a word) to contain the meaning of that word.
+* <ins>Vector space</ins>: each token has a vector representation which vectors are in a (vector) space.
+This space has a dimensionality, where different dimensions or directions can represent a semantic notion, meaning.
+Also words with similar meaning can reside near to each other in this vector space.
+* <ins>Tokenization</ins>: we need to split input text into tokens (atomic parts).
+Each token will have a belonging vector.
+* <ins>Token</ins>: the atomic part that the Language Model will use an entry of the input sequence.
+* <ins>Embedding</ins>: each token has a belonging value in the vector space, which is called embedding.
+This mapping usually is learned: the structure is formed during a training by taking the information of a large text collection (corpora).
+* <ins>Dictionary</ins>: at the end of tokenization and embedding process, we will have a dictionary (a key - value mapping pair), where the keys are unique tokens (characters, words, sub-words), and the value is the embedding vector representation in the learned vector space.
+There are a couple of engineering decisions we have to decide: what is the size of the dictionary (how many different tokens we have)? What is the dimension size of the embedding vector space (how big the vector representation of a token)?
+
+Different approaches and solutions were created during the history of progress to answer these challenges and decisions. Here we introduce a couple of them (the mainstream).
+
+
 #### Tokenization
+
+
 #### Embeddings
+
+
 #### Text embeddings
+
