@@ -24,7 +24,7 @@ This lecture tries to answer the following questions:
       3. How text embeddings opened the door for great applications?
 
 ## Contents:
-* Motivation
+* [Motivation](#motivation)
   * Demo of latest NLP-based achievements and applications
 * Definition of NLP
 * Why is NLP so successful
