@@ -48,10 +48,6 @@ This lecture tries to answer the following questions:
 ### Demo of recent NLP-related applications
 
 
-
-
-
-
 ### Videos Collection
 
 <table style="width: 100%;">
@@ -107,7 +103,7 @@ This lecture tries to answer the following questions:
         <img src="https://img.youtube.com/vi/HK6y8DAPN_0/0.jpg" style="width: 100%; height: auto;">
       </a>
       <p style="text-align: center;">
-        OpenAI's Sora<br>
+        OpenAI Sora<br>
         Generating video from text.<br>
         Not integrated into the ChatGPT.
       </p>
@@ -117,7 +113,7 @@ This lecture tries to answer the following questions:
         <img src="https://img.youtube.com/vi/UIZAiXYceBI/0.jpg" style="width: 100%; height: auto;">
       </a>
       <p style="text-align: center;">
-        Google's BARD with the Gemini model<br>
+        Google BARD with the Gemini model<br>
         Gemini understands image and video input.<br>
         Not available yet.
       </p>
@@ -139,7 +135,7 @@ This lecture tries to answer the following questions:
         <img src="https://img.youtube.com/vi/3hPoEmlBQdY/0.jpg" style="width: 100%; height: auto;">
       </a>
       <p style="text-align: center;">
-        Samsung's Galaxy S24 Ultra with AI features<br>
+        Samsung Galaxy S24 Ultra with AI features<br>
         During a call, it transcribes the talk.<br>
         It translates on-the-fly in either text or voice.
       </p>
@@ -149,7 +145,7 @@ This lecture tries to answer the following questions:
         <img src="https://img.youtube.com/vi/N1gpkk-MwpY/0.jpg" style="width: 100%; height: auto;">
       </a>
       <p style="text-align: center;">
-        Microsoft's CoPilot<br>
+        Microsoft CoPilot<br>
         During a meeting, it transcribes the talk.<br>
         It creates a summary of the content.
       </p>
@@ -171,9 +167,8 @@ This lecture tries to answer the following questions:
         <img src="https://img.youtube.com/vi/4RfD5JiXt3A/0.jpg" style="width: 100%; height: auto;">
       </a>
       <p style="text-align: center;">
-        Samsung's Galaxy S24 Ultra with AI features<br>
-        During a call, it transcribes the talk.<br>
-        It translates on-the-fly in either text or voice.
+        GitHub's CoPilot
+        Can generate code based on an instruction.
       </p>
     </td>
     <td style="padding: 5px;">
