@@ -260,28 +260,28 @@ Thus we need to map characters into numeric values (codes).
 Character encoding deals with problems by defining a table (mapping) with the corresponding character and its code.
 Here we briefly introduce some of the most prominent character encoding standards created for different requirements.
 
-* **Character set**:
+* <ins>Character set</ins>:
   * a defined collection of characters (‘a’, ‘b’, …), symbols (‘$’, ‘♣’, ‘§’’, …), and control codes (NUL ‘\0’, TAB ‘\t’, LF ‘\n’, …)
   * Examples: ASCII character set, Unicode character set.
-* **Character encoding**:
+* <ins>Character encoding</ins>:
   * the process of assigning numbers (code point) to a character set
   * allowing them to be stored, transmitted, and transformed using digital computers
   * establishing the rules for converting characters into binary code and back
-* **Character encoding standard**:
+* <ins>Character encoding standard</ins>:
   * a specific character encoding
   * Examples: ASCII, Unicode
   * think of it as a table, which enumerates characters supported, and their belonging unique numbers (code points)
-* **Encoding Scheme**:
+* <ins>Encoding Scheme</ins>:
   * specifying how the code points are represented in binary
   * defining the rules for converting characters into byte sequences and vice versa
   * Examples: UTF-8, UTF-16, ISO-8859-1
-* **Fixed-length vs. Variable-length encodings**:
-  * **Fixed-length encoding**: each character is represented by the same number of bytes
+* <ins>Fixed-length vs. Variable-length encodings</ins>:
+  * <ins>Fixed-length encoding</ins>: each character is represented by the same number of bytes
     * Example: UTF-32
-  * **Variable-length encoding**: different characters may have different byte lengths
+  * <ins>Variable-length encoding</ins>: different characters may have different byte lengths
     * Example: UTF-8, UTF-16
 
-Character Encoding Standards:
+**Character Encoding Standards**:
 * **ASCII** (American Standard Code for Information Interchange):
   * in the 1960s
   * using 7-bit code points
@@ -332,11 +332,94 @@ There are a couple of engineering decisions we have to decide: what is the size 
 Different approaches and solutions were created during the history of progress to answer these challenges and decisions. Here we introduce a couple of them (the mainstream).
 
 
-#### Tokenization
+### Tokenization
+
+Online tokenizer demos:
+* https://platform.openai.com/tokenizer
+* https://llmtokencounter.com/
+* https://tokens-lpj6s2duga-ew.a.run.app/
+
+**Considerations**: there are a couple decisions we have to make, and a few problems we have to solve during constructing the tokenization process.
+* What size should the final tokenization dictionary have?
+  * small dictionary is storage efficient
+  * larger dictionary can capture more structure
+  * it is a trade-off
+* On which level should we split the text? Or from the opposite direction, on which level should we group characters together?
+  * Character-based tokenization: we split the text to tokens character by character (each character is an individual token)
+    * Pros:
+      * small vocabulary: English alphabet consists of 26 characters
+      * typos are handled: diversity → diwersity
+      * there are no missing keys in the dictionary
+    * Cons:
+      * characters lack semantic information: a word has meaning, but a character itself does not
+      * splitting a general text into character-based tokens results in a longer token sequence
+  * Word-based tokenization:   we split the text to tokens word by word (each word is an individual token)
+    * Pros:
+      * words contain a lot of semantic and contextual information
+      * splitting a general text into word-based tokens results in a shorter token sequence
+    * Cons:
+      * vocabulary size can be pretty large: English contains around 170 000 words
+      * handling different forms of words: run, runs, ran
+      * What happens to typos? diversity → diwersity
+        * missing key in the dictionary
+        * adding a new token for each typo?
+        * using an special <UNK> unknown token
+    * Sub-word-based tokenization:
+      * somewhere between character-based and word-based split
+      * we split text to tokens where a token can be a single character, a complete word, or a part of a word (subword), even strings containing consecutive characters of more neighboring words (walking on the street)
+      * frequency of common character sequences (sub-words) in a corpus is used to decide which will be part of the token dictionary
+      * taking advantages of the previous methods
+      * Pros:
+        * intermediate vocabulary size
+        * typos are handled
+        * intermediate sequence length
+        * hybrid keys in the token dictionary
+        * all the letters are included as entries
+        * more frequent words and form of words are included as entries
+        * frequently used words should not be split but have an individual token, while rare words should be decomposed into more tokens
+      * individual tokens can have semantic meaning
+      * different forms of words share common tokens:
+        * rain, bow, rainbow
+      * Cons:
+        * we have to make these design decision detailed above
+        * picking a good size for the token dictionary
+        * creating the keys (strings) part of the token dictionary
+* Open Vocabulary Problem and Out of Vocabulary (OOV) words:
+  * there are rare words (longtail distribution) which may not occur in our corpus
+  * new words can appear, language evolves with time
+  * typos are probably not in our corpus
+* Special tokens:
+  * \<UNK>: representing unknown tokens
+  * \<SEP>: separating different parts of the sequence
+  * \<BOS>: indicating the beginning of the sequence / sentence
+  * \<EOS>: indicating the end of the sequence / sentence
 
 
-#### Embeddings
+### Tokenization methods
+
+**Byte Pair Encoding** (BPE) [2015]:
+
+**WordPiece** (Google) [2016]:
+
+**Unigram** (Google) [2018]:
+
+**SentencePiece** (Google) [2018]:
+
+#### Good to know:
+* Tokenizers are usually trained on English datasets, or multi-language datasets where english text is overrepresented. Due to this, English text is handled more efficiently, which in practice means that the same sentence in english will be tokenized into fewer tokens than the hungarian translation of that sentence. (Suppose a translation consists of the same number of words and characters.)
+* Since LLMs make prices based on the used tokens, using a LLM (e.g. ChatGPT) is more expensive for the Hungarian language than for English.
 
 
-#### Text embeddings
+### Embeddings
+
+Tokenization splits our text sequence into tokens (atomic parts), embedding represents these tokens in a high dimensional vector space to map to numeric representation manageable by Language Models.
+
+> **TL;DR**: 
+> The evolution of textual embeddings have 2 main phases, similarly to the applied representations in general Machine Learning.
+Early NLP methods utilized human-engineered (hand-crafted) descriptors and features of text, incorporating various task-specific statistics, such as word frequencies and importance-reflecting weights.
+As Deep Learning methods evolved, embeddings (vector representations of words or tokens) began to be learned through Neural Networks.
+This paradigm shift has led to remarkable improvements in representation learning, enabling the derived embeddings to capture more nuanced semantic features, including abstract meanings and similarity between words, or encoding the context for addressing polymorphism.
+
+
+### Text embeddings
 
