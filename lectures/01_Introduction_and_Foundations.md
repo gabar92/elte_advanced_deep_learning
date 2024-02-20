@@ -64,8 +64,8 @@ The Natural Language Processing (NLP) domain sites at the junction of the fields
 * **Linguistics**: the study of language and its structure, including the analysis of syntax, semantics, and more, with the aim of understanding how languages are formed, used, and change over time.
 
 The goal of NLP: enabling computers to understand, interpret, and generate human language.
-* *Understanding* langauge: grasping the meaning of words, phrases, or larger units of text.
-* *Interpreting* langauge: extracting deeper meaning, context, or intent in text and comprehending it.
+* *Understanding* language: grasping the meaning of words, phrases, or larger units of text.
+* *Interpreting* language: extracting deeper meaning, context, or intent in text and comprehending it.
 * *Generating* text: producing human-like text
 
 By having high-quality NLP systems:
@@ -121,7 +121,7 @@ Model architectures are required to handle varying size of the input.
 
 * **Handling long-range inputs and capturing long-range dependencies**: important information in text can be separated by long distances, which is challenging for being captured.
 Vanilla architectures for modelling sequences (RNNs: LSTMs, GRUs) are limited in capturing long-term dependencies.
-  * <ins>Solution</ins>: using the Transformer architectures which can handle long-range information efficiently.
+  * <ins>Solution</ins>: using the Transformer architecture which can handle long-range information efficiently.
 Also, there are different trick for limiting the attention mask to reduce the resource-requirements of the model. 
 
 * **Labeling for some tasks is very challenging (costly, hard)**: for those tasks require text generation as output, creating these labeled training examples is extremely challenging.
@@ -133,5 +133,54 @@ This is especially hold for fine-tuning dataset, where high quality is extremely
 However, tasks where the generated text does not have a single form, but there can be multiple perfect outputs are challenging to evaluate.
   * <ins>Solution</ins>: applying proxy measures (e.g. LM objective), or developing task-specific measures handling this challenge well (e.g. BLEU).
 
+
+## NLP-specific advantages
+
+* **Abundance of data**:
+
+* **Unsupervised and Self-Supervised Learning (SSL) provide string general-purpose models**:
+
+* **Transfer learning efficacy**:
+
+* **Embeddings**:
+
+* **Emergent properties**:
+
+
+## Converging paths: adopting techniques between NLP and CV
+
+The fields of Natural Language Processing (NLP) and Computer Vision (CV) each come with their unique strengths and challenges, leading to the creation of distinct techniques and solutions tailored to their situation.
+Over time, these domain-specific approaches have been shared and adapted between the two fields.
+Here, we delve into a few techniques that have been shared and adapted between these 2 fields, highlighting their background, motivation, and cross-domain application:
+
+CV techniques adopted in NLP:
+* Two-stage training procedure: Pre-training then Fine-tuning:
+  * The two-stage training procedure was popularized in CV with the development of models like AlexNet and VGG.
+The network is first pre-trained on a large, generic dataset (like ImageNet) and then fine-tuned on a smaller, domain-specific dataset.
+This approach leverages the generic features learned during pre-training, which are applicable across a wide-range of visual tasks.
+This methodology was later adopted by the NLP community with models like BERT and GPT.
+Here, language models are pre-trained on vast amounts of text data to learn a general understanding of language and then fine-tuned for specific tasks.
+  * Differences between the two domains:
+    * In CV both the pre-training and fine-tuning are supervised learning (classification).
+    * However, in NLP the pre-training is usually unsupervised or self-supervised learning (next word prediction, or missing word prediction) while the fine-tuning is supervised (downstream task’s objective).
+Fine-tuning in CV usually affects an additional linear layer at the top of the backbone model (?). In NLP, fine-tuning extends for the entire network.
+
+NLP techniques adopted in CV:
+* Unsupervised / Self-Supervised Learning:
+  * Unsupervised and Self-Supervised Learning in NLP involves learning patterns from unlabelled text data.
+Since there is abundant text on the web which can be used to learn general language modeling during a pre-training phase.
+Frequently used objectives are language modeling (next word prediction) (GPT) and masked language modeling (BERT).
+  * Unsupervised and Self-Supervised Learning techniques found their way into CV as well.
+Techniques like Contrastive Learning (CL), where the model learns by comparing pairs of images to understand if they are similar or different, have shown great promise in learning robust visual representations without the need for labeled data.
+* Transformer architecture:
+  * The Transformer architecture revolutionized NLP by providing a mechanism (self-attention) that allows models to weigh the importance of different words in a sentence.
+This architectures forms the backbone of many state-of-the-art NLP models (e.g., BERT, GPT), enabling to capture long-range dependencies in text.
+  * The Transformer architecture has been adapted for CV tasks, leading to the development of Vision Transformers (ViT).
+The input image is divided into patches, and the transformer processes these patches as sequences similar to words in a sentence.
+* Embeddings:
+  * CLIP? (TODO)
+
+
+## General framework of current models:
 
 
