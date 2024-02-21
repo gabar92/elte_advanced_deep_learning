@@ -238,25 +238,20 @@ Ambiguity and Polysemy: words can have multiple meanings based on the context, m
 Dynamic representations instead of static representations generate embeddings on-the-fly, considering the entire sentence or document.
 * **Lack of inherent structure**: unlike structured data (database tables), freeform text data is unstructured data.
   * <ins>Solution</ins>:
-
 * **Sparsity of data**: the discrete nature of text leads to sparsity issues.
 The vast majority of possible word combinations are never observed, making it hard to learn from.
   * <ins>Solution</ins>: tokenization can reduce the vocabulary size and handle out-of-vocabulary cases.
-
 * **Variable length of input**: text data comes in variable lengths (unlike images which are typically resized to fixed dimensions.)
 Model architectures are required to handle varying size of the input.
   * <ins>Solution</ins>: applying RNNs (LSTM, GRU) or Transformer networks which inherently handle sequential input with varying length.
-
 * **Handling long-range inputs and capturing long-range dependencies**: important information in text can be separated by long distances, which is challenging for being captured.
 Vanilla architectures for modelling sequences (RNNs: LSTMs, GRUs) are limited in capturing long-term dependencies.
   * <ins>Solution</ins>: using the Transformer architecture which can handle long-range information efficiently.
-Also, there are different trick for limiting the attention mask to reduce the resource-requirements of the model. 
-
+Also, there are different trick for limiting the attention mask to reduce the resource-requirements of the model.
 * **Labeling for some tasks is very challenging (costly, hard)**: for those tasks require text generation as output, creating these labeled training examples is extremely challenging.
 The creation of these labels (ground truth output text) frequently requires qualified labelers, and the generation is very laborious.
 This is especially hold for fine-tuning dataset, where high quality is extremely important.
   * <ins>Solution</ins>: applying different training setup (e.g., RLHF).
-
 * **Evaluation of downstream tasks**: classification tasks are easy to evaluate.
 However, tasks where the generated text does not have a single form, but there can be multiple perfect outputs are challenging to evaluate.
   * <ins>Solution</ins>: applying proxy measures (e.g. LM objective), or developing task-specific measures handling this challenge well (e.g. BLEU).
