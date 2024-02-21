@@ -303,6 +303,32 @@ The input image is divided into patches, and the transformer processes these pat
 
 ### The gist of NLP models: Next word prediction
 
+<details>
+<summary><b>n-gram</b>:</summary>
+
+> * Video: https://www.youtube.com/watch?v=E_mN90TYnlg
+> * Demo: https://www.reuneker.nl/files/ngram/
+
+</details>
+
+  * General meaning of n-gram:
+    * n-gram is a series of n adjacent letters, syllables, or rarely whole words found in a language dataset
+    * an n-gram is a sequence of n words, characters, or other linguistic items
+  * conditional probability of a words given the previous (N - 1) words
+  * P(word_n | word_n-1, …, word_n-N+1)
+    * bigram model: P(word_n | word_n-1)
+    * trigram model: P(word_n | word_n-1, word_n-2)
+  * Disadvantages:
+    * not taking into account context farther than N
+    * not taking into account the “similarity” between words
+  * Application:
+    * Word n-gram Language Model:
+      * a purely statistical model of language
+      * superseded by RNNs
+    * the probability of the next word in a sequence depends only on a fixed size window of previous words
+  * Connection:
+    * Markov property?
+
 ### A list of Tasks and Applications in NLP
 
 * Classification:
@@ -708,7 +734,7 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
     * High Dimensionality: with a large vocabulary, the feature space can become very large, leading to high memory and computational costs
 
 <details>
-<summary><b>Example</b></summary>
+<summary>Example</summary>
 
 * Sentences / Documents:
   * Sentence 1: "The annual software technology conference showcased the latest innovations in software and hardware."
@@ -765,32 +791,6 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
     * Fixed Vocabulary: similar to BoW, the TF-IDF model has a fixed vocabulary, and it can't handle new words that weren't in the training corpus without retraining
 
 <details>
-<summary><b>n-gram</b>:</summary>
-
-> * Video: https://www.youtube.com/watch?v=E_mN90TYnlg
-> * Demo: https://www.reuneker.nl/files/ngram/
-
-</details>
-
-  * General meaning of n-gram:
-    * n-gram is a series of n adjacent letters, syllables, or rarely whole words found in a language dataset
-    * an n-gram is a sequence of n words, characters, or other linguistic items
-  * conditional probability of a words given the previous (N - 1) words
-  * P(word_n | word_n-1, …, word_n-N+1)
-    * bigram model: P(word_n | word_n-1)
-    * trigram model: P(word_n | word_n-1, word_n-2)
-  * Disadvantages:
-    * not taking into account context farther than N
-    * not taking into account the “similarity” between words
-  * Application:
-    * Word n-gram Language Model:
-      * a purely statistical model of language
-      * superseded by RNNs
-    * the probability of the next word in a sequence depends only on a fixed size window of previous words
-  * Connection:
-    * Markov property?
-
-<details>
 <summary><b>BM25</b>: </summary>
 
 > * Paper:  https://www.staff.city.ac.uk/~sbrp622/papers/foundations_bm25_review.pdf
@@ -805,6 +805,10 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 #### <ins>Deep Learning-based methods - Embeddings</ins>:
 
 > TL;DR: 
+
+Distributed representations:
+
+* 
 
 <details>
 <summary><b>Word2Vec</b> (Google) [2013]: </summary>
