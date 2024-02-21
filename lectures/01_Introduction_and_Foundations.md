@@ -703,7 +703,6 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 <details>
 <summary><b>Example</b></summary>
 
->  * Example:
     * Sentences / Documents:
       * Sentence 1: "The annual software technology conference showcased the latest innovations in software and hardware."
       * Sentence 2: "Attendees of the technology conference gained insights into new software applications and digital technologies."
