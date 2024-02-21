@@ -813,53 +813,120 @@ Distributed representations:
 <details>
 <summary><b>Word2Vec</b> (Google) [2013]: </summary>
 
-> * Paper:  https://arxiv.org/abs/1301.3781
-> * Demo:  https://remykarem.github.io/word2vec-demo/
+> * Paper: https://arxiv.org/abs/1301.3781
+> * Paper: https://arxiv.org/abs/1310.4546
+> * Demo: https://remykarem.github.io/word2vec-demo/
 
 </details>
 
-  * first method captioning algebraic representation
-  * using shallot feed-forward networks
-  * 2 methods:
-    * Continuous Bag of Words (CBOW)
-      * predicting a word based on its context
-    * Continuous Skip-Gram model
-      * predicting the context of a given word
-  * NN models to learn representations (mappings)
-    * representations are distributed
+  * Neural Network-based models used to produce learned word embeddings, which are vector representations of words
+    * shallow neural network, not Deep Neural Network / Deep Learning
+  * the learned embeddings are distributed representations
+  * can capture a large number of precise syntactic and semantic word relationships simply by vector arithmetic
+    * placing words that have similar meanings close to each other in a multidimensional vector space
+    * the first method capturing these algebraic representations:
+      * Word2Vec("Queen") = Word2Vec("King") + [Word2Vec("Woman") - Word2Vec("King")]
+  * Model architecture:
+    * shallow, 2-layer Neural Networks
+    * trained to reconstruct linguistic contexts of words
+    * 2 main architectures:
+      * Continuous Bag of Words (CBoW):
+        * Objective: predicting the target word based on context words surrounding it
+        * given one or more context words, it predicts the target word in the middle
+        * generally faster than Skip-Gram
+      * Skip-Gram:
+        * Objective: predicting surrounding context words for a given target word
+        * given a specific word, it predicts the likelihood of other words appearing in its vicinity within a sentence
+        * generally slower than CBoW
+  * Pros:
+    * Efficiency: quickly processes large vocabularies
+    * Semantic Information: captures complex word relationships and similarities
+    * Scalability: can handle massive datasets effectively
+  * Cons:
+    * Context Limitation: struggles with words that have multiple meanings based on context
+    * Static Representations: each word has a fixed representation, not considering the word's context in different sentences
+    * Data Hungry: requires a large amount of text data to perform well
+    * Domain Specificity: pre-trained models may not perform well on text from specialized domains without additional training 
+
 
 <details>
 <summary><b>GloVe</b> (Stanford) [2014]: </summary>
 
-> * Paper:  https://aclanthology.org/D14-1162/
+> * Paper: https://aclanthology.org/D14-1162/
 
 </details>
 
-  * GloVe = Global Vectors for Word Representations
-  * 2 methods:
-    * Global Matrix Factorization
-    * Local context window-based method
+  * GloVe stands for Global Vectors for Word Representations
+  * matrix statistics-based models used to produce learned word embeddings, which are vector representations of words
+  * unlike Word2Vec, which uses local context information, GloVe constructs an explicit word-context (or word co-occurrence) matrix using statistics across the whole text corpus
+  * the model applies matrix factorization techniques to approximate the matrix
+    * learning to rich word embeddings that reflect both the semantic and syntactic meaning of words 
+    * 2 matrix factorization methods:
+      * Global Matrix Factorization:
+        * capturing global statistics
+        * the entire corpus is used to generate a co-occurrence matrix
+          * analyzing how often words co-occur with others across the corpus to capture global statistics
+      * Local context window-based method:
+        * capturing local context
+  * Pros:
+    * Rich Word Embeddings: captures complex patterns beyond mere word co-occurrences, including semantic and syntactic nuances
+    * Efficient Use of Corpus: by utilizing global co-occurrence statistics, it leverages more information than just local context, leading to more informed embeddings
+    * Scalability: can process large corpora effectively
+  * Cons:
+    * Memory Intensive: building and storing the global co-occurrence matrix can be memory-intensive, especially for large corpora
+    * Fixed Context Size: the initial co-occurrence matrix construction doesn't account for varying context sizes or dynamic context windows
+    * Preprocessing Overhead: requires the construction of a co-occurrence matrix before training
+    * Less Effective for Rare Words: the model's performance can degrade for words that appear infrequently in the corpus, as their co-occurrence statistics are less robust
 
 <details>
 <summary><b>CoVe</b> [2018]: </summary>
 
-> * Paper:  https://arxiv.org/abs/1708.00107
+> * Paper: https://arxiv.org/abs/1708.00107
 
 </details>
 
-  * CoVe = Contextualized word Vectors
-  * encoder-decoder architecture
-    * Encoder: 2-layer bidirectional LSTM
-    * Decoder: 
-  * attentional sequence-to-sequence model
-  * used with GloVe (?) concatenated
+  * CoVe stands for Contextualized word Vectors
+  * Deep Neural Network-based models used to produce learned word embeddings, which are vector representations of words
+  * unlike (traditional) static word embedding models like Word2Vec and GloVe, CoVe provides word representations that are sensitive to the context in which a word appears
+    * a step forward in capturing the nuances of languages
+      * Polysemy: words with multiple meanings
+      * complex syntactic structures
+  * Architecture:
+    * CoVe model is generated by a model that uses a Machine Translation architecture
+      * Sequence-to-Sequence (Seq2Seq) model
+      * Encoder-Decoder architecture
+      * initially trained on Machine Translation task
+      * Deep Learning-based Deep Neural Networks (DNNs) are used
+    * Encoder:
+      * RNN (LSTM, GRU)
+      * learning to represent input sentences in a way that captures both semantic and syntactic information contextually
+      * the word vectors generated by this encoder are what referred to as CoVe
+  * Pros:
+    * Contextual Awareness: CoVe adjusts the representation of each word based on the sentence it appears in
+      * the same word can get different representations based on the actual context
+      * can handle complex linguistic nuances
+      * In contrast: traditional embeddings provide a single static representation for each word regardless of its context
+    * Leverages Deep Learning: uses deep learning models trained on large-scale machine translation tasks, benefiting from the nuanced understanding of langauge
+    * Complementary to Static Embeddings: CoVe are often used in combination with static embeddings like GloVE, providing both the efficiency of static representations and the contextual awareness of CoVe
+    * Rich Representations: captures deeper semantic and syntactic information than static embeddings
+  * Cons:
+    * Computational Complexity: requires significant computational resources due to the complexity of the underlying models
+    * Training Time: training CoVe from scratch can be time-consuming
+    * Integration Complexity: integrating CoVe with existing NLP systems can be more complex than static embeddings
+      * requiring adjustments to accommodate the dynamic nature of the embeddings
 
 <details>
 <summary><b>ELMo</b> [2018]: </summary>
 
-> * Paper:  https://arxiv.org/abs/1802.05365
+> * Paper: https://arxiv.org/abs/1802.05365
 
 </details>
+
+  * ELMo stands for Embeddings from Language Models
+  * Deep Neural Network-based models used to produce learned word embeddings, which are vector representations of words
+
+
+
 
   * Embeddings from Language Models
   * deep contextualized word representation
@@ -875,7 +942,7 @@ Distributed representations:
 <details>
 <summary><b>BERT</b> (Google) [2018]: </summary>
 
-> * Paper:  https://arxiv.org/abs/1810.04805
+> * Paper: https://arxiv.org/abs/1810.04805
 
 </details>
 
