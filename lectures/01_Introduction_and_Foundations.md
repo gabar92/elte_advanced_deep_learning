@@ -199,7 +199,7 @@ What are the novel features that Large Language Models (LLMs) have brought to th
 Just to highlight one qualitative measure of ChatGPT's success: it reached 100 million users faster than any previous application.
 (At the moment, Meta's Threads leads the leaderboard.)
 
-Key factors contributing to the success include:
+Key factors contributing to the success include: [TODO: reorder]
 * Unlike Computer Vision (CV), NLP-based applications offer the most natural and convenient means of interaction through natural language.
 * The simplicity of non-technical communication eliminates the barrier of requiring specialized knowledge for usage.
 * The capability to perform new tasks, such as creating photo-realistic images on any topic without the need for expert Photoshop skills, fosters a sense of achievement and unleashes creativity.
@@ -889,5 +889,13 @@ Features of text embeddings:
 * developers can shorten embeddings (i.e., remove some numbers from the end of the sequence) without the embedding losing its concept-representing properties by passing in the dimensions
 
 
+## Additional resources
+* Andrej Karpathy: Intro to Large Language Models: https://www.youtube.com/watch?v=zjkBMFhNj_g&t=995s&pp=ygUVbGFyZ2UgbGFuZ3VhZ2UgbW9kZWxz
+* Google: Introduction to Large Language Models: https://www.youtube.com/watch?v=zizonToFXDs&pp=ygUVbGFyZ2UgbGFuZ3VhZ2UgbW9kZWxz
+* Google: Introduction to Generative AI: https://www.youtube.com/watch?v=G2fqAlgmoPo
+* Harvard University: Large Language Models and The End of Programming: https://www.youtube.com/watch?v=JhCl-GeT4jw
+* Jeff Bezos: Large Language Models: https://www.youtube.com/watch?v=e4FXX4yX0nA
 
-TODO: add chapter numbers
+# TODO list:
+* TODO: add chapter numbers
+* TODO: add history between demo and why so successful
