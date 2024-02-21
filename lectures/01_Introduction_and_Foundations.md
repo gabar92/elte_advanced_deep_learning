@@ -753,25 +753,62 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 <summary>Example</summary>
 
 ```
-Sentences / Documents:
+Demonstration of the Bag of Words (BoW) method on a toy example.
+
+    We have a dataset (corpus) with 3 documents. Each document comprises of a sentence.
+    We want to create the BoW descriptors for these documents to provide them to NNs.
+
+ ■ Sentences / Documents:
+    
+    The 3 sentences in the 3 documents.
+    
   - Sentence 1: "The annual software technology conference showcased the latest innovations in software and hardware."
   - Sentence 2: "Attendees of the technology conference gained insights into new software applications and digital technologies."
   - Sentence 3: "The software designed for pet management helps dog owners schedule vet appointments and track their pet's health."
-Cleaning: Removing stop words, Stemming
+
+
+ ■ Cleaning: removing Stop Words and applying Stemming / Lemmatization
+ 
+    As a first step we remove non-informative words (Stop Words).
+    In the secont step we 'normalize' the words by reducint them to their base forms.
+
   - Sentence 1: ["annual", "software", "technology", "conference", "showcase", "latest", "innovation", "software", "hardware"]
   - Sentence 2: ["attendee", "technology", "conference", "gain", "insight", "new", "software", "application", "digital", "technology"]
   - Sentence 3: ["software", "design", "pet", "management", "help", "dog", "owner", "schedule", "vet", "appointment", "track", "pet", "health"]
-Creating common vocabulary:
+
+    Now we have a list of unique words for each document.
+
+ ■ Creating the vocabulary:
+ 
+    We need to create the vocabulary. This contains all the root words in all the documents of the corpus.
+    We will compare documents based on this vocabulary that servers as a 'basis', or as the features of our descriptor.
+
   - Vocabulary: ["annual", "application", "appointment", "attendee", "conference", "design", "digital", "dog", "gain", "hardware", "health", "help", "innovation", "insight", "latest", "management", "new", "owner", "pet", "schedule", "showcase", "software", "technology", "track", "vet"]
-Summarize the frequencies of words:
+
+ ■ Summarize the frequencies of words:
+ 
+    We count how many times the words appear. Create list with unique words (aka. a set) and save the frequency of the words (how many times they appear in the document).
+    We can see that we ordered the words in alhpabetical order: this descriptor removes this information.
+
   - Frequencies of Sentence 1: ["annual": 1, "conference": 1, "hardware": 1, "innovation": 1, "latest": 1, "showcase": 1, "software": 2, "technology": 1]
   - Frequencies of Sentence 2: ["application": 1, "attendee": 1, "conference": 1, "digital": 1, "gain": 1, "insight": 1, "new": 1, "software": 1, "technology": 2]
   - Frequencies of Sentence 3: ["appointment": 1, "design": 1, "dog": 1, "health": 1, "help": 1, "management": 1, "owner": 1, "pet": 2, "schedule": 1, "software": 1, "track": 1, "vet": 1]
-Constructing BoW representations:
+
+ ■ Constructing BoW representations:
+ 
+    We need not only the appearing words for describing the document, but all the words appearing in the vocabulary.
+    Those words don't appear in the document gets the 0 frequancy.
+    The order of the words (features) is the same for all the documents.
+    The specific order doesn't matter, but it has to match for all the documents. 
+
   - BoW Representation of Sentence 1: ["annual": 1, "application": 0, "appointment": 0, "attendee": 0, "conference": 1, "design": 0, "digital": 0, "dog": 0, "gain": 0, "hardware": 1, "health": 0, "help": 0, "innovation": 1, "insight": 0, "latest": 1, "management": 0, "new": 0, "owner": 0, "pet": 0, "schedule": 0, "showcase": 1, "software": 2, "technology": 1, "track": 0, "vet": 0]
   - BoW Representation of Sentence 2: ["annual": 0, "application": 1, "appointment": 0, "attendee": 1, "conference": 1, "design": 0, "digital": 1, "dog": 0, "gain": 1, "hardware": 0, "health": 0, "help": 0, "innovation": 1, "insight": 1, "latest": 0, "management": 0, "new": 1, "owner": 0, "pet": 0, "schedule": 0, "showcase": 0, "software": 1, "technology": 2, "track": 0, "vet": 0]
   - BoW Representation of Sentence 3: ["annual": 0, "application": 0, "appointment": 1, "attendee": 0, "conference": 0, "design": 1, "digital": 0, "dog": 1, "gain": 0, "hardware": 0, "health": 1, "help": 1, "innovation": 1, "insight": 0, "latest": 0, "management": 1, "new": 0, "owner": 1, "pet": 2, "schedule": 1, "showcase": 0, "software": 1, "technology": 0, "track": 1, "vet": 1]
-Bow representations vector:
+
+ ■ Bow representations vector:
+
+    The BoW descriptor vectors are only the values (words / features are omitted).
+
   - BoW Representation of Sentence 1: [1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 2, 1, 0, 0]
   - BoW Representation of Sentence 2: [0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 2, 0, 0] 
   - BoW Representation of Sentence 3: [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 2, 1, 0, 1, 0, 1, 1]
