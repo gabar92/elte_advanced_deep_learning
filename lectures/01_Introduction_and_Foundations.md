@@ -661,27 +661,79 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 #### <ins>Classical methods</ins>:
 
 <details>
-<summary><b>One-hot encoding</b> (Google) [2018]:</summary>
+<summary><b>One-hot encoding</b>:</summary>
 
 > * Video: https://www.youtube.com/watch?v=G2iVj7WKDFk
 
 </details>
 
-  * does not really make sense, but demonstrates the problem with sparse representations
-    * no meaning encoded in any way
-    * not scalable: vocabulary with 40,000 words → vectors with dimension of 40,000
-    * sparse
-  * distributed representations are preferred
+  * one-hot encoding is a fundamental technique to transform categorical data, such as tokens, into a numerical format that ML models can work with
+  * each word / token in the vocabulary is assigned a unique ID, and each one is represented as a sparse vector of zeros except for the index corresponding to the ID, which is marked as 1
+    * first word (token): [1, 0, 0, ...]
+    * second word (token): [0, 1, 0, ...]
+    * last word (token): [0, 0, 0, , ..., 1]
+  * in NN models, one-hot encoded vectors are often used as the input to an embedding layer, which then maps these spase vectors into a dense, lower-dimensional space
+  * Pros:
+    * Simplicity: one-hot encoding is straightforward to understand and implement
+  * Cons:
+    * Sparsity: one-hot vectors are extremely sparse, leading to inefficient use of memory and computational resources
+    * Lack of Semantic Information: one-hot encoding does not capture any semantic relationships between words
+    * Scalability issues: the size of the vectors increases with the size of the vocabulary
+      * vocabulary with 40,000 words (tokens) --> vectors with dimension of 40,000
 
 <details>
-<summary><b>Bag-of-Words</b> (BoG): </summary>
+<summary><b>Bag-of-Words</b> (BoW): </summary>
 
 > * Video: https://www.youtube.com/watch?v=IRKDrrzh4dE
 > * Video: https://www.youtube.com/watch?v=OGK9SHt8SWg
 
 </details>
 
-  * TODO
+  * BoW is a fundamental technique used in classical NLP to convert text data into numerical form
+  * unlike one-hot encoding, which represents each word as a unique vector, BoW represents text as a collection of the counts of words that appear in the document
+    * disregarding the order in which the words appear
+  * a document / text is represented as a bag (or multiset) of its words
+    * the words are usually preprocessed
+    * the grammar and the order of the words are disregarded by the BoW representation
+    * multiplicities of words are kept
+    * BoW only concerns whether known words occur in the document or not
+    * each unique word in the entire dataset becomes a feature in the model
+    * for each document, the values in its feature vector correspond to the frequencies of each word in the document
+
+<details>
+<summary><b>Example</b></summary>
+
+>  * Example:
+    * Sentences / Documents:
+      * Sentence 1: "The annual software technology conference showcased the latest innovations in software and hardware."
+      * Sentence 2: "Attendees of the technology conference gained insights into new software applications and digital technologies."
+      * Sentence 3: "The software designed for pet management helps dog owners schedule vet appointments and track their pet's health."
+      * ...
+    * Cleaning: Removing stop words, Stemming
+      * Sentence 1: ["annual", "software", "technology", "conference", "showcase", "latest", "innovation", "software", "hardware"]
+      * Sentence 2: ["attendee", "technology", "conference", "gain", "insight", "new", "software", "application", "digital", "technology"]
+      * Sentence 3: ["software", "design", "pet", "management", "help", "dog", "owner", "schedule", "vet", "appointment", "track", "pet", "health"]
+    * Creating common vocabulary:
+      * Vocabulary: ["annual", "application", "appointment", "attendee", "conference", "design", "digital", "dog", "gain", "hardware", "health", "help", "innovation", "insight", "latest", "management", "new", "owner", "pet", "schedule", "showcase", "software", "technology", "track", "vet"]
+    * Summarize the frequencies of words:
+      * Frequencies of Sentence 1: ["annual": 1, "conference": 1, "hardware": 1, "innovation": 1, "latest": 1, "showcase": 1, "software": 2, "technology": 1]
+      * Frequencies of Sentence 2: ["application": 1, "attendee": 1, "conference": 1, "digital": 1, "gain": 1, "insight": 1, "new": 1, "software": 1, "technology": 2]
+      * Frequencies of Sentence 3: ["appointment": 1, "design": 1, "dog": 1, "health": 1, "help": 1, "management": 1, "owner": 1, "pet": 2, "schedule": 1, "software": 1, "track": 1, "vet": 1]
+    * Constructing BoW representations:
+      * BoW Representation of Sentence 1: ["annual": 1, "application": 0, "appointment": 0, "attendee": 0, "conference": 1, "design": 0, "digital": 0, "dog": 0, "gain": 0, "hardware": 1, "health": 0, "help": 0, "innovation": 1, "insight": 0, "latest": 1, "management": 0, "new": 0, "owner": 0, "pet": 0, "schedule": 0, "showcase": 1, "software": 2, "technology": 1, "track": 0, "vet": 0]
+      * BoW Representation of Sentence 2: ["annual": 0, "application": 1, "appointment": 0, "attendee": 1, "conference": 1, "design": 0, "digital": 1, "dog": 0, "gain": 1, "hardware": 0, "health": 0, "help": 0, "innovation": 1, "insight": 1, "latest": 0, "management": 0, "new": 1, "owner": 0, "pet": 0, "schedule": 0, "showcase": 0, "software": 1, "technology": 2, "track": 0, "vet": 0]
+      * BoW Representation of Sentence 3: ["annual": 0, "application": 0, "appointment": 1, "attendee": 0, "conference": 0, "design": 1, "digital": 0, "dog": 1, "gain": 0, "hardware": 0, "health": 1, "help": 1, "innovation": 1, "insight": 0, "latest": 0, "management": 1, "new": 0, "owner": 1, "pet": 2, "schedule": 1, "showcase": 0, "software": 1, "technology": 0, "track": 1, "vet": 1]
+    * Bow representations vector:
+      * BoW Representation of Sentence 1: [1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 2, 1, 0, 0]
+      * BoW Representation of Sentence 2: [0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 2, 0, 0] 
+      * BoW Representation of Sentence 3: [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 2, 1, 0, 1, 0, 1, 1]
+
+</details>
+
+  * Pros:
+    * TODO
+  * Cons:
+    * TODO
 
 <details>
 <summary><b>TF-IDF: Term Frequency - Inverse Document Frequency</b>:</summary>
