@@ -657,7 +657,7 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 
 ### Embedding methods:
 
-#### Classical methods:
+#### <ins>Classical methods</ins>:
 
 <details>
 <summary><b>One-hot encoding</b> (Google) [2018]:</summary>
@@ -735,7 +735,7 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 * Skip-gram?
   * wikipedia: TODO
 
-#### Deep Learning-based methods - Embeddings:
+#### <ins>Deep Learning-based methods - Embeddings</ins>:
 
 <details>
 <summary><b>Word2Vec</b> (Google) [2013]: </summary>
