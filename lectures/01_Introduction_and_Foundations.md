@@ -527,8 +527,8 @@ Different approaches and solutions were created during the history of progress t
 <details>
 <summary><b>Byte Pair Encoding</b> (BPE) [2015]:</summary>
 
-* Paper: https://arxiv.org/abs/1508.07909
-* A blogpost: https://towardsdatascience.com/byte-pair-encoding-the-dark-horse-of-modern-nlp-eb36c7df4f10
+> * Paper: https://arxiv.org/abs/1508.07909
+> * A blogpost: https://towardsdatascience.com/byte-pair-encoding-the-dark-horse-of-modern-nlp-eb36c7df4f10
 
 </details>
 
