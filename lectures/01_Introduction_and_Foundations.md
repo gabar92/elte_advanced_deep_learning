@@ -563,11 +563,14 @@ Different approaches and solutions were created during the history of progress t
       * exception is for spaces which significantly improves the compression efficiency
     * making it possible to learn a subword vocabulary of a modest size (50K units), that can still encode any input text without introducing any “unknown” tokens
 
-**WordPiece** (Google) [2016]:
-* Literature:
-  * Paper: https://arxiv.org/abs/1609.08144v2
-  * Blogpost: https://blog.research.google/2021/12/a-fast-wordpiece-tokenization-system.html?m=1
-  * Demo:
+<details>
+<summary><b>WordPiece</b> (Google) [2016]:</summary>
+
+> * Paper: https://arxiv.org/abs/1609.08144v2
+> * A blogpost: https://blog.research.google/2021/12/a-fast-wordpiece-tokenization-system.html?m=1
+
+</details>
+
 * a subword tokenization algorithm
 * special word boundary symbols used
 * data-driven approach is used to generate the wordpiece model
@@ -579,11 +582,14 @@ Different approaches and solutions were created during the history of progress t
 * evaluating what it loses by merging 2 symbols to ensure it’s worth it
 * Models: BERT, DistillBERT, Electra
 
-**Unigram** (Google) [2018]:
-* Literature:
-  * Paper: https://arxiv.org/abs/1804.10959
-  * Blogpost:
-  * Demo:
+
+<details>
+<summary><b>Unigram</b> (Google) [2018]:</summary>
+
+> * Paper: https://arxiv.org/abs/1804.10959
+
+</details>
+
 * BPE and WordPiece is based on merge rules
 * a subword tokenization algorithm
 * initializing the base vocabulary to a large number of symbols and progressively trims down each symbol to obtain a smaller vocabulary
@@ -599,11 +605,14 @@ Different approaches and solutions were created during the history of progress t
 * Models: not used directly for any of the models, but it’s used in conjunction with SentencePiece
 * TODO
 
-**SentencePiece** (Google) [2018]:
-* Literature:
-  * Paper: https://arxiv.org/abs/1808.06226
-  * Github: https://github.com/google/sentencepiece
-  * Demo:
+<details>
+<summary><b>SentencePiece</b> (Google) [2018]:</summary>
+
+> * Paper: https://arxiv.org/abs/1808.06226
+> * Github: https://github.com/google/sentencepiece
+
+</details>
+
 * previous tokenizations have the same problem: it is assumed that the input text uses spaces to separate words
 * not all languages use spaces to separate words
 * one possible choice: using language specific tokenizer (e.g., XLM model)
