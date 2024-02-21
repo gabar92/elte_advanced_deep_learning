@@ -260,6 +260,8 @@ However, tasks where the generated text does not have a single form, but there c
 
 * **Emergent properties**:
 
+* **General pre-trained model**:
+
 
 ## Converging paths: adopting techniques between NLP and CV
 
@@ -267,8 +269,8 @@ The fields of Natural Language Processing (NLP) and Computer Vision (CV) each co
 Over time, these domain-specific approaches have been shared and adapted between the two fields.
 Here, we delve into a few techniques that have been shared and adapted between these 2 fields, highlighting their background, motivation, and cross-domain application:
 
-CV techniques adopted in NLP:
-* Two-stage training procedure: Pre-training then Fine-tuning:
+<ins>CV techniques adopted in NLP</ins>:
+* **Two-stage training procedure: Pre-training then Fine-tuning**:
   * The two-stage training procedure was popularized in CV with the development of models like AlexNet and VGG.
 The network is first pre-trained on a large, generic dataset (like ImageNet) and then fine-tuned on a smaller, domain-specific dataset.
 This approach leverages the generic features learned during pre-training, which are applicable across a wide-range of visual tasks.
@@ -279,14 +281,14 @@ Here, language models are pre-trained on vast amounts of text data to learn a ge
     * However, in NLP the pre-training is usually unsupervised or self-supervised learning (next word prediction, or missing word prediction) while the fine-tuning is supervised (downstream task’s objective).
 Fine-tuning in CV usually affects an additional linear layer at the top of the backbone model (?). In NLP, fine-tuning extends for the entire network.
 
-NLP techniques adopted in CV:
-* Unsupervised / Self-Supervised Learning:
+<ins>NLP techniques adopted in CV</ins>:
+* **Unsupervised / Self-Supervised Learning**:
   * Unsupervised and Self-Supervised Learning in NLP involves learning patterns from unlabelled text data.
 Since there is abundant text on the web which can be used to learn general language modeling during a pre-training phase.
 Frequently used objectives are language modeling (next word prediction) (GPT) and masked language modeling (BERT).
   * Unsupervised and Self-Supervised Learning techniques found their way into CV as well.
 Techniques like Contrastive Learning (CL), where the model learns by comparing pairs of images to understand if they are similar or different, have shown great promise in learning robust visual representations without the need for labeled data.
-* Transformer architecture:
+* **Transformer architecture**:
   * The Transformer architecture revolutionized NLP by providing a mechanism (self-attention) that allows models to weigh the importance of different words in a sentence.
 This architectures forms the backbone of many state-of-the-art NLP models (e.g., BERT, GPT), enabling to capture long-range dependencies in text.
   * The Transformer architecture has been adapted for CV tasks, leading to the development of Vision Transformers (ViT).
