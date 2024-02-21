@@ -340,8 +340,8 @@ The input image is divided into patches, and the transformer processes these pat
 <details>
 <summary><b><ins>References</ins></b></summary>
 
-* 🤗 Hugging Face: https://huggingface.co/tasks
-* Papers with Code: https://paperswithcode.com/area/natural-language-processing
+> * 🤗 Hugging Face: https://huggingface.co/tasks
+> * Papers with Code: https://paperswithcode.com/area/natural-language-processing
 
 </details>
 
@@ -515,7 +515,7 @@ Different approaches and solutions were created during the history of progress t
   * there are rare words (longtail distribution) which may not occur in our corpus
   * new words can appear, language evolves with time
   * typos are probably not in our corpus
-* Special tokens:
+* Examples for special tokens:
   * \<UNK>: representing unknown tokens
   * \<SEP>: separating different parts of the sequence
   * \<BOS>: indicating the beginning of the sequence / sentence
@@ -656,8 +656,14 @@ Required features of embeddings:
 Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 
 ### Embedding methods:
-* One-hot encoding:
-  *  
+
+<details>
+<summary><b>One-hot encoding</b> (Google) [2018]:</summary>
+
+> * Demo: TODO
+
+</details>
+
   * does not really make sense, but demonstrates the problem with sparse representations
     * no meaning encoded in any way
     * not scalable: vocabulary with 40,000 words → vectors with size of 40,000 dimensions
@@ -665,19 +671,28 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
   * distributed representations are preferred 
 
 #### Classical methods:
-* TF-IDF: Term Frequency - Inverse Document Frequency
-  * Resources:
-    * Demo: https://remykarem.github.io/tfidf-demo/
+
+<details>
+<summary><b>TF-IDF: Term Frequency - Inverse Document Frequency</b>:</summary>
+
+> * Demo: https://remykarem.github.io/tfidf-demo/
+
+</details>
+ 
   * a numerical statistic
   * reflecting how important a word is to a document in a collection or corpus
   * Term Frequency: the number of times a term occurs in a document
   * Inverse Document Frequency: diminishes the weight of terms that occur very frequently in the document set and increases the weight of terms that occur rarely
   * Application:
   * information retrieval: query to a text
-* n-gram:
-  * Resources:
-    * Paper: TODO
-    * Demo: https://www.reuneker.nl/files/ngram/
+
+<details>
+<summary><b>n-gram</b>:</summary>
+
+> * Demo:  https://www.reuneker.nl/files/ngram/
+
+</details>
+
   * General meaning of n-gram:
     * n-gram is a series of n adjacent letters, syllables, or rarely whole words found in a language dataset
     * an n-gram is a sequence of n words, characters, or other linguistic items
@@ -695,11 +710,23 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
     * the probability of the next word in a sequence depends only on a fixed size window of previous words
   * Connection:
     * Markov property?
-* Bag-of-Words (BoW):
+
+<details>
+<summary><b>Bag-of-Words</b> (BoG): </summary>
+
+> * Demo:  TODO
+
+</details>
+
   * TODO
-* BM25
-  * Resources:
-    * Paper: TODO
+
+<details>
+<summary><b>BM25</b>: </summary>
+
+> * Paper:  TODO
+
+</details>
+
   * Best Match 25
   * ranking algorithm
 * Skip-gram?
