@@ -935,16 +935,16 @@ Distributed representations:
     * layers are stacked
       * learning layers of representation that correspond to different aspects of language
     * trained on a large text corpus
-  * Pros:
-    * Contextualized Embeddings: ELMo generates words embeddings that are context-dependent, providing rich representations that capture a wide array of syntactic and semantic information
-    * Deep Representations: utilizing Deep Learning (biLSTMs) to model language which allows ELMo to capture complex characteristics of language
-    * Dynamic Embeddings: ELMo's dynamic embeddings are particularly effective at handling words with multiple meanings (polysemy), providing context-specific representations
-  * Cons:
-    * Shallow Concatenation of Bidirectional Representations: the forward and backward LM-s (LSTMs) are concatenated in  a shallow way
+  * <ins>Pros</ins>:
+    * **Contextualized Embeddings**: ELMo generates words embeddings that are context-dependent, providing rich representations that capture a wide array of syntactic and semantic information
+    * **Deep Representations**: utilizing Deep Learning (biLSTMs) to model language which allows ELMo to capture complex characteristics of language
+    * **Dynamic Embeddings**: ELMo's dynamic embeddings are particularly effective at handling words with multiple meanings (polysemy), providing context-specific representations
+  * <ins>Cons</ins>:
+    * **Shallow Concatenation of Bidirectional Representations**: the forward and backward LM-s (LSTMs) are concatenated in  a shallow way
       * in contrast: BERT applies a deep bidirectional representations
-    * Computational Requirements: generating ELMo embeddings is computationally intensive due to the complexity of the underlying biLSTM model
-    * Increased Model Complexity: integrating ELMo into existing models increases the overall complexity of the model, which may impact training and inference times
-    * Resource Intensity: ELMo models require significant memory and processing power
+    * **Computational Requirements:** generating ELMo embeddings is computationally intensive due to the complexity of the underlying biLSTM model
+    * **Increased Model Complexity**: integrating ELMo into existing models increases the overall complexity of the model, which may impact training and inference times
+    * **Resource Intensity**: ELMo models require significant memory and processing power
     * TODO: why shallow?
 
 <details>
@@ -974,7 +974,7 @@ Distributed representations:
       * Next Sentence Prediction (NSP)
         * predicting whether 2 segments of text occur in sequence of not
         * understanding the relationship between sentences
-  * **Pros**:
+  * <ins>Pros</ins>:
     * **Deep Contextualized Embeddings**: BERT provides embeddings that are deeply contextual
       * capturing subtle nuances of language
       * due to the bidirectional context, BERT considers the full context of a word by looking at the words that come before and after it
@@ -982,7 +982,7 @@ Distributed representations:
     * **Versatility**: its architecture allows it to be fine-tuned for a broad range of tasks, making it incredible versatile
       * pre-trained BERT models are available, which has been trained on vast text corpora
       * BERT can be fine-tuned with just one additional output layer for a wide range of tasks
-  * **Cons**:
+  * <ins>Cons</ins>:
     * **Resource Intensity**: training and even fine-tuning BERT can require significant computational resources
     * **Complexity and Inference Time**: the complexity of the model can lead to longer inference times, which might be a bottleneck
     * **Understanding Model Decisions**: the complexity and size of the model can also make it challenging to understand why BERT makes certain decisions or predictions
