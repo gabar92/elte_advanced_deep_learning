@@ -173,8 +173,10 @@ What particularly makes NLP successful is its ability to go beyond mere text pro
 </table>
 
 
-> Caveats: TODO
-> * Words vs. Tokens vs. Sub-words
+> Caveats:
+> * **Words vs. Sub-words vs. Tokens**: though these terms have different meanings, they are used interchangeably in most of the time.
+> Where the different matters, it is highlighted.
+> * **Undefined terms**: a lot of undefined terms are in this lecture. Most of them will be introduced in detail in later lectures.
 
 
 ### Definition of Natural Langauge process (NLP)
