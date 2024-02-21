@@ -767,7 +767,7 @@ Demonstration of the Bag of Words (BoW) method on a toy example.
   - Sentence 3: "The software designed for pet management helps dog owners schedule vet appointments and track their pet's health."
 
 
- ■ Cleaning: removing Stop Words and applying Stemming / Lemmatization
+ ■ Cleaning text: removing Stop Words and applying Stemming / Lemmatization
  
     As a first step we remove non-informative words (Stop Words).
     In the secont step we 'normalize' the words by reducint them to their base forms.
@@ -785,7 +785,7 @@ Demonstration of the Bag of Words (BoW) method on a toy example.
 
   - Vocabulary: ["annual", "application", "appointment", "attendee", "conference", "design", "digital", "dog", "gain", "hardware", "health", "help", "innovation", "insight", "latest", "management", "new", "owner", "pet", "schedule", "showcase", "software", "technology", "track", "vet"]
 
- ■ Summarize the frequencies of words:
+ ■ Summarizing the frequencies of words:
  
     We count how many times the words appear. Create list with unique words (aka. a set) and save the frequency of the words (how many times they appear in the document).
     We can see that we ordered the words in alhpabetical order: this descriptor removes this information.
