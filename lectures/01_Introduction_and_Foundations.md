@@ -32,6 +32,7 @@ This lecture tries to answer the following questions:
     * [Tokenization](#tokenization)
     * [Embeddings](#embeddings)
     * [Text embeddings](#text-embeddings)
+* [Additional Resources](#additional-resources)
 
 
 ## Motivation
@@ -889,7 +890,7 @@ Features of text embeddings:
 * developers can shorten embeddings (i.e., remove some numbers from the end of the sequence) without the embedding losing its concept-representing properties by passing in the dimensions
 
 
-## Additional resources
+## Additional Resources
 * [Google: Introduction to Large Language Models](https://www.youtube.com/watch?v=zizonToFXDs&pp=ygUVbGFyZ2UgbGFuZ3VhZ2UgbW9kZWxz)
 * [Andrej Karpathy: Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g&t=995s&pp=ygUVbGFyZ2UgbGFuZ3VhZ2UgbW9kZWxz)
 * [Google: Introduction to Generative AI](https://www.youtube.com/watch?v=G2fqAlgmoPo)
