@@ -734,6 +734,8 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
   * BoW Representation of Sentence 2: [0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 2, 0, 0] 
   * BoW Representation of Sentence 3: [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 2, 1, 0, 1, 0, 1, 1]
 
+</details>
+  
 <details>
 <summary><b>TF-IDF: Term Frequency - Inverse Document Frequency</b>:</summary>
 
