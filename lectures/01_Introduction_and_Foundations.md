@@ -708,24 +708,24 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
   * Sentence 2: "Attendees of the technology conference gained insights into new software applications and digital technologies."
   * Sentence 3: "The software designed for pet management helps dog owners schedule vet appointments and track their pet's health."
   * ...
-  * Cleaning: Removing stop words, Stemming
-    * Sentence 1: ["annual", "software", "technology", "conference", "showcase", "latest", "innovation", "software", "hardware"]
-    * Sentence 2: ["attendee", "technology", "conference", "gain", "insight", "new", "software", "application", "digital", "technology"]
-    * Sentence 3: ["software", "design", "pet", "management", "help", "dog", "owner", "schedule", "vet", "appointment", "track", "pet", "health"]
-  * Creating common vocabulary:
-    * Vocabulary: ["annual", "application", "appointment", "attendee", "conference", "design", "digital", "dog", "gain", "hardware", "health", "help", "innovation", "insight", "latest", "management", "new", "owner", "pet", "schedule", "showcase", "software", "technology", "track", "vet"]
-  * Summarize the frequencies of words:
-    * Frequencies of Sentence 1: ["annual": 1, "conference": 1, "hardware": 1, "innovation": 1, "latest": 1, "showcase": 1, "software": 2, "technology": 1]
-    * Frequencies of Sentence 2: ["application": 1, "attendee": 1, "conference": 1, "digital": 1, "gain": 1, "insight": 1, "new": 1, "software": 1, "technology": 2]
-    * Frequencies of Sentence 3: ["appointment": 1, "design": 1, "dog": 1, "health": 1, "help": 1, "management": 1, "owner": 1, "pet": 2, "schedule": 1, "software": 1, "track": 1, "vet": 1]
-  * Constructing BoW representations:
-    * BoW Representation of Sentence 1: ["annual": 1, "application": 0, "appointment": 0, "attendee": 0, "conference": 1, "design": 0, "digital": 0, "dog": 0, "gain": 0, "hardware": 1, "health": 0, "help": 0, "innovation": 1, "insight": 0, "latest": 1, "management": 0, "new": 0, "owner": 0, "pet": 0, "schedule": 0, "showcase": 1, "software": 2, "technology": 1, "track": 0, "vet": 0]
-    * BoW Representation of Sentence 2: ["annual": 0, "application": 1, "appointment": 0, "attendee": 1, "conference": 1, "design": 0, "digital": 1, "dog": 0, "gain": 1, "hardware": 0, "health": 0, "help": 0, "innovation": 1, "insight": 1, "latest": 0, "management": 0, "new": 1, "owner": 0, "pet": 0, "schedule": 0, "showcase": 0, "software": 1, "technology": 2, "track": 0, "vet": 0]
-    * BoW Representation of Sentence 3: ["annual": 0, "application": 0, "appointment": 1, "attendee": 0, "conference": 0, "design": 1, "digital": 0, "dog": 1, "gain": 0, "hardware": 0, "health": 1, "help": 1, "innovation": 1, "insight": 0, "latest": 0, "management": 1, "new": 0, "owner": 1, "pet": 2, "schedule": 1, "showcase": 0, "software": 1, "technology": 0, "track": 1, "vet": 1]
-  * Bow representations vector:
-    * BoW Representation of Sentence 1: [1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 2, 1, 0, 0]
-    * BoW Representation of Sentence 2: [0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 2, 0, 0] 
-    * BoW Representation of Sentence 3: [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 2, 1, 0, 1, 0, 1, 1]
+* Cleaning: Removing stop words, Stemming
+  * Sentence 1: ["annual", "software", "technology", "conference", "showcase", "latest", "innovation", "software", "hardware"]
+  * Sentence 2: ["attendee", "technology", "conference", "gain", "insight", "new", "software", "application", "digital", "technology"]
+  * Sentence 3: ["software", "design", "pet", "management", "help", "dog", "owner", "schedule", "vet", "appointment", "track", "pet", "health"]
+* Creating common vocabulary:
+  * Vocabulary: ["annual", "application", "appointment", "attendee", "conference", "design", "digital", "dog", "gain", "hardware", "health", "help", "innovation", "insight", "latest", "management", "new", "owner", "pet", "schedule", "showcase", "software", "technology", "track", "vet"]
+* Summarize the frequencies of words:
+  * Frequencies of Sentence 1: ["annual": 1, "conference": 1, "hardware": 1, "innovation": 1, "latest": 1, "showcase": 1, "software": 2, "technology": 1]
+  * Frequencies of Sentence 2: ["application": 1, "attendee": 1, "conference": 1, "digital": 1, "gain": 1, "insight": 1, "new": 1, "software": 1, "technology": 2]
+  * Frequencies of Sentence 3: ["appointment": 1, "design": 1, "dog": 1, "health": 1, "help": 1, "management": 1, "owner": 1, "pet": 2, "schedule": 1, "software": 1, "track": 1, "vet": 1]
+* Constructing BoW representations:
+  * BoW Representation of Sentence 1: ["annual": 1, "application": 0, "appointment": 0, "attendee": 0, "conference": 1, "design": 0, "digital": 0, "dog": 0, "gain": 0, "hardware": 1, "health": 0, "help": 0, "innovation": 1, "insight": 0, "latest": 1, "management": 0, "new": 0, "owner": 0, "pet": 0, "schedule": 0, "showcase": 1, "software": 2, "technology": 1, "track": 0, "vet": 0]
+  * BoW Representation of Sentence 2: ["annual": 0, "application": 1, "appointment": 0, "attendee": 1, "conference": 1, "design": 0, "digital": 1, "dog": 0, "gain": 1, "hardware": 0, "health": 0, "help": 0, "innovation": 1, "insight": 1, "latest": 0, "management": 0, "new": 1, "owner": 0, "pet": 0, "schedule": 0, "showcase": 0, "software": 1, "technology": 2, "track": 0, "vet": 0]
+  * BoW Representation of Sentence 3: ["annual": 0, "application": 0, "appointment": 1, "attendee": 0, "conference": 0, "design": 1, "digital": 0, "dog": 1, "gain": 0, "hardware": 0, "health": 1, "help": 1, "innovation": 1, "insight": 0, "latest": 0, "management": 1, "new": 0, "owner": 1, "pet": 2, "schedule": 1, "showcase": 0, "software": 1, "technology": 0, "track": 1, "vet": 1]
+* Bow representations vector:
+  * BoW Representation of Sentence 1: [1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 2, 1, 0, 0]
+  * BoW Representation of Sentence 2: [0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 2, 0, 0] 
+  * BoW Representation of Sentence 3: [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 2, 1, 0, 1, 0, 1, 1]
 
 </details>
 
