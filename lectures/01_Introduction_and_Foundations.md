@@ -340,7 +340,7 @@ The input image is divided into patches, and the transformer processes these pat
 <details>
 <summary><b><ins>References</ins></b></summary>
 
-* Hugging Face: https://huggingface.co/tasks
+* 🤗 Hugging Face: https://huggingface.co/tasks
 * Papers with Code: https://paperswithcode.com/area/natural-language-processing
 
 </details>
