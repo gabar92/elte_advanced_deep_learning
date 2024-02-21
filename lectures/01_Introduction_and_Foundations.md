@@ -197,6 +197,7 @@ However, the development of AI has been a more gradual journey. So, what gives t
 What are the novel features that Large Language Models (LLMs) have brought to the table that were missing in prior advancements?
 
 Just to highlight one qualitative measure of ChatGPT's success: it reached 100 million users faster than any previous application.
+(At the moment, Meta's Threads leads the leaderboard.)
 
 Key factors contributing to the success include:
 * Unlike Computer Vision (CV), NLP-based applications offer the most natural and convenient means of interaction through natural language.
@@ -335,8 +336,15 @@ The input image is divided into patches, and the transformer processes these pat
   * Audio-to-Text
 * Prompt Engineering
 
-Sources:
-* 
+
+<details>
+<summary><b>References</b></summary>
+
+* Hugging Face: https://huggingface.co/tasks
+* Papers with Code: https://paperswithcode.com/area/natural-language-processing
+
+</details>
+
 
 
 
