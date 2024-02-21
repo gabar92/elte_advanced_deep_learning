@@ -699,6 +699,13 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
     * BoW only concerns whether known words occur in the document or not
     * each unique word in the entire dataset becomes a feature in the model
     * for each document, the values in its feature vector correspond to the frequencies of each word in the document
+  * Pros:
+    * Simplicity and Efficiency: BoW is straightforward to implement and understand
+    * Scalability: efficient implementations exist that can handle large vocabularies and documents
+  * Cons:
+    * Loss of Context: BoW does not capture the order of words, meaning that can lose the context and meaning of words in sentences
+    * Sparsity: the resulting feature vectors are often sparse (many zeros), which can be inefficient for some ML algorithms
+    * High Dimensionality: with a large vocabulary, the feature space can become very large, leading to high memory and computational costs
 
 <details>
 <summary><b>Example</b></summary>
@@ -727,13 +734,6 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
   * BoW Representation of Sentence 2: [0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 2, 0, 0] 
   * BoW Representation of Sentence 3: [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 2, 1, 0, 1, 0, 1, 1]
 
-</details>
-
-  * Pros:
-    * TODO
-  * Cons:
-    * TODO
-
 <details>
 <summary><b>TF-IDF: Term Frequency - Inverse Document Frequency</b>:</summary>
 
@@ -742,12 +742,25 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 
 </details>
  
-  * a numerical statistic
-  * reflecting how important a word is to a document in a collection or corpus
-  * Term Frequency: the number of times a term occurs in a document
-  * Inverse Document Frequency: diminishes the weight of terms that occur very frequently in the document set and increases the weight of terms that occur rarely
-  * Application:
-  * information retrieval: query to a text
+  * TF-IDF is a fundamental technique used in classical NLP to convert text data into numerical form
+  * improves upon Bag of Words by considering not just the frequency of words within a single document, but also how unique these words are across all documents in the corpus
+  * TF: Term Frequency:
+    * measures how frequently a term occurs in a document
+    * the more times a word appears in a document, the higher its term frequency
+  * IDF: Inverse Document Frequency:
+    * measures how important a term is within the corpus
+    * words that appear in many documents have lower IDF score, as they are considered less significant
+  * TF-IDF score:
+    * the product of TF and IDF
+    * provides a weight for each word
+    * words with higher TF-iDF scores are considered more important to the document they appear in
+  * Pros:
+    * Relevance: TF-IDF can highlight words that are more relevant to a document's context, improving the quality of information retrieval and text mining tasks
+    * Dimensionality Reduction: by prioritizing important words, TF-IDF can help reduce the dimensionality of the text data, focusing on words that offer more meaning
+  * Cons:
+    * Complexity: the calculation of IDF value requires knowledge of the entire corpus, making TF-IDF more complex to implement and compute than simpler models like BoW
+    * Context Ignorance: although TF-IDF considers the rarity of words across documents, it still ignores the context and syntax within the text, potentially missing nuanced meanings
+    * Fixed Vocabulary: similar to BoW, the TF-IDF model has a fixed vocabulary, and it can't handle new words that weren't in the training corpus without retraining
 
 <details>
 <summary><b>n-gram</b>:</summary>
