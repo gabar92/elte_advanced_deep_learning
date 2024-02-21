@@ -752,6 +752,7 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 <details>
 <summary>Example</summary>
 
+```
 * Sentences / Documents:
   * Sentence 1: "The annual software technology conference showcased the latest innovations in software and hardware."
   * Sentence 2: "Attendees of the technology conference gained insights into new software applications and digital technologies."
@@ -775,6 +776,7 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
   * BoW Representation of Sentence 1: [1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 2, 1, 0, 0]
   * BoW Representation of Sentence 2: [0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 2, 0, 0] 
   * BoW Representation of Sentence 3: [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 2, 1, 0, 1, 0, 1, 1]
+ ```
 
 </details>
   
