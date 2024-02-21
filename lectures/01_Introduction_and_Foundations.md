@@ -737,10 +737,12 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 
 #### <ins>Deep Learning-based methods - Embeddings</ins>:
 
+> TL;DR: 
+
 <details>
 <summary><b>Word2Vec</b> (Google) [2013]: </summary>
 
-> * Paper:  TODO
+> * Paper:  https://arxiv.org/abs/1301.3781
 > * Demo:  https://remykarem.github.io/word2vec-demo/
 
 </details>
@@ -758,7 +760,7 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 <details>
 <summary><b>GloVe</b> (Stanford) [2014]: </summary>
 
-> * Paper:  TODO
+> * Paper:  https://aclanthology.org/D14-1162/
 
 </details>
 
@@ -768,9 +770,9 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
     * Local context window-based method
 
 <details>
-<summary><b>CoVe</b> (?) [2018]: </summary>
+<summary><b>CoVe</b> [2018]: </summary>
 
-> * Paper:  TODO
+> * Paper:  https://arxiv.org/abs/1708.00107
 
 </details>
 
@@ -782,9 +784,9 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
   * used with GloVe (?) concatenated
 
 <details>
-<summary><b>ELMo</b> (?) [2018]: </summary>
+<summary><b>ELMo</b> [2018]: </summary>
 
-> * Paper:  TODO
+> * Paper:  https://arxiv.org/abs/1802.05365
 
 </details>
 
@@ -800,9 +802,9 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
       * linear function of all the internal layers of the biLM model
 
 <details>
-<summary><b>BERT</b> (?) [?]: </summary>
+<summary><b>BERT</b> (Google) [2018]: </summary>
 
-> * Paper:  TODO
+> * Paper:  https://arxiv.org/abs/1810.04805
 
 </details>
 
@@ -885,3 +887,7 @@ Features of text embeddings:
 * using larger embeddings: generally costs more and consumes more compute, memory and storage
 * the new embedding models were trained with a technique that allows developers to trade-off performance and cost of using embeddings
 * developers can shorten embeddings (i.e., remove some numbers from the end of the sequence) without the embedding losing its concept-representing properties by passing in the dimensions
+
+
+
+TODO: add chapter numbers
