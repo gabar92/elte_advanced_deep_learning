@@ -989,56 +989,46 @@ Distributed representations:
       * complicating efforts to improve model transparency and explainability
 
 
-### Text embeddings
+### Text Embeddings
 
 > TL;DR: TODO
 > What is text embedding about. In which domains are used? (RAG)
 
 
-Implementations:
-* OpenAI: Embeddings - documentation: https://platform.openai.com/docs/guides/embeddings
-
-
-* turning not only tokens but larger segment of text (sentence, text-chunk, document) into an embedding vector
-* unlocking use cases like search
-* we can measure the relatedness of texts
-* assigning an embedded vector with fixed size to an arbitrary text
-* similar to meaning in mathematical techniques
-* An embedding is a vector (list) of floating point numbers
-* the distance between two vectors measure their relatedness
-* embedding methods:
-  * length:
-    * 1536 for text-embedding-3-small
-    * 3072 for text-embedding-3-large
-    * vertexai.language_models import TextEmbeddingModel
-      * vector dimension: 768
-  * embedding models:
-  * V3 and V2 generations: 8191 max input tokens, tokenizer: cl100k_base, September 2021
-  * priced per input token: 1$ (~800 tokens per page):
-    * text-embedding-3-large: 62 500 pages
-    * text-embedding-3-small: 9 615 pages
+Features of Text Embeddings:
+* we can turn a text with 'arbitrary' size into a fixed-size embedding vector
+* by being able to measure the relatedness of texts we unlock use cases for a couple of applications:
+  * e.g., Semantic Search, Anomaly Detection, Retrieval-Augmented Generation (RAG)
+* Embedding vector space is structured:
+  * similar or related texts are close to each other
+  * embeddings are similar to meaning in mathematical techniques
+* Frequently used Text-Embedding models:
+  * OpenAI:
+    * text-embedding-3-small
+      * context size: 8191 input tokens
+      * embedding dimension: 1536
+      * 1$: 62,500 pages (~800 tokens per page)
+    * text-embedding-3-large
+      * context size: 8191 input tokens
+      * embedding dimension: 3072
+      * 1$: 9,615 pages (~800 tokens per page)
+    * tokenizer: cl100k_base
     * tiktoken tokenizer can split text to tokens to get the number of tokens in Python
+* Native support for shortening embeddings:
+  * using larger embeddings: generally costs more and consumes more compute, memory and storage
+  * the new embedding models were trained with a technique that allows developers to trade-off performance and cost of using embeddings
+  * developers can shorten embeddings (i.e., remove some numbers from the end of the sequence) without the embedding losing its concept-representing properties by passing in the dimensions
+* Implementations:
+  * OpenAI: Embeddings - documentation: https://platform.openai.com/docs/guides/embeddings
+  * Google - Vertex AI
 
+### How to create a Text Embedding model:
+* Naive method:
+  * averaging word embeddings
+* Modern method:
+  * using a transformer to compute a context-aware representation of each word, then take an average of the context-aware representations
 
-Application:
-  * Search: results are ranked by relevance to a query string
-  * Clustering: text strings are grouped by similarity
-  * Anomaly / Outlier detection: outliers with little relatedness are identified
-  * Diversity measurement: similarity distributions are analyzed
-  * Classification: text strings are classified by their most similar label
-  * Semantic Search:
-  * Recommendations: items with related text strings are recommended
-
-Demo for use cases:
- * Question answering using embeddings-based search
- * Text search using embeddings
- * Recommendations using embeddings
- * Classification using the embedding features
- * Clustering
- * RAG
- 
-
-Manipulation and usage embeddings, Metrics: measuring similarity
+### Similarity measures for Text Embeddings:
 * cosine similarity
 * euclidean distance
 * dot-product: cosine * length of both vectors
@@ -1049,22 +1039,28 @@ Manipulation and usage embeddings, Metrics: measuring similarity
   * cosine similarity can be computed slightly faster using just a dot product
   * cosine similarities and Euclidean distance will result in the identical rankings
 
-Embedding demo:
+### Visualization of Text Embeddings:
 * similarity in the space
 * heatmap visualization
 * PCA and t-SNE
 
-
-How we create text-embedding models? 
-* Simple method: averaging word embeddings
-  * naive approach
-* Modern method: using a transformer to compute a context-aware representation of each word, then take an average of the context-aware representations
-
-Features of text embeddings:
-* Native support for shortening embeddings:
-* using larger embeddings: generally costs more and consumes more compute, memory and storage
-* the new embedding models were trained with a technique that allows developers to trade-off performance and cost of using embeddings
-* developers can shorten embeddings (i.e., remove some numbers from the end of the sequence) without the embedding losing its concept-representing properties by passing in the dimensions
+### Applications of Text Embeddings:
+  * Semantic Search:
+    * results are ranked by relevance to a query string
+  * Clustering:
+    * text strings are grouped by similarity
+  * Anomaly / Outlier detection:
+    * outliers with little relatedness are identified
+  * Diversity measurement:
+    * similarity distributions are analyzed
+  * Classification:
+    * text strings are classified by their most similar label
+  * Recommendations:
+    * items with related text strings are recommended
+  * Retrieval-Augmented Generation (RAG):
+    * augmenting the context of LLMs with retrieved information
+  * Question Answering:
+    * TODO
 
 
 ## Additional Resources
