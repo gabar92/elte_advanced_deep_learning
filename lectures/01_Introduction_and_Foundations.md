@@ -214,15 +214,6 @@ Key factors contributing to the success include:
 
 ### NLP-specific challenges
 
-asdadasdad fkjasf jasflk jdfask jdélasf j
-
-* **Discrete data**: NLP deals with text data, which is inherently discrete (we have characters, words, sub-words).
-Other domains like Computer Vision (CV) deal with continuous data which has a couple of advantages.
-In terms of representation complexity, discrete symbols do not have a natural, ordered relationship that numerical data in images have, which makes it difficult to represent semantic relationships.
-  * <ins>Solution</ins>: Embeddings: mapping tokens into a continuous vector space, where closeness captures similarities and relationships.
-* ads
-  * asdads
-
 Here, we introduce and walk around a couple of challenges specific to NLP, some of them are being present in other domains as well, some are unique to this field.
 The goal is to give reason and understanding why different de-facto models and principles evolved.
 
