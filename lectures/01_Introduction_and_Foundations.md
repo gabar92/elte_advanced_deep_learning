@@ -346,14 +346,12 @@ The input image is divided into patches, and the transformer processes these pat
 </details>
 
 
-
-
-
 ## Details
 
 ### Classical methods
 
 There are a couple of terms that are general enough to collect them into a glossary and describe separately.
+Here comes those terms which are general enough to be worth to introduce prior to others, outdated, or could not put into the stream of the following sections.
 
 * **Tokenization**: the process of splitting text into individual units called tokens, which can be words, phrases, or symbols.
 
@@ -459,10 +457,14 @@ Different approaches and solutions were created during the history of progress t
 
 ### Tokenization
 
-Online tokenizer demos:
+<details>
+<summary><b><ins>Tokenizer demo</ins></b></summary>
+
 * https://platform.openai.com/tokenizer
 * https://llmtokencounter.com/
 * https://tokens-lpj6s2duga-ew.a.run.app/
+
+</details>
 
 **Considerations**: there are a couple decisions we have to make, and a few problems we have to solve during constructing the tokenization process.
 * What size should the final tokenization dictionary have?
@@ -522,11 +524,14 @@ Online tokenizer demos:
 
 ### Tokenization methods
 
-**Byte Pair Encoding** (BPE) [2015]:
-* Literature:
-  * Paper: https://arxiv.org/abs/1508.07909
-  * A blogpost: https://towardsdatascience.com/byte-pair-encoding-the-dark-horse-of-modern-nlp-eb36c7df4f10
-  * Demo: 
+<details>
+<summary><b>Byte Pair Encoding (BPE) [2015]:</b></summary>
+
+* Paper: https://arxiv.org/abs/1508.07909
+* A blogpost: https://towardsdatascience.com/byte-pair-encoding-the-dark-horse-of-modern-nlp-eb36c7df4f10
+
+</details>
+
 * BPE originally is a data compression technique
 * adopted for text tokenization in Natural Language Processing in 2015
 * Title of the paper: Neural Machine Translation of Rare Words with Subword Units
@@ -643,6 +648,7 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 
 ### Embedding methods:
 * One-hot encoding:
+  *  
   * does not really make sense, but demonstrates the problem with sparse representations
     * no meaning encoded in any way
     * not scalable: vocabulary with 40,000 words → vectors with size of 40,000 dimensions
@@ -652,7 +658,6 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 #### Classical methods:
 * TF-IDF: Term Frequency - Inverse Document Frequency
   * Resources:
-    * Paper: TODO
     * Demo: https://remykarem.github.io/tfidf-demo/
   * a numerical statistic
   * reflecting how important a word is to a document in a collection or corpus
