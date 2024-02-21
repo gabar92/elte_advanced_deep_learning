@@ -974,18 +974,18 @@ Distributed representations:
       * Next Sentence Prediction (NSP)
         * predicting whether 2 segments of text occur in sequence of not
         * understanding the relationship between sentences
-  * Pros:
-    * Deep Contextualized Embeddings: BERT provides embeddings that are deeply contextual
+  * **Pros**:
+    * **Deep Contextualized Embeddings**: BERT provides embeddings that are deeply contextual
       * capturing subtle nuances of language
       * due to the bidirectional context, BERT considers the full context of a word by looking at the words that come before and after it
-    * State-Of-The-Art (SOTA) performance: SOTA results on a lot of tasks
-    * Versatility: its architecture allows it to be fine-tuned for a broad range of tasks, making it incredible versatile
+    * **State-Of-The-Art (SOTA) performance**: SOTA results on a lot of tasks
+    * **Versatility**: its architecture allows it to be fine-tuned for a broad range of tasks, making it incredible versatile
       * pre-trained BERT models are available, which has been trained on vast text corpora
       * BERT can be fine-tuned with just one additional output layer for a wide range of tasks
-  * Cons:
-    * Resource Intensity: training and even fine-tuning BERT can require significant computational resources
-    * Complexity and Inference Time: the complexity of the model can lead to longer inference times, which might be a bottleneck
-    * Understanding Model Decisions: the complexity and size of the model can also make it challenging to understand why BERT makes certain decisions or predictions
+  * **Cons**:
+    * **Resource Intensity**: training and even fine-tuning BERT can require significant computational resources
+    * **Complexity and Inference Time**: the complexity of the model can lead to longer inference times, which might be a bottleneck
+    * **Understanding Model Decisions**: the complexity and size of the model can also make it challenging to understand why BERT makes certain decisions or predictions
       * complicating efforts to improve model transparency and explainability
 
 
