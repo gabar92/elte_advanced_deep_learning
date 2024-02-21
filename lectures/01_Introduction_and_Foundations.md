@@ -891,11 +891,11 @@ Features of text embeddings:
 
 
 ## Additional Resources
-* [Google: Introduction to Large Language Models](https://www.youtube.com/watch?v=zizonToFXDs&pp=ygUVbGFyZ2UgbGFuZ3VhZ2UgbW9kZWxz)
-* [Andrej Karpathy: Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g&t=995s&pp=ygUVbGFyZ2UgbGFuZ3VhZ2UgbW9kZWxz)
-* [Google: Introduction to Generative AI](https://www.youtube.com/watch?v=G2fqAlgmoPo)
-* [Harvard University: Large Language Models and The End of Programming](https://www.youtube.com/watch?v=JhCl-GeT4jw)
-* [Jeff Bezos: Large Language Models](https://www.youtube.com/watch?v=e4FXX4yX0nA)
+* [Google: Introduction to Large Language Models (16 min)](https://www.youtube.com/watch?v=zizonToFXDs&pp=ygUVbGFyZ2UgbGFuZ3VhZ2UgbW9kZWxz)
+* [Andrej Karpathy: Intro to Large Language Models (60 min)](https://www.youtube.com/watch?v=zjkBMFhNj_g&t=995s&pp=ygUVbGFyZ2UgbGFuZ3VhZ2UgbW9kZWxz)
+* [Google: Introduction to Generative AI (22 min)](https://www.youtube.com/watch?v=G2fqAlgmoPo)
+* [Harvard University: Large Language Models and The End of Programming (67 min)](https://www.youtube.com/watch?v=JhCl-GeT4jw)
+* [Jeff Bezos: Large Language Models (10 min)](https://www.youtube.com/watch?v=e4FXX4yX0nA)
 
 # TODO list:
 * TODO: add chapter numbers
