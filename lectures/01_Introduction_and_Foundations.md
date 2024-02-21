@@ -458,11 +458,11 @@ Different approaches and solutions were created during the history of progress t
 ### Tokenization
 
 <details>
-<summary><b><ins>Tokenizer demo</ins></b></summary>
+<summary><b><ins>Online demos</ins></b></summary>
 
-* https://platform.openai.com/tokenizer
-* https://llmtokencounter.com/
-* https://tokens-lpj6s2duga-ew.a.run.app/
+> * https://platform.openai.com/tokenizer
+> * https://llmtokencounter.com/
+> * https://tokens-lpj6s2duga-ew.a.run.app/
 
 </details>
 
