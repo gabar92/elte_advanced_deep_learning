@@ -217,7 +217,7 @@ Key factors contributing to the success include:
 * **Discrete data**: NLP deals with text data, which is inherently discrete (we have characters, words, sub-words).
 Other domains like Computer Vision (CV) deal with continuous data which has a couple of advantages.
 In terms of representation complexity, discrete symbols do not have a natural, ordered relationship that numerical data in images have, which makes it difficult to represent semantic relationships.
-  * asdasd
+  * <ins>Solution</ins>: Embeddings: mapping tokens into a continuous vector space, where closeness captures similarities and relationships.
 * ads
   * asdads
 
