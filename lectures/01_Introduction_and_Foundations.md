@@ -173,6 +173,10 @@ What particularly makes NLP successful is its ability to go beyond mere text pro
 </table>
 
 
+> Caveats: TODO
+> * Words vs. Tokens vs. Sub-words
+
+
 ### Definition of Natural Langauge process (NLP)
 
 #### Interdisciplinarity of NLP:
@@ -923,21 +927,25 @@ Distributed representations:
 </details>
 
   * ELMo stands for Embeddings from Language Models
-  * Deep Neural Network-based models used to produce learned word embeddings, which are vector representations of words
-
-
-
-
-  * Embeddings from Language Models
-  * deep contextualized word representation
-    * polysemy: same word can get different representations based on its context
-    * the representation of a token is the function of the entire input sequence
-  * model: bidirectional LM (LSTM)
-    * forward LM (LSTM)
-    * backward LM (LSTM)
-    * shallow concatenation (compared to BERT)
-    * deep representations:
-      * linear function of all the internal layers of the biLM model
+  * Deep Neural Network (bidirectional LSTM) based model used to produce learned word embeddings, which are vector representations of words
+  * Architecture:
+    * bidirectional LSTM (biLSTM)
+    * trained on Language Modeling objective
+      * predicting the next word based on the entire context of a word (both past and future)
+    * layers are stacked
+      * learning layers of representation that correspond to different aspects of language
+    * trained on a large text corpus
+  * Pros:
+    * Contextualized Embeddings: ELMo generates words embeddings that are context-dependent, providing rich representations that capture a wide array of syntactic and semantic information
+    * Deep Representations: utilizing Deep Learning (biLSTMs) to model language which allows ELMo to capture complex characteristics of language
+    * Dynamic Embeddings: ELMo's dynamic embeddings are particularly effective at handling words with multiple meanings (polysemy), providing context-specific representations
+  * Cons:
+    * Shallow Concatenation of Bidirectional Representations: the forward and backward LM-s (LSTMs) are concatenated in  a shallow way
+      * in contrast: BERT applies a deep bidirectional representations
+    * Computational Requirements: generating ELMo embeddings is computationally intensive due to the complexity of the underlying biLSTM model
+    * Increased Model Complexity: integrating ELMo into existing models increases the overall complexity of the model, which may impact training and inference times
+    * Resource Intensity: ELMo models require significant memory and processing power
+    * TODO: why shallow?
 
 <details>
 <summary><b>BERT</b> (Google) [2018]: </summary>
@@ -946,8 +954,40 @@ Distributed representations:
 
 </details>
 
-  * transformer-based solution
-  * deeply bidirectional
+  * BERT stands for Bidirectional Encoder Representations from Transformers
+  * Deep Neural Network (Transformer) based model used to produce learned word embeddings, which are vector representations of words
+  * represents a landmark innovation in the field of NLP
+    * introducing a new paradigm for obtaining rich, contextualized word embeddings
+  * deeply bidirectional representations due to the attention mechanism in the Transformer
+    * previous models read the text input sequentially (either left-to-right or right-to-left)
+    * BERT processes the entire sequence of words at once
+      * capturing the context of a word based on all of its surroundings
+  * Architecture:
+    * encoder-only Transformer
+    * a type of attention mechanism (self-attention) that learns contextual relations between words (tokens) in a text
+  * Training:
+    * pre-trained on a large corpus of text from the internet
+    * trained using 2 novel pre-training tasks:
+      * Masked Language Modeling (MLM):
+        * randomly masking some tokens from tne input
+        * predicting masked tokens based on the context
+      * Next Sentence Prediction (NSP)
+        * predicting whether 2 segments of text occur in sequence of not
+        * understanding the relationship between sentences
+  * Pros:
+    * Deep Contextualized Embeddings: BERT provides embeddings that are deeply contextual
+      * capturing subtle nuances of language
+      * due to the bidirectional context, BERT considers the full context of a word by looking at the words that come before and after it
+    * State-Of-The-Art (SOTA) performance: SOTA results on a lot of tasks
+    * Versatility: its architecture allows it to be fine-tuned for a broad range of tasks, making it incredible versatile
+      * pre-trained BERT models are available, which has been trained on vast text corpora
+      * BERT can be fine-tuned with just one additional output layer for a wide range of tasks
+  * Cons:
+    * Resource Intensity: training and even fine-tuning BERT can require significant computational resources
+    * Complexity and Inference Time: the complexity of the model can lead to longer inference times, which might be a bottleneck
+    * Understanding Model Decisions: the complexity and size of the model can also make it challenging to understand why BERT makes certain decisions or predictions
+      * complicating efforts to improve model transparency and explainability
+
 
 ### Text embeddings
 
