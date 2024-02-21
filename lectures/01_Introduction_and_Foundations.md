@@ -657,24 +657,35 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 
 ### Embedding methods:
 
+#### Classical methods:
+
 <details>
 <summary><b>One-hot encoding</b> (Google) [2018]:</summary>
 
-> * Demo: TODO
+> * Video: https://www.youtube.com/watch?v=G2iVj7WKDFk
 
 </details>
 
   * does not really make sense, but demonstrates the problem with sparse representations
     * no meaning encoded in any way
-    * not scalable: vocabulary with 40,000 words → vectors with size of 40,000 dimensions
+    * not scalable: vocabulary with 40,000 words → vectors with dimension of 40,000
     * sparse
-  * distributed representations are preferred 
+  * distributed representations are preferred
 
-#### Classical methods:
+<details>
+<summary><b>Bag-of-Words</b> (BoG): </summary>
+
+> * Video: https://www.youtube.com/watch?v=IRKDrrzh4dE
+> * Video: https://www.youtube.com/watch?v=OGK9SHt8SWg
+
+</details>
+
+  * TODO
 
 <details>
 <summary><b>TF-IDF: Term Frequency - Inverse Document Frequency</b>:</summary>
 
+> * Video: https://www.youtube.com/watch?v=t2Nq3MFK_pg
 > * Demo: https://remykarem.github.io/tfidf-demo/
 
 </details>
@@ -689,7 +700,8 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 <details>
 <summary><b>n-gram</b>:</summary>
 
-> * Demo:  https://www.reuneker.nl/files/ngram/
+> * Video: https://www.youtube.com/watch?v=E_mN90TYnlg
+> * Demo: https://www.reuneker.nl/files/ngram/
 
 </details>
 
@@ -712,18 +724,9 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
     * Markov property?
 
 <details>
-<summary><b>Bag-of-Words</b> (BoG): </summary>
-
-> * Demo:  TODO
-
-</details>
-
-  * TODO
-
-<details>
 <summary><b>BM25</b>: </summary>
 
-> * Paper:  TODO
+> * Paper:  https://www.staff.city.ac.uk/~sbrp622/papers/foundations_bm25_review.pdf
 
 </details>
 
@@ -732,11 +735,16 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 * Skip-gram?
   * wikipedia: TODO
 
-#### Deep Learning-based methods:
-* Word2Vec (Google - 2013):
-  * Resources:
-    * Paper: TODO 
-    * Demo: https://remykarem.github.io/word2vec-demo/
+#### Deep Learning-based methods - Embeddings:
+
+<details>
+<summary><b>Word2Vec</b> (Google) [2013]: </summary>
+
+> * Paper:  TODO
+> * Demo:  https://remykarem.github.io/word2vec-demo/
+
+</details>
+
   * first method captioning algebraic representation
   * using shallot feed-forward networks
   * 2 methods:
@@ -746,25 +754,40 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
       * predicting the context of a given word
   * NN models to learn representations (mappings)
     * representations are distributed
-* GloVe (Stanford - 2014):
-  * Resources:
-      * Paper: TODO
+
+<details>
+<summary><b>GloVe</b> (Stanford) [2014]: </summary>
+
+> * Paper:  TODO
+
+</details>
+
   * GloVe = Global Vectors for Word Representations
   * 2 methods:
     * Global Matrix Factorization
     * Local context window-based method
-* CoVe (2018):
-  * Resources:
-      * Paper: TODO
+
+<details>
+<summary><b>CoVe</b> (?) [2018]: </summary>
+
+> * Paper:  TODO
+
+</details>
+
   * CoVe = Contextualized word Vectors
   * encoder-decoder architecture
     * Encoder: 2-layer bidirectional LSTM
     * Decoder: 
   * attentional sequence-to-sequence model
   * used with GloVe (?) concatenated
-* ELMo (2018):
-  * Resources:
-      * Paper: TODO
+
+<details>
+<summary><b>ELMo</b> (?) [2018]: </summary>
+
+> * Paper:  TODO
+
+</details>
+
   * Embeddings from Language Models
   * deep contextualized word representation
     * polysemy: same word can get different representations based on its context
@@ -775,9 +798,14 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
     * shallow concatenation (compared to BERT)
     * deep representations:
       * linear function of all the internal layers of the biLM model
-* BERT:
-  * Resources:
-      * Paper: TODO
+
+<details>
+<summary><b>BERT</b> (?) [?]: </summary>
+
+> * Paper:  TODO
+
+</details>
+
   * transformer-based solution
   * deeply bidirectional
 
