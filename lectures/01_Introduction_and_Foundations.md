@@ -175,7 +175,7 @@ What particularly makes NLP successful is its ability to go beyond mere text pro
 
 > Caveats:
 > * **Words vs. Sub-words vs. Tokens**: though these terms have different meanings, they are used interchangeably in most of the time.
-> Where the different matters, it is highlighted.
+> Where the difference matters, it is highlighted.
 > * **Undefined terms**: a lot of undefined terms are in this lecture. Most of them will be introduced in detail in later lectures.
 
 
@@ -287,7 +287,7 @@ Here, language models are pre-trained on vast amounts of text data to learn a ge
   * Differences between the two domains:
     * In CV both the pre-training and fine-tuning are supervised learning (classification).
     * However, in NLP the pre-training is usually unsupervised or self-supervised learning (next word prediction, or missing word prediction) while the fine-tuning is supervised (downstream task’s objective).
-Fine-tuning in CV usually affects an additional linear layer at the top of the backbone model (?). In NLP, fine-tuning extends for the entire network.
+Fine-tuning in CV typically affects an additional linear layer at the top of the backbone model (?). In NLP, fine-tuning extends for the entire network.
 
 <ins>NLP techniques adopted in CV</ins>:
 * **Unsupervised / Self-Supervised Learning**:
@@ -308,6 +308,16 @@ The input image is divided into patches, and the transformer processes these pat
 ### General framework of current models
 
 ### The gist of NLP models: Next word prediction
+
+<details>
+<summary><b>Language Modeling</b>:</summary>
+
+> * Video: TODO
+> * Demo: TODO
+
+</details>
+
+Describe language modeling.
 
 <details>
 <summary><b>n-gram</b>:</summary>
@@ -632,7 +642,7 @@ Different approaches and solutions were created during the history of progress t
 * removing p percent of the symbols whose loss increase is the lowers (least affecting the overall loss over the training data)
 * the process is repeated until the desired vocabulary size is reached
 * since Unigram is not based on merge rules, the algorithm has several ways of tokenizing new text after training
-* the algorithm simply picks the most likely tokenization in practive
+* the algorithm simply picks the most likely tokenization in practice
 * probabilities of each possible tokenization can be computed
 * Unigram saves the probability of each token in the training corpus 
 * Models: not used directly for any of the models, but it’s used in conjunction with SentencePiece
@@ -646,7 +656,7 @@ Different approaches and solutions were created during the history of progress t
 
 </details>
 
-* previous tokenizations have the same problem: it is assumed that the input text uses spaces to separate words
+* previous tokenization methods have the same problem: it is assumed that the input text uses spaces to separate words
 * not all languages use spaces to separate words
 * one possible choice: using language specific tokenizer (e.g., XLM model)
 * solving this problem more generally: SentencePiece
@@ -661,9 +671,9 @@ Different approaches and solutions were created during the history of progress t
   * Decoder
 * Models: ALBERT, XLNet, T5
 
-#### Good to know:
-* Tokenizers are usually trained on English datasets, or multi-language datasets where english text is overrepresented. Due to this, English text is handled more efficiently, which in practice means that the same sentence in english will be tokenized into fewer tokens than the hungarian translation of that sentence. (Suppose a translation consists of the same number of words and characters.)
-* Since LLMs make prices based on the used tokens, using a LLM (e.g. ChatGPT) is more expensive for the Hungarian language than for English.
+> #### Side note:
+> * Tokenizers are usually trained on English datasets, or multi-language datasets where english text is overrepresented. Due to this, English text is handled more efficiently, which in practice means that the same sentence in english will be tokenized into fewer tokens than the hungarian translation of that sentence. (Suppose a translation consists of the same number of words and characters.)
+> * Since LLMs make prices based on the used tokens, using a LLM (e.g. ChatGPT) is more expensive for the Hungarian language than for English.
 
 
 ### Embeddings
