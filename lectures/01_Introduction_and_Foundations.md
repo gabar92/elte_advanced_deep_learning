@@ -404,28 +404,41 @@ TODO: add reference applications
 There are a couple of terms that are general enough to collect them into a glossary and describe separately.
 Here comes those terms which are general enough to be worth to introduce prior to others, outdated, or could not put into the stream of the following sections.
 
-* **Tokenization**: the process of splitting text into individual units called tokens, which can be words, phrases, or symbols.
+* **Tokenization**: the process of splitting text into individual units called tokens, which can be words, phrases, or symbols
 
-* **Stemming**: the process of reducing words to their base or root form. Example: running, rungs, and ran → run.
+* **Stemming**: the process of reducing words to their base or root form. Example: running, rungs, and ran → run
 
-* **Lemmatization**: similar to stemming, but lemmatization also reduces words to their base form, but it does so by using a vocabulary and morphological analysis of words, aiming to remove inflectional endings only and return the base or dictionary form of a word, which is known as the lemma. It is more accurate than stemming as it uses a knowledge base to obtain the correct base forms.
+* **Lemmatization**: similar to stemming, but lemmatization also reduces words to their base form, but it does so by using a vocabulary and morphological analysis of words, aiming to remove inflectional endings only and return the base or dictionary form of a word, which is known as the lemma. It is more accurate than stemming as it uses a knowledge base to obtain the correct base forms
 
-* **Chunking**: aka. shallow parsing, chunking is the process of extracting phrases from unstructured text and grouping together the words into chunks based on their part of speech tags.
+* **Chunking**: aka. shallow parsing, chunking is the process of extracting phrases from unstructured text and grouping together the words into chunks based on their part of speech tags
 
 * **Stop Word removal**: words that are filtered out before or after processing of natural language data (text) because they are insignificant
 
 * **Embedding**: what value to assign, vector database
 
 
-* **Part of Speech (PoS) tagging**: assigning parts of speech to each word in the text (e.g., noun, verb, adj), based on its definition and contexts.
+* **Part of Speech (PoS) tagging**: assigning parts of speech to each word in the text (e.g., noun, verb, adj), based on its definition and contexts
 
-* **Named Entity Recognition (NER)**: identifying and classifying named entities in text into predefined categories (e.g., names of persons, organizations, locations). It is essential for information extraction tasks to identify important elements in the text.
+* **Named Entity Recognition (NER)**: identifying and classifying named entities in text into predefined categories (e.g., names of persons, organizations, locations).
+It is essential for information extraction tasks to identify important elements in the text
 
 
-* **Bag of Words**: a kind of representation of a text, getting by transforming it into fixed-length vectors by counting how many times each word appears. It disregards the order of words but allows for the comparison of different texts based on their content. (maybe put into hand-crafted embeddings)
+* **Bag of Words**: a kind of representation of a text, getting by transforming it into fixed-length vectors by counting how many times each word appears.
+It disregards the order of words but allows for the comparison of different texts based on their content.
+(maybe put into hand-crafted embeddings)
 
-* **n-grams**: continuous sequences of n items from a given sample of text or speech. They help in capturing the context of words in a document by considering a contiguous sequence of items. Useful for prediction and classification tasks.
+* **n-grams**: continuous sequences of n items from a given sample of text or speech.
+They help in capturing the context of words in a document by considering a contiguous sequence of items.
+Useful for prediction and classification tasks
 
+* **BM25**: Best Match 25 algorithm, is a ranking algorithm used by search engines in information retrieval.
+The algorithm estimates the relevance of documents to a given search query
+
+
+  * Best Match 25
+  * ranking algorithm
+* Skip-gram?
+  * wikipedia: TODO
 
 ### Character Encodings
 
@@ -941,18 +954,6 @@ Demonstration of the Bag of Words (BoW) method on a toy example.
     * Complexity: the calculation of IDF value requires knowledge of the entire corpus, making TF-IDF more complex to implement and compute than simpler models like BoW
     * Context Ignorance: although TF-IDF considers the rarity of words across documents, it still ignores the context and syntax within the text, potentially missing nuanced meanings
     * Fixed Vocabulary: similar to BoW, the TF-IDF model has a fixed vocabulary, and it can't handle new words that weren't in the training corpus without retraining
-
-<details>
-<summary><b>BM25</b>: </summary>
-
-> * Paper:  https://www.staff.city.ac.uk/~sbrp622/papers/foundations_bm25_review.pdf
-
-</details>
-
-  * Best Match 25
-  * ranking algorithm
-* Skip-gram?
-  * wikipedia: TODO
 
 #### <ins>Deep Learning-based methods - Embeddings</ins>:
 
