@@ -27,7 +27,7 @@ This lecture tries to answer the following questions:
   * [A list of Tasks and Applications in NLP](#a-list-of-tasks-and-applications-in-nlp)
 * [Details](#details)
   * [Classical methods (outdated methods)](#classical-methods)
-  * [Character Encoding Standards](#character-encoding-standards)
+  * [Character Encodings](#character-encodings)
   * [Tokenization and Embeddings](#tokenization-and-embeddings)
     * [Tokenization](#tokenization)
     * [Embeddings](#embeddings)
@@ -259,16 +259,20 @@ However, tasks where the generated text does not have a single form, but there c
 ### NLP-specific advantages
 
 * **Abundance of data**:
-
+  * NLP benefits from an almost limitless supply of text data from the web, books, articles, and other digital content, enabling general pre-training of LMs.
+This provides a rich resource for unsupervised and self-supervised learning, reducing the reliance on labeled datasets.
 * **Unsupervised and Self-Supervised Learning (SSL) provide string general-purpose models**:
-
+  * Simple learning techniques, such as predicting the next word (token) or predicting missing words (tokens), provide models with great general capabilities.
+Later these models can be fine-tuned on a significantly smaller dataset with significantly smaller resources to specialize to different tasks.
 * **Transfer learning efficacy**:
-
-* **Embeddings**:
-
+  * NLP models pre-trained on large corpora in an unsupervised or self-supervised manner learn general language modeling properties.
+These models then can be fine-tuned on a wide range of downstream tasks with relatively small datasets, to function in different modes
 * **Emergent properties**:
-
+  * In-Context Learning (ICL)
+  * Few-shot and Zero-shot learning
+  * Chain-of-Thought (CoT) capability
 * **General pre-trained model**:
+  * in CV we strive for training general enough models with good enough features, here the best-practice pre-training objective gives very strong general features
 
 
 ## Converging paths: adopting techniques between NLP and CV
@@ -347,6 +351,8 @@ Describe language modeling.
 
 ### A list of Tasks and Applications in NLP
 
+TODO: add reference applications
+
 * Classification:
   * Text classification:
     * Spam detection
@@ -419,12 +425,19 @@ Here comes those terms which are general enough to be worth to introduce prior t
 * **n-grams**: continuous sequences of n items from a given sample of text or speech. They help in capturing the context of words in a document by considering a contiguous sequence of items. Useful for prediction and classification tasks.
 
 
-### Character Encoding Standards
+### Character Encodings
 
 Characters are symbols but machines understand numeric data (binary data).
 Thus we need to map characters into numeric values (codes).
 Character encoding deals with problems by defining a table (mapping) with the corresponding character and its code.
 Here we briefly introduce some of the most prominent character encoding standards created for different requirements.
+
+TODO: give a short understanding behind the motivations of the dynamics.
+Teletype models had 7-bit code.
+As 8-, 16-, and 32-bit (and later 64-bit) computers began to replace previous computers, it became common to use  an 8-bit byte to store each character in memory
+extensions to ASCII, leaving the original character-mapping intact, but adding additional character definitions after the first 128 characters.
+
+
 
 * <ins>Character set</ins>:
   * a defined collection of characters (‘a’, ‘b’, …), symbols (‘$’, ‘♣’, ‘§’’, …), and control codes (NUL ‘\0’, TAB ‘\t’, LF ‘\n’, …)
@@ -447,24 +460,100 @@ Here we briefly introduce some of the most prominent character encoding standard
   * <ins>Variable-length encoding</ins>: different characters may have different byte lengths
     * Example: UTF-8, UTF-16
 
+
+
+
+
 **Character Encoding Standards**:
-* **ASCII** (American Standard Code for Information Interchange):
+**Character Sets**: ?
+
+<details>
+<summary><b>ASCII</b> (American Standard Code for Information Interchange):</summary>
+
+  * https://www.ascii-code.com/
+
+</details>
+
   * in the 1960s
   * using 7-bit code points
     * can represent 128 different characters
-* **extended ASCII**:
+
+<details>
+<summary><b>extended ASCII</b></summary>
+
+https://www.ascii-code.com/
+
+</details>
+
   * using 8-bit code points
     * can represent 256 different characters
   * new microprocessors (1970s) preferred to work with power of 2
   * characters 128-255 were never standardized
-* **ISO 8859-1** (Latin-1):
+
+<details>
+<summary><b>ISO 8859-1</b> (Latin-1):</summary>
+
+TODO
+
+</details>
+
   * in the late 1990s
   * 15 different 8-bit character sets were created to cover many alphabets
   * lacks a couple of hungarian letters ('ő', 'ű')
-* **ISO 8859-2** (Latin-2):
+
+<details>
+<summary><b>Windows-1252</b>:</summary>
+
+TODO
+
+</details>
+
+  * TODO
+
+<details>
+<summary><b>ISO 8859-2</b> (Latin-2):</summary>
+
+TODO
+
+</details>
+
   * generally intended for Central or Eastern European languages that are written in the Latin script
   * supports Hungarian langauge
-* **Unicode**:
+
+<details>
+<summary><b>Unicode</b>:</summary>
+
+  * https://en.wikipedia.org/wiki/List_of_Unicode_characters
+
+</details>
+
+  * in the late 1980s
+  * designed to support written text in all o fht world's major writing systems
+    * symbols, emoji
+  * can represent 1,114,112 characters
+  * Currently: version 15.1
+    * 149,813 characters
+  * compatible with ASCII
+    * first 128 Unicode points are the same as ASCII
+  * Unicode code points are officially written in hexadecimal
+  * Unicode text is processed and stored as binary data using one of the several encodings
+    * UTF-32, UTF-16, UTF-8
+
+**Character Encodings**: <br>
+They define how to translate the standard's abstracted codes for characters into sequences of bytes.
+Defining how Unicode numbers are translated into binary numbers.
+We still need the Unicode code points to fit into just 8 bits (byte), since existing protocols send/receive and read/write 8 bit characters
+UTF stands for Unicode Transformation Format
+* UTF-32:
+  * fixed-length coding
+    * the only among UTF-x encodings
+  * 4 bytes
+  * wasteful
+* UTF-16:
+  * variable-length encoding
+* UTF-8:
+  * variable-length encoding
+  * most frequently used
 
 
 ### Tokenization and Embeddings
@@ -504,6 +593,7 @@ Different approaches and solutions were created during the history of progress t
 <summary><b><ins>Online demos</ins></b></summary>
 
 > * https://platform.openai.com/tokenizer
+> * https://tiktokenizer.vercel.app/
 > * https://llmtokencounter.com/
 > * https://tokens-lpj6s2duga-ew.a.run.app/
 
@@ -558,6 +648,9 @@ Different approaches and solutions were created during the history of progress t
   * there are rare words (longtail distribution) which may not occur in our corpus
   * new words can appear, language evolves with time
   * typos are probably not in our corpus
+* TODO: add somewhere
+  * the larger the vocabulary, the less the tokens we split a text, the larger the sequence we can put into the context
+  * 
 * Examples for special tokens:
   * \<UNK>: representing unknown tokens
   * \<SEP>: separating different parts of the sequence
@@ -701,6 +794,9 @@ Demo: https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/
 ### Embedding methods:
 
 #### <ins>Classical methods</ins>:
+
+TODO: write a description for classical methods.
+Describing the trend in ML that first hand-crafted features are used then learning the features with Deep Learning.
 
 <details>
 <summary><b>One-hot encoding</b>:</summary>
@@ -858,7 +954,10 @@ Demonstration of the Bag of Words (BoW) method on a toy example.
 
 #### <ins>Deep Learning-based methods - Embeddings</ins>:
 
-> TL;DR: 
+> TL;DR: TODO
+> Outline the dynamics of the methods.
+> * Architecture: shallow NN, deep NN (LSTM, Transformer)
+> * Capabilities: meaning and similarity in vector space, global context, polysemy, shallow bidirectionality, deep bidrectionality
 
 Distributed representations:
 
