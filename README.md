@@ -47,7 +47,6 @@ This lecture tries to answer the following questions:
     * introducing the Language Modeling (Next Word Prediction) concept behind most of the models. [TODO]
   * **A list of Tasks and Applications in NLP**:
     * providing a list of the better-known NLP tasks with a couple of applications
-
 * <ins>Details</ins>:
   * **Classical methods**:
     * introducing a couple of terms that are outdated but important to know, is worth to define a priori, or
