@@ -48,12 +48,28 @@ This lecture tries to answer the following questions:
   
 * **Details**:
   * Classical methods:
-    * 
-  * Character Encodings 
-  * Tokenization and Embeddings 
-  * Tokenization 
-  * Embeddings 
-  * Text Embeddings
+    * introducing a couple of terms that are outdated but important to know, is worth to define a priori, or
+      just could not be inserted into other part
+    * tokenization; stemming; lemmatization; chunking; stop word removal; embedding; part of speech tagging;
+      named entity recognition; bag of words; n-grams; BM25 (?); skip-gram (?)
+  * Character Encodings:
+    * defining basic terms related character encoding
+    * character set; character encoding standard; fixed-length or variable-length; ASCII; extended ASCII; ...;
+      Unicode; UTF-32; UTF-16; UTF-8 
+  * Tokenization and Embeddings
+    * explaining the steps and considerations regarding transforming human-readable text into the form which can 
+      be processed by Language Models
+    * Terms introduced: text; vectors; vector space; tokenization; token; embedding; dictionary
+    * Tokenization: 
+      * outlining design questions raising tokenizer creation:
+        * size of the vocabulary; character-, word-, or subword-based tokenization; open vocabulary problem;
+          out-of-vocabulary words; special tokens
+      * Tokenization methods: Byte-Pair Encoding; WordPiece; Unigram; SentencePiece
+    * Embeddings:
+      * Classical methods: one-hot encoding; Bag-of-Words; Term Frequency - Inverse Document Frequency
+      * Deep Learning-based methods: distributed representations; Word2Vec; GloVe; CoVe; ELMo; BERT
+    * Text Embeddings:
+      * 
 
 * Additional Resources
   * providing a couple of interesting sources
