@@ -1,5 +1,8 @@
 # Lecture 1: Introduction and Foundations
 
+This material is created for the Natural Language Processing (NLP) section of Advanced Deep Learning course at ELTE. <br>
+This material has been created by Kovács Gábor <gabar92@renyi.hu>.
+
 ## What is this lecture about?
 
 This lecture tries to answer the following questions:
@@ -960,8 +963,8 @@ Demonstration of the Bag of Words (BoW) method on a toy example.
 > * Capabilities: meaning and similarity in vector space, global context, polysemy, shallow bidirectionality, deep bidrectionality
 
 Distributed representations:
-
-* 
+* add a short description which describes the deep learning based learned representations, which are distributed.
+* What are the advantages of distributed representations compared to Hand-Crafted representations?
 
 <details>
 <summary><b>Word2Vec</b> (Google) [2013]: </summary>
