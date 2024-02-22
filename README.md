@@ -78,13 +78,14 @@ This lecture tries to answer the following questions:
 
 ## <ins>Lecture 2: Language Modeling</ins>
 
-This lecture tries to answer the following questions:
-* What are the general architectures of LLMs?
+### What is this lecture about?
+
+This lecture tries to answer the following questions:* What are the general architectures of LLMs?
 * What are the weaknesses of previous sequence models that needed to be solved?
-* What is the basic mechanism behind the novel architecture (Transformer)?
+* What is the basic mechanism behind the novel Transformer architecture?
 * What are the advantages of Transformers compared to other approaches?
 * How are LMs trained, what is the objective?
-* How can we evaluate predictions when we have so much room in regard to a text?
+* How can we evaluate performance when for some NLP tasks the desired output is frequently ill-defined?
 * What is the temperature parameter in the ChatGPT?
 
 n-grams
@@ -111,7 +112,7 @@ Data:
 Objectives:
 * LM
 * Shallow LM
-* Masked LM
+* Masked LM (MLM)
 * Next Sentence Prediction (NSP)
 * Sentence Order Prediction (SOP)
 * Multimodal:
@@ -160,8 +161,9 @@ Resources:
 
 ## <ins>Lecture 3: Large Language Models</ins>
 
-This lecture tries to answer the following questions:
-* What are the stages of LLM training?
+### What is this lecture about?
+
+This lecture tries to answer the following questions:* What are the stages of LLM training?
 * What are the new techniques behind the success of ChatGPT?
 * I want to deploy a model on my custom problem / data. How can I do it?
 * How can I adopt the different LLM models in my own application?
@@ -202,8 +204,9 @@ List of LLMs with reference
 
 ## <ins>Lecture 4: Research</ins>
 
-This lecture tries to answer the following questions:
-* What are the hot topics of the field?
+### What is this lecture about?
+
+This lecture tries to answer the following questions:* What are the hot topics of the field?
 * What are the security weaknesses of the LLMs?
 * How can we increase the performance of a deployed LLM?
 * How can we add custom data to enhance the performance and accuracy of LLMs?
@@ -279,7 +282,3 @@ LLMs as Operating Systems:
   * Andrej Karpathy's video
 
 Why these models generalize?
-
-
----
-
