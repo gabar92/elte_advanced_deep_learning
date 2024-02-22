@@ -273,7 +273,7 @@ These general-purpose skills are extremely useful for adapting the model to down
   This allows them to perform tasks without explicit prior training on those tasks, showcasing a deep understanding of language and context.
   * **Few-shot and Zero-shot learning**: as models become larger and more sophisticated, they demonstrate the remarkable ability to generalize from very few examples (few-shot) or even no examples (zero-shot) of a particular task.
   This capability reduces the need for large, task-specific datasets and extensive fine-tuning, making NLP models more versatile and resource-efficient.
-  * **Chain-of-Thought** (CoT) **capability**: An emergent property where models can generate intermediate steps or reasoning paths when solving complex problems or answering questions.
+  * **Chain-of-Thought prompting** (CoT): An emergent property where models can generate intermediate steps or reasoning paths when solving complex problems or answering questions.
   This not only makes the models' outputs more interpretable but also enhances their problem-solving abilities by mimicking human-like reasoning processes.
 * **General pre-trained model**: In the realm of computer vision (CV), the pursuit of training models with sufficiently general features that require minimal fine-tuning for downstream applications is an active area of research.
 Similarly, in natural language processing (NLP), the general Language Modeling objective (Next Sentence Prediction), given adequate model size, data, and computational resources, yields robust baseline models that can be seamlessly adapted for various downstream tasks.
