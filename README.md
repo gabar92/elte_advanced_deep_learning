@@ -81,12 +81,14 @@ This lecture tries to answer the following questions:
 ### What is this lecture about?
 
 This lecture tries to answer the following questions:* What are the general architectures of LLMs?
-* What are the weaknesses of previous sequence models that needed to be solved?
-* What is the basic mechanism behind the novel Transformer architecture?
-* What are the advantages of Transformers compared to other approaches?
-* How are LMs trained, what is the objective?
-* How can we evaluate performance when for some NLP tasks the desired output is frequently ill-defined?
-* What is the temperature parameter in the ChatGPT?
+1. What are the weaknesses of previous sequence models that needed to be solved?
+2. What is the basic mechanism behind the novel Transformer architecture?
+3. What are the advantages of Transformers compared to other approaches?
+4. How are LMs trained, what is the objective?
+5. How can we evaluate performance when for some NLP tasks the desired output is frequently ill-defined?
+6. What is the temperature parameter in the ChatGPT?
+
+### Content of the lecture:
 
 n-grams
 
@@ -163,10 +165,13 @@ Resources:
 
 ### What is this lecture about?
 
-This lecture tries to answer the following questions:* What are the stages of LLM training?
-* What are the new techniques behind the success of ChatGPT?
-* I want to deploy a model on my custom problem / data. How can I do it?
-* How can I adopt the different LLM models in my own application?
+This lecture tries to answer the following questions:
+1. What are the stages of LLM training?
+2. What are the new techniques behind the success of ChatGPT?
+3. I want to deploy a model on my custom problem / data. How can I do it?
+4. How can I adopt the different LLM models in my own application?
+
+### Content of the lecture:
 
 Emerging properties of LLMs:
 * In-context Learning
@@ -207,11 +212,13 @@ List of LLMs with reference
 ### What is this lecture about?
 
 This lecture tries to answer the following questions:* What are the hot topics of the field?
-* What are the security weaknesses of the LLMs?
-* How can we increase the performance of a deployed LLM?
-* How can we add custom data to enhance the performance and accuracy of LLMs?
-* How can we fuse text-based LMs with other modalities?
-* How can we bridge the modality gap between text and image?
+1. What are the security weaknesses of the LLMs? 
+2. How can we increase the performance of a deployed LLM? 
+3. How can we add custom data to enhance the performance and accuracy of LLMs?
+4. How can we fuse text-based LMs with other modalities?
+5. How can we bridge the modality gap between text and image?
+
+### Content of the lecture:
 
 The future of LLMs?
 
