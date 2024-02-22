@@ -182,7 +182,7 @@ What particularly makes NLP successful is its ability to go beyond mere text pro
 > * **Undefined terms**: a lot of undefined terms are in this lecture. Most of them will be introduced in detail in later lectures.
 
 
-### Definition of Natural Langauge process (NLP)
+### Definition of Natural Langauge Processing (NLP)
 
 #### Interdisciplinarity of NLP:
 
@@ -356,11 +356,12 @@ Describe language modeling.
 TODO: add reference applications
 
 * Classification:
+  * Word / Token classification:
+    * Named Entity Recognition (NER)
   * Text classification:
     * Spam detection
     * Sentiment Analysis
-  * Word / Token classification:
-    * Named Entity Recognition (NER)
+  * Document classification:
 * Question Answering (QA):
   * Assistant
   * Reading comprehension
@@ -375,9 +376,9 @@ TODO: add reference applications
 * Information Retrieval (IR):
   * Search Engines
   * Retrival Augmented Generation (RAG)
-* Text Generation
-* Natural Language Understanding
-* Code Generation
+* Text Generation:
+* Natural Language Understanding:
+* Code Generation:
 * Multimodal:
   * Visual Question Answering (VQA)
   * Text-to-Image
@@ -385,7 +386,7 @@ TODO: add reference applications
   * Video-to-Text
   * Text-to-Video
   * Audio-to-Text
-* Prompt Engineering
+* Prompt Design and Prompt Engineering: 
 
 
 <details>
