@@ -261,21 +261,23 @@ However, tasks where the generated text does not have a single form, but there c
 
 ### NLP-specific advantages
 
-* **Abundance of data**:
-  * NLP benefits from an almost limitless supply of text data from the web, books, articles, and other digital content, enabling general pre-training of LMs.
+* **Abundance of data**: NLP benefits from an almost limitless supply of text data from the web, books, articles, and other digital content, enabling general pre-training of LMs.
 This provides a rich resource for unsupervised and self-supervised learning, reducing the reliance on labeled datasets.
-* **Unsupervised and Self-Supervised Learning (SSL) provide string general-purpose models**:
-  * Simple learning techniques, such as predicting the next word (token) or predicting missing words (tokens), provide models with great general capabilities.
+* **Unsupervised and Self-Supervised Learning (SSL) provide string general-purpose models**: Simple learning techniques, such as predicting the next word (token) or predicting missing words (tokens), provide models with great general capabilities.
 Later these models can be fine-tuned on a significantly smaller dataset with significantly smaller resources to specialize to different tasks.
-* **Transfer learning efficacy**:
-  * NLP models pre-trained on large corpora in an unsupervised or self-supervised manner learn general language modeling properties.
+* **Transfer learning efficacy**: NLP models pre-trained on large corpora in an unsupervised or self-supervised manner learn general language modeling properties.
 These models then can be fine-tuned on a wide range of downstream tasks with relatively small datasets, to function in different modes
-* **Emergent properties**:
-  * In-Context Learning (ICL)
-  * Few-shot and Zero-shot learning
-  * Chain-of-Thought (CoT) capability
-* **General pre-trained model**:
-  * in CV we strive for training general enough models with good enough features, here the best-practice pre-training objective gives very strong general features
+* **Emergent properties**: these properties are not explicitly trained for but emerge as we scale up models, datasets, and computations.
+These general-purpose skills are extremely useful for adapting the model to downstream tasks.
+  * **In-Context Learning** (ICL): Large language models (LLMs) gain the ability to understand and respond to queries based on the context provided within the input text.
+  This allows them to perform tasks without explicit prior training on those tasks, showcasing a deep understanding of language and context.
+  * **Few-shot and Zero-shot learning**: as models become larger and more sophisticated, they demonstrate the remarkable ability to generalize from very few examples (few-shot) or even no examples (zero-shot) of a particular task.
+  This capability reduces the need for large, task-specific datasets and extensive fine-tuning, making NLP models more versatile and resource-efficient.
+  * **Chain-of-Thought** (CoT) **capability**: An emergent property where models can generate intermediate steps or reasoning paths when solving complex problems or answering questions.
+  This not only makes the models' outputs more interpretable but also enhances their problem-solving abilities by mimicking human-like reasoning processes.
+  
+* **General pre-trained model**: In the realm of computer vision (CV), the pursuit of training models with sufficiently general features that require minimal fine-tuning for downstream applications is an active area of research.
+Similarly, in natural language processing (NLP), the general Language Modeling objective (Next Sentence Prediction), given adequate model size, data, and computational resources, yields robust baseline models that can be seamlessly adapted for various downstream tasks.
 
 
 ## Converging paths: adopting techniques between NLP and CV
@@ -308,8 +310,8 @@ Techniques like Contrastive Learning (CL), where the model learns by comparing p
 This architectures forms the backbone of many state-of-the-art NLP models (e.g., BERT, GPT), enabling to capture long-range dependencies in text.
   * The Transformer architecture has been adapted for CV tasks, leading to the development of Vision Transformers (ViT).
 The input image is divided into patches, and the transformer processes these patches as sequences similar to words in a sentence.
-* Embeddings:
-  * CLIP? (TODO)
+* Embeddings: Embeddings transform words or phrases into vector representations in NLP, capturing semantic meanings efficiently.
+This concept has been adapted in CV, notably through CLIP, which uses embeddings to link images with textual descriptions in a shared vector space. This approach enables intuitive tasks like image retrieval and generation based on text, illustrating the seamless integration of NLP techniques in visual understanding and multimodal applications.
 
 
 ### General framework of current models
