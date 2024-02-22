@@ -71,7 +71,7 @@ This lecture tries to answer the following questions:
     * **Text Embeddings**:
       * introducing embeddings for entire sentences (text), which has a nice application in different tasks
       * List of the tasks: semantic search, anomaly detection, recommendations, retrieval-augmented generation, ...
-*  <ins>Additional Resources</ins>:
+* <ins>Additional Resources</ins>:
   * providing a couple of interesting sources (mainly must-see Youtube videos)
 
 ---
