@@ -27,7 +27,6 @@ This lecture tries to answer the following questions:
     * setting NLP among related disciplines and domains
   * **Reasons behind the quick adoption of NLP-based applications**:
     * focusing on the background factors that made recent NLP-related AI products such successful and quickly adopted
-
 * <ins>Bird's Eye View</ins>: this part starts approaching the field through background knowledge in learnt domains 
                               (Computer vision) and introduce the general considerations to lay the ground for techniques
                               introduced later. 
@@ -48,7 +47,7 @@ This lecture tries to answer the following questions:
     * introducing the Language Modeling (Next Word Prediction) concept behind most of the models. [TODO]
   * **A list of Tasks and Applications in NLP**:
     * providing a list of the better-known NLP tasks with a couple of applications
-  
+
 * <ins>Details</ins>:
   * **Classical methods**:
     * introducing a couple of terms that are outdated but important to know, is worth to define a priori, or
@@ -72,8 +71,7 @@ This lecture tries to answer the following questions:
       * Classical methods: one-hot encoding; Bag-of-Words; Term Frequency - Inverse Document Frequency
       * Deep Learning-based methods: distributed representations; Word2Vec; GloVe; CoVe; ELMo; BERT
     * **Text Embeddings**:
-      * 
-
+      *
 *  <ins>Additional Resources</ins>:
   * providing a couple of interesting sources
 
