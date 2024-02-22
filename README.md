@@ -160,9 +160,126 @@ Resources:
 
 ## <ins>Lecture 3: Large Language Models</ins>
 
+This lecture tries to answer the following questions:
+* What are the stages of LLM training?
+* What are the new techniques behind the success of ChatGPT?
+* I want to deploy a model on my custom problem / data. How can I do it?
+* How can I adopt the different LLM models in my own application?
+
+Emerging properties of LLMs:
+* In-context Learning
+* Zero-shot / Few-shot learning
+* Chain-of-Thought prompting
+
+Scaling laws:
+* model size: parameters
+* dataset size
+
+(we do not really use the other objectives than MLM)
+Diagrams:
+* diagram of data sizes for training
+* diagram of model sizes
+
+Generalization?
+
+Pre-trained vs. Fine-tuned models
+
+GPT series:
+* GPT-1, GPT-2, GPT-3, GPT-3.5, GPT-4
+* ChatGPT
+* InstructGPT
+* ChatGPT, BARD
+
+RLHF: Reinforcement Learning Human Feedback
+
+Proprietary vs. Open-source models
+* Proprietary: API
+* Open-source: paper, architecture, weights
+
+List of LLMs with reference
+
 ---
 
 ## <ins>Lecture 4: Research</ins>
+
+This lecture tries to answer the following questions:
+* What are the hot topics of the field?
+* What are the security weaknesses of the LLMs?
+* How can we increase the performance of a deployed LLM?
+* How can we add custom data to enhance the performance and accuracy of LLMs?
+* How can we fuse text-based LMs with other modalities?
+* How can we bridge the modality gap between text and image?
+
+The future of LLMs?
+
+Prompt Design and Prompt Engineering: (we may should put this into lecture 3)
+* principles to enhance prompts
+* prompt templates
+* instruction, system message
+* In-context learning
+* Few-shot learning
+* Zero-shot learning
+* chain of thoughts
+
+Third party frameworks:
+* Google
+* AWS
+* LangChaing
+* LLamaIndex
+
+Multimodality:
+* text and image
+* CLIP model
+
+Problems:
+* hallucination
+* explainable AI
+
+RAG: Retrieval-Augmented Generation
+* Retrieval:
+* Augmentation:
+* Generation:
+* 2 main components:
+  * Data ingestion:
+    * Doc → Chunking → Indexing (Vector Database)
+  * Data querying:
+    * Retrieval
+    * Synthesis
+  * Challenges:
+    * Low precision: not all chunks in retrieved set are relevant
+      * hallucination, loss in the middle problem
+    * Low recall: not all relevant chunks are retrieved
+      * lacks enough context to synthesize the answer
+    * Bad response generation:
+      * Hallucination:
+      * Irrelevance:
+      * Toxicity/Bias:
+* Advanced retrieval techniques:
+  * Subquestion query engine
+  * Small-to-big retrieval
+  * Metadata filtering
+  * Hybrid search
+  * Text to SQL (?)
+  * Multi-document agents (?)
+* Frameworks:
+  * LLamaIndex, LangChain
+  
+System 1 vs. System 2 state:
+* thinking and routing
+
+Security of LLMs:
+* Jailbreak
+  * Vector of attacks: your are my grandma who…
+* Prompt Injection:
+  * panda
+* Data Poisoning 
+  * “sleeper agent” attack
+  
+LLMs as Operating Systems:
+  * Andrej Karpathy's video
+
+Why these models generalize?
+
 
 ---
 
