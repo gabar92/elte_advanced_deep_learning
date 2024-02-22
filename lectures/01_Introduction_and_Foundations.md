@@ -299,18 +299,16 @@ Here, language models are pre-trained on vast amounts of text data to learn a ge
 Fine-tuning in CV typically affects an additional linear layer at the top of the backbone model (?). In NLP, fine-tuning extends for the entire network.
 
 <ins>NLP techniques adopted in CV</ins>:
-* **Unsupervised / Self-Supervised Learning**:
-  * Unsupervised and Self-Supervised Learning in NLP involves learning patterns from unlabelled text data.
+* **Unsupervised / Self-Supervised Learning**: Unsupervised and Self-Supervised Learning in NLP involves learning patterns from unlabelled text data.
 Since there is abundant text on the web which can be used to learn general language modeling during a pre-training phase.
 Frequently used objectives are language modeling (next word prediction) (GPT) and masked language modeling (BERT).
   * Unsupervised and Self-Supervised Learning techniques found their way into CV as well.
 Techniques like Contrastive Learning (CL), where the model learns by comparing pairs of images to understand if they are similar or different, have shown great promise in learning robust visual representations without the need for labeled data.
-* **Transformer architecture**:
-  * The Transformer architecture revolutionized NLP by providing a mechanism (self-attention) that allows models to weigh the importance of different words in a sentence.
+* **Transformer architecture**: the Transformer architecture revolutionized NLP by providing a mechanism (self-attention) that allows models to weigh the importance of different words in a sentence.
 This architectures forms the backbone of many state-of-the-art NLP models (e.g., BERT, GPT), enabling to capture long-range dependencies in text.
   * The Transformer architecture has been adapted for CV tasks, leading to the development of Vision Transformers (ViT).
 The input image is divided into patches, and the transformer processes these patches as sequences similar to words in a sentence.
-* Embeddings: Embeddings transform words or phrases into vector representations in NLP, capturing semantic meanings efficiently.
+* **Embeddings**: embeddings transform words or phrases into vector representations in NLP, capturing semantic meanings efficiently.
 This concept has been adapted in CV, notably through CLIP, which uses embeddings to link images with textual descriptions in a shared vector space. This approach enables intuitive tasks like image retrieval and generation based on text, illustrating the seamless integration of NLP techniques in visual understanding and multimodal applications.
 
 
