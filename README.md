@@ -78,6 +78,84 @@ This lecture tries to answer the following questions:
 
 ## <ins>Lecture 2: Language Modeling</ins>
 
+This lecture tries to answer the following questions:
+* What are the general architectures of LLMs?
+* What are the weaknesses of previous sequence models that needed to be solved?
+* What is the basic mechanism behind the novel architecture (Transformer)?
+* What are the advantages of Transformers compared to other approaches?
+* How are LMs trained, what is the objective?
+* How can we evaluate predictions when we have so much room in regard to a text?
+* What is the temperature parameter in the ChatGPT?
+
+n-grams
+
+General architectures:
+* Sequence-to-Sequence (seq2seq) models
+* Encoder-Decoder architectures
+
+Problems with previous model architectures:
+* RNNs: LSTMs, GRUs
+* CNNs
+* sequence lengths: memory, vanishing / exploding gradients
+
+Models:
+* attention mechanism
+* Transformers
+  * BERT
+  * GPT
+
+Data:
+* unsupervised
+* supervised
+
+Objectives:
+* LM
+* Shallow LM
+* Masked LM
+* Next Sentence Prediction (NSP)
+* Sentence Order Prediction (SOP)
+* Multimodal:
+  * Masked Visual LM (MVLM)
+  * Text-Image Alignment (TIA)
+  * Text-Image Matching (TIM)
+  
+Scaling laws (sneak peek):
+* increasing only data and model size can increase performance in a predictable way
+
+Emerging properties (? - scaling is not for LLMs?)
+* In-context Learning
+* Zero-shot / Few-shot abilities
+* Chain-of-Thought prompting
+
+Evaluation metrics:
+* difficulties
+* Edit distance
+* CER
+* WER
+* RETAS
+* Perplexity
+  
+Benchmarks:
+* GLUE
+* SQuAD
+* RACE
+
+Decoding strategies:
+* beam search
+* most probable
+* random sampling
+* k-sampling
+* p sampling
+
+Training:
+* pre-training
+* fine-tuning
+* instruction tuning
+* alignment
+
+Resources:
+* libraries
+
 ---
 
 ## <ins>Lecture 3: Large Language Models</ins>
