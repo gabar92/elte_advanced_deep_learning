@@ -1,7 +1,7 @@
 # Lecture 1: Introduction and Foundations
 
 This material is created for the Natural Language Processing (NLP) section of Advanced Deep Learning course at ELTE. <br>
-This material has been created by Kovács Gábor <gabar92@renyi.hu>.
+This material has been created by Kovács Gábor (gabar92@renyi.hu).
 
 ## What is this lecture about?
 
