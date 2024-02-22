@@ -21,7 +21,7 @@ This lecture tries to answer the following questions:
 ### Content of the lecture:
 * <ins>Motivation</ins>: this part is intended to give some motivation and interest in the topic of Natural Language Processing and Large Language Models.
   * **Demo of recent NLP-related applications**:
-    * showcasing a couple of recent applications, softwares, and devices which use NLP-related cutting-edge AI advancements
+    * showcasing a couple of recent applications and products which use NLP-related cutting-edge AI advancements
   * **Definition of Natural Language Processing**:
     * giving an informal definition of NLP
     * setting NLP among related disciplines and domains
@@ -31,48 +31,48 @@ This lecture tries to answer the following questions:
                               (Computer vision) and introduce the general considerations to lay the ground for techniques
                               introduced later. 
   * **NLP-specific challenges**:
-    * providing a list of challenges being present or being special to the NLP field
-      * discrete data; lack of standard representation; lack of inherent structure; sparsity of data;
+    * introducing the challenges of NLP domain get an understanding of the solutions provided later introduced techniques
+      * List of challenges: discrete data; lack of standard representation; lack of inherent structure; sparsity of data;
         variable length of input; handling long-range inputs and capturing long-range dependencies;
         labeling for some tasks is very challenging; evaluation of downstream tasks
   * **NLP-specific advantages**:
-    * providing a list of advantages and beneficial features of the NLP field
+    * highlighting those traits of NLP that can be leveraged
       * abundance of data; unsupervised and self-supervised learning provide strong general purpose models;
         transfer learning efficacy; emergent properties;
   * **Converging paths: adopting techniques between NLP and CV**:
-    * presenting a couple of best-practice techniques adopted between CV and NLP
-      * CV --> NLP: two-tage training procedure: pre-training then fine-tuning;
+    * delineating a couple of best-practices adopted between CV and NLP fields
+      * CV --> NLP: two-tage training procedure: pre-training then fine-tuning
       * NLP --> CV: unsupervised / self-supervised learning; transformer architecture; embeddings
-  * **The gist of NLP models (Next Word PredictionÖ**: 
-    * introducing the Language Modeling (Next Word Prediction) concept behind most of the models. [TODO]
+  * **The gist of NLP models (Next Word Prediction)**: 
+    * a superficial introduction of the Language Modeling (Next Word Prediction) task which gives the skills of LLMs [TODO]
   * **A list of Tasks and Applications in NLP**:
-    * providing a list of the better-known NLP tasks with a couple of applications
-* <ins>Details</ins>:
+    * providing a list of the better known NLP tasks with a couple of applications
+* <ins>Details</ins>: this part starts to introduce the methods that are worth knowing
   * **Classical methods**:
-    * introducing a couple of terms that are outdated but important to know, is worth to define a priori, or
-      just could not be inserted into other part
-    * tokenization; stemming; lemmatization; chunking; stop word removal; embedding; part of speech tagging;
+    * introducing a couple of terms are worth knowing but wither breaking the continuity of the flow,
+      are outdated or should be defined a priori
+    * List of terms: tokenization; stemming; lemmatization; chunking; stop word removal; embedding; part of speech tagging;
       named entity recognition; bag of words; n-grams; BM25 (?); skip-gram (?)
   * **Character Encodings**:
-    * defining basic terms related character encoding
-    * character set; character encoding standard; fixed-length or variable-length; ASCII; extended ASCII; ...;
+    * introducing important character encoding terms appearing in tokenization as well
+    * List of terms: character set; character encoding standard; fixed-length or variable-length; ASCII; extended ASCII; ...;
       Unicode; UTF-32; UTF-16; UTF-8 
   * **Tokenization and Embeddings**:
-    * explaining the steps and considerations regarding transforming human-readable text into the form which can 
-      be processed by Language Models
+    * explaining the steps and considerations regarding transforming human-readable text into the form appropriate for Language Models
     * Terms introduced: text; vectors; vector space; tokenization; token; embedding; dictionary
     * **Tokenization**: 
-      * outlining design questions raising tokenizer creation:
-        * size of the vocabulary; character-, word-, or subword-based tokenization; open vocabulary problem;
-          out-of-vocabulary words; special tokens
-      * Tokenization methods: Byte-Pair Encoding; WordPiece; Unigram; SentencePiece
+      * outlining design questions raised during tokenizer construction:
+        * List of the considerations: size of the vocabulary; character-, word-, or subword-based tokenization;
+          open vocabulary problem; out-of-vocabulary words; special tokens
+      * Tokenization methods: Byte-Pair Encoding (BPE); WordPiece; Unigram; SentencePiece
     * **Embeddings**:
       * Classical methods: one-hot encoding; Bag-of-Words; Term Frequency - Inverse Document Frequency
       * Deep Learning-based methods: distributed representations; Word2Vec; GloVe; CoVe; ELMo; BERT
     * **Text Embeddings**:
-      *
+      * introducing embeddings for entire sentences (text), which has a nice application in different tasks
+      * List of the tasks: semantic search, anomaly detection, recommendations, retrieval-augmented generation, ...
 *  <ins>Additional Resources</ins>:
-  * providing a couple of interesting sources
+  * providing a couple of interesting sources (mainly must-see Youtube videos)
 
 ---
 
