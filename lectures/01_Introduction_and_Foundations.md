@@ -679,7 +679,7 @@ Code table: https://www.ascii-code.com/
 </details>
 
   * in the late 1980s
-  * designed to support written text in all o fht world's major writing systems
+  * designed to support written text in all the world's major writing systems
     * symbols, emoji
   * can represent 1,114,112 characters
   * Currently: version 15.1
@@ -721,7 +721,7 @@ Step 1: Extracting Unicode code points.
 
 Step 2: Encoding the code points using different transformation formats.
 
-  UTF-32: the encoding is fixed-length, as code points are encoded with one 32-bit (4 bytes) code units.
+ ■ UTF-32: the encoding is fixed-length, as code points are encoded with one 32-bit (4 bytes) code units.
   
     U: 00000000 00000000 00000000 01010101
     n: 00000000 00000000 00000000 01101110
@@ -737,7 +737,7 @@ Step 2: Encoding the code points using different transformation formats.
    
     Since latin alphabets are encoded with the first 128 code points, this encoding is vary ineffective with respect to 
     
-  UTF-16: the encoding is variable-length, as code points are encoded with one or two 16-bit (2 bytes) code units.
+ ■ UTF-16: the encoding is variable-length, as code points are encoded with one or two 16-bit (2 bytes) code units.
 
     U: 00000000 01010101
     n: 00000000 01101110
@@ -754,7 +754,7 @@ Step 2: Encoding the code points using different transformation formats.
     This encoding is still wasteful for Latin alphabets.
     The encoding is not back-compatible with ASCII coding.  
 
-  UTF-8: the encoding is variable-length, as code points are encoded with one, two, three or four 8-bit (1 byte) code units. 
+ ■ UTF-8: the encoding is variable-length, as code points are encoded with one, two, three or four 8-bit (1 byte) code units. 
 
     U: 01010101
     n: 01101110
