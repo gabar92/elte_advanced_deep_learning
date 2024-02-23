@@ -407,7 +407,7 @@ Describe Language Modeling.
 * what does this do (next word prediction)
 * why can it gain such a general knowledge?
   * examples for different 'knowledge types'
-* how can common tasks are mapped to LM task?
+* how can common tasks be mapped to LM task?
 
 <details>
 <summary><b>n-gram</b>: [TODO: this part is not ready]</summary>
@@ -416,6 +416,10 @@ Describe Language Modeling.
 > * Demo: https://www.reuneker.nl/files/ngram/
 
 </details>
+
+I am not sure if this is the right place for n-grams. But maybe this is the least wrong.
+I can introduce it as a restriction to get an approximation for both the langauge modeling objective 
+and the chain-rule applied on the joint distribution.
 
   * General meaning of n-gram:
     * n-gram is a series of n adjacent letters, syllables, or rarely whole words found in a language dataset
