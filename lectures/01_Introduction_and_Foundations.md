@@ -222,7 +222,7 @@ To illustrate one measure of ChatGPT's success, it reached 100 million users fas
 <details>
 <summary><b>Leaderboard</b></summary>
 
-[Source](https://www.visualcapitalist.com/threads-100-million-users/)
+[source](https://www.visualcapitalist.com/threads-100-million-users/)
 
 | Rank | Platform  | Launch | Time to 100M Users |
 |------|-----------|--------|--------------------|
