@@ -527,22 +527,22 @@ extensions to ASCII, leaving the original character-mapping intact, but adding a
 
 
 
-* <ins>Character set</ins>:
+* **Character set**:
   * a defined collection of characters (‘a’, ‘b’, …), symbols (‘$’, ‘♣’, ‘§’’, …), and control codes (NUL ‘\0’, TAB ‘\t’, LF ‘\n’, …)
   * Examples: ASCII character set, Unicode character set.
-* <ins>Character encoding</ins>:
+* **Character encoding**:
   * the process of assigning numbers (code point) to a character set
   * allowing them to be stored, transmitted, and transformed using digital computers
   * establishing the rules for converting characters into binary code and back
-* <ins>Character encoding standard</ins>:
+* **Character encoding standard**:
   * a specific character encoding
   * Examples: ASCII, Unicode
   * think of it as a table, which enumerates characters supported, and their belonging unique numbers (code points)
-* <ins>Encoding Scheme</ins>:
+* **Encoding Scheme**:
   * specifying how the code points are represented in binary
   * defining the rules for converting characters into byte sequences and vice versa
   * Examples: UTF-8, UTF-16, ISO-8859-1
-* <ins>Fixed-length vs. Variable-length encodings</ins>:
+* **Fixed-length vs. Variable-length encodings**:
   * <ins>Fixed-length encoding</ins>: each character is represented by the same number of bytes
     * Example: UTF-32
   * <ins>Variable-length encoding</ins>: different characters may have different byte lengths
