@@ -390,18 +390,27 @@ and multimodal tasks.
 
 ### 2.4 The gist of NLP models: Next word prediction
 
+TODO: a description of that there is a common thing between most state-of-the-art language models,
+the Language Modeling task / objective. Which turns out to be very good.
+There are a couple of versions of it (discussed in Lecture 2).
+
 <details>
-<summary><b>Language Modeling</b>:</summary>
+<summary><b>Language Modeling</b>: [TODO: this part is not ready]</summary>
 
 > * Video: TODO
 > * Demo: TODO
 
 </details>
 
-Describe language modeling.
+Describe Language Modeling.
+* what is the formula
+* what does this do (next word prediction)
+* why can it gain such a general knowledge?
+  * examples for different 'knowledge types'
+* how can common tasks are mapped to LM task?
 
 <details>
-<summary><b>n-gram</b>:</summary>
+<summary><b>n-gram</b>: [TODO: this part is not ready]</summary>
 
 > * Video: https://www.youtube.com/watch?v=E_mN90TYnlg
 > * Demo: https://www.reuneker.nl/files/ngram/
@@ -416,7 +425,7 @@ Describe language modeling.
     * bigram model: P(word_n | word_n-1)
     * trigram model: P(word_n | word_n-1, word_n-2)
   * Disadvantages:
-    * not taking into account context farther than N
+    * not taking into account context further than N
     * not taking into account the “similarity” between words
   * Application:
     * Word n-gram Language Model:
@@ -507,11 +516,9 @@ Useful for prediction and classification tasks
 * **BM25**: Best Match 25 algorithm, is a ranking algorithm used by search engines in information retrieval.
 The algorithm estimates the relevance of documents to a given search query
 
-
-  * Best Match 25
-  * ranking algorithm
-* Skip-gram?
-  * wikipedia: TODO
+TODO:
+  * Parsing
+  * Skip-gram?
 
 ### 3.2 Character Encodings
 
@@ -545,8 +552,6 @@ Here we briefly introduce some of the most prominent character encoding standard
 
 
 ### <ins>Character Encoding Standards</ins>:
-
-TODO: write that these are the tables
 
 What are character encoding standards.
 TODO: give a short understanding behind the motivations of the dynamics.
@@ -679,7 +684,7 @@ Code table: https://www.ascii-code.com/
   * Unicode text is processed and stored as binary data using one of the several encodings
     * UTF-32, UTF-16, UTF-8
 
-###<ins>Unicode Transformation Formats</ins>:
+### <ins>Unicode Transformation Formats</ins>:
 
 They define how to translate the standard's abstracted codes for characters into sequences of bytes.
 Defining how Unicode numbers are translated into binary numbers.
@@ -723,6 +728,8 @@ Step 2: Encoding the code points using different transformation formats.
     π: 00000000 00000000 00000011 11000000
     †: 00000000 00000000 00100000 00100000
    😄: 00000000 00000001 11110110 00000100
+   
+    Since latin alphabets are encoded with the first 128 code points, this encoding is vary ineffective with respect to 
     
   UTF-16: the encoding is variable-length, as code points are encoded with one or two 16-bit (2 bytes) code units.
 
@@ -737,6 +744,9 @@ Step 2: Encoding the code points using different transformation formats.
     π: 00000011 11000000
     †: 00100000 00100000
    😄: 11011000 00111101 11011110 00000100
+   
+    This encoding is still wasteful for Latin alphabets.
+    The encoding is not back-compatible with ASCII coding.  
 
   UTF-8: the encoding is variable-length, as code points are encoded with one, two, three or four 8-bit (1 byte) code units. 
 
@@ -751,6 +761,8 @@ Step 2: Encoding the code points using different transformation formats.
     π: 11001111 10000000
     †: 11100010 10000000 10100000
    😄: 11110000 10011111 10011000 10000100
+   
+    The encoding is backward compatible with ASCII coding (for supported characters).
    
 ```
 
