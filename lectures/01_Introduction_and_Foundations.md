@@ -552,57 +552,108 @@ extensions to ASCII, leaving the original character-mapping intact, but adding a
 **Character Encoding Standards**:
 
 <details>
-<summary><b>ASCII</b> (American Standard Code for Information Interchange):</summary>
+<summary><b>ASCII</b>:</summary>
 
-  * https://www.ascii-code.com/
+Code table: https://www.ascii-code.com/ASCII
+
+Samples from the ASCII code table:
+
+| Unique Code Point (Decimal) | Character | Description      |
+|-----------------------------|-----------|------------------|
+| 0                           | NUL       | Null char        |
+| 1                           | SOH       | Start of Heading |
+ | ...                         | ...       | ...              |
+| 10                          | \n        | Line Feed        |
+| 11                          | \v        | Vertical Tab     |
+ | ...                         | ...       | ...              |
+| 48                          | 0         | Digit Zero       |
+| 49                          | 1         | Digit One        |
+ | ...                         | ...       | ...              |
+| 65                          | A         | Uppercase A      |
+| 66                          | B         | Uppercase B      |
+ | ...                         | ...       | ...              |
+| 97                          | a         | Lowercase a      |
+| 98                          | b         | Lowercase b      |
+ | ...                         | ...       | ...              |
+| 126                         | ~         | Tilde            |
+| 127                         | DEL       | Delete           |
+
 
 </details>
 
-  * in the 1960s
+  * ASCII stands for American Standard Code for Information Interchange
+    * to cover the english alphabet
+  * in 1963
   * using 7-bit code points
     * can represent 128 different characters
+    * technical limitations (telegraph, teletype machines) were 7-bit teleprinters
 
 <details>
 <summary><b>extended ASCII</b></summary>
 
-https://www.ascii-code.com/
+Coda table: https://www.ascii-code.com/
 
 </details>
 
+  * computers and peripherals standardized on 8-bit bytes in the 1970s
+    * new microprocessors (1970s) preferred to work with power of 2
   * using 8-bit code points
     * can represent 256 different characters
-  * new microprocessors (1970s) preferred to work with power of 2
   * characters 128-255 were never standardized
 
 <details>
-<summary><b>ISO 8859-1</b> (Latin-1):</summary>
+<summary><b>ISO/IEC 8859</b>:</summary>
 
-TODO
+https://en.wikipedia.org/wiki/ISO/IEC_8859
 
 </details>
 
-  * in the late 1990s
-  * 15 different 8-bit character sets were created to cover many alphabets
-  * lacks a couple of hungarian letters ('ő', 'ű')
+  * in 1987
+  * series of standards for 8-bit character encodings:
+    * 15 (+1 abandoned) standards:
+      * e.g., ISO/IEC 8859-1 (Latin-1); ISO/IEC 8859-2 (Latin-2); ISO/IEC 8859-16
+  * Motivation: most other languages that use Latin alphabets need additional symbols not covered by ASCII
+  * 8-bit single-byte coded character sets
 
 <details>
-<summary><b>Windows-1252</b>:</summary>
+<summary><b>ISO/IEC 8859-1</b> (Latin-1):</summary>
 
-TODO
+Code table: https://www.ascii-code.com/ISO-8859-1
 
 </details>
 
-  * TODO
+  * Latin alphabet no. 1
+  * covers most Western European languages
+    * Complete coverage: English, Irish, Italian, Norwegian, Portuguese, Scots, Spanish, Swedish, ...
+    * Incomplete coverage: Hungarian, Danish, Dutch, French, German
+      * Hungarian: lacks a couple of hungarian letters ('ő', 'ű', 'Ő', ''Ű')
+  * 8-bit single-byte coded character set
 
 <details>
 <summary><b>ISO 8859-2</b> (Latin-2):</summary>
 
-TODO
+Coda table: https://www.ascii-code.com/ISO-8859-2
+
+</details>
+  
+  * Latin alphabet no. 2
+  * covers most Central or Eastern European languages
+    * Complete coverage: Hungarian, Croatian, Czech, Finnish, German, Polish, Romanian, ...
+  * 8-bit single-byte coded character set
+
+<details>
+<summary><b>Windows-1252</b>:</summary>
+
+Code table: https://www.ascii-code.com/
 
 </details>
 
-  * generally intended for Central or Eastern European languages that are written in the Latin script
-  * supports Hungarian langauge
+  * in the 1990s
+  * it is the most-used single-byte character encoding in the world
+  * 8-bit single-byte coded character set
+  * Hungarian is not supported completely
+    * Windows-1250 supports Hungarian completely
+
 
 <details>
 <summary><b>Unicode</b>:</summary>
@@ -1296,3 +1347,10 @@ Features of Text Embeddings:
 
 # TODO list:
 * TODO: add history between demo and why so successful
+
+
+
+Jokes:
+- Why did the LLM refuse to play hide and seek with the dataset? 
+- It was too good at finding patterns!
+
