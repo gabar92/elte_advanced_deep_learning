@@ -549,7 +549,9 @@ extensions to ASCII, leaving the original character-mapping intact, but adding a
     * Example: UTF-8, UTF-16
 
 
-<ins>Character Encoding Standards</ins>:
+### <ins>Character Encoding Standards</ins>:
+
+TODO: write that these are the tables
 
 <details>
 <summary><b>ASCII</b>:</summary>
@@ -674,7 +676,8 @@ Code table: https://www.ascii-code.com/
   * Unicode text is processed and stored as binary data using one of the several encodings
     * UTF-32, UTF-16, UTF-8
 
-<ins>Character Encodings</ins>: <br>
+###<ins>Character Encodings</ins>:
+
 They define how to translate the standard's abstracted codes for characters into sequences of bytes.
 Defining how Unicode numbers are translated into binary numbers.
 We still need the Unicode code points to fit into just 8 bits (byte), since existing protocols send/receive and read/write 8 bit characters
