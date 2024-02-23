@@ -75,7 +75,7 @@ such as images and sound, serving as an effective interface.
       <p style="text-align: center;">
         Adobe FireFly<br>
         Generating images described by text.<br>
-        Modifying images based on description.
+        Editing images based on description.
       </p>
     </td>
     <td style="padding: 5px;">
@@ -85,7 +85,7 @@ such as images and sound, serving as an effective interface.
       <p style="text-align: center;">
         Adobe FireFly<br>
         Generating images described by text.<br>
-        Modifying images based on description.
+        Editing images based on description.
       </p>
     </td>
   </tr>
