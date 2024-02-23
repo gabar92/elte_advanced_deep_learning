@@ -690,51 +690,67 @@ UTF stands for Unicode Transformation Format
 <summary>Example</summary>
 
 ```
-Let's produce the different encodings of the string "Unicode".
+Let's produce the different encodings of the string "Unicode π†😄".
 
 Step 1: Extracting Unicode code points.
 
   We can search from the Unicode code table the unique numbers belonging to the characters.
 
-    U:  85
+    U: 85
     n: 110
     i: 105
-    c:  99
+    c: 99
     o: 111
     d: 100
     e: 101
+     : 32
+    π: 960
+    †: 8224
+    😄: 128516
 
 Step 2: Encoding the code points using different transformation formats.
 
-  UTF-32: the standard uses a fixed-length (32 bits = 4 bytes) to encode characters.
-    
-    U: 00000000 00000000 00000000 01010101
-    n: 00000000 00000000 00000000 01101110
-    i: 00000000 00000000 00000000 01101001
-    c: 00000000 00000000 00000000 01100011
-    o: 00000000 00000000 00000000 01101111
-    d: 00000000 00000000 00000000 01100100
-    e: 00000000 00000000 00000000 01100101
-    
-  UTF-16: the standard uses 
+  UTF-32: the encoding is fixed-length, as code points are encoded with one 32-bit (4 bytes) code units.
   
-    U: 00000000 01010101
-    n: 00000000 01101110
-    i: 00000000 01101001
-    c: 00000000 01100011
-    o: 00000000 01101111
-    d: 00000000 01100100
-    e: 00000000 01100101
-
-  UTF-8: the standard uses 
+    U:  00000000 00000000 00000000 01010101
+    n:  00000000 00000000 00000000 01101110
+    i:  00000000 00000000 00000000 01101001
+    c:  00000000 00000000 00000000 01100011
+    o:  00000000 00000000 00000000 01101111
+    d:  00000000 00000000 00000000 01100100
+    e:  00000000 00000000 00000000 01100101
+     :  00000000 00000000 00000000 00100000
+    π:  00000000 00000000 00000011 11000000
+    †:  00000000 00000000 00100000 00100000
+    😄: 00000000 00000001 11110110 00000100
     
-    U: 01010101
-    n: 01101110
-    i: 01101001
-    c: 01100011
-    o: 01101111
-    d: 01100100
-    e: 01100101
+  UTF-16: the encoding is variable-length, as code points are encoded with one or two 16-bit (2 bytes) code units.
+
+    U:  00000000 01010101
+    n:  00000000 01101110
+    i:  00000000 01101001
+    c:  00000000 01100011
+    o:  00000000 01101111
+    d:  00000000 01100100 
+    e:  00000000 01100101
+     :  00000000 00100000
+    π:  00000011 11000000
+    †:  00100000 00100000
+    😄: 11011000 00111101 11011110 00000100
+
+  UTF-8: the encoding is variable-length, as code points are encoded with one, two, three or four 8-bit (1 byte) code units. 
+
+    U:  01010101
+    n:  01101110
+    i:  01101001
+    c:  01100011
+    o:  01101111
+    d:  01100100
+    e:  01100101
+     :  00100000
+    π:  11001111 10000000
+    †:  11100010 10000000 10100000
+    😄: 11110000 10011111 10011000 10000100
    
 ```
 
