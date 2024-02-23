@@ -696,13 +696,13 @@ Step 1: Extracting Unicode code points.
 
   We can search from the Unicode code table the unique numbers belonging to the characters.
 
-    U: 85 <br>
-    n: 110 <br>
-    i: 105 <br>
-    c: 99 <br>
-    o: 111 <br>
-    d: 100 <br>
-    e: 101 <br>
+    U:  85
+    n: 110
+    i: 105
+    c:  99
+    o: 111
+    d: 100
+    e: 101
 
 Step 2: Encoding the code points using different transformation formats.
 
