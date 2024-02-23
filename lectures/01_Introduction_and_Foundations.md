@@ -239,7 +239,7 @@ To illustrate one measure of ChatGPT's success, it reached 100 million users fas
 
 </details>
 
-Key factors contributing to the success include:
+<ins>Key factors contributing to the success include</ins>:
 * **Natural and Convenient Interaction**: Unlike Computer Vision (CV), NLP-based applications offer the most natural and convenient means of interaction through natural language, making technology more accessible.
 * **Elimination of Technical Barriers**: The simplicity of communicating in non-technical language eliminates the need for specialized knowledge, broadening the user base.
 * **Unleashing Creativity**: The ability to perform tasks such as creating photo-realistic images on any topic without expert skills fosters a sense of achievement and unleashes creativity.
