@@ -543,9 +543,9 @@ extensions to ASCII, leaving the original character-mapping intact, but adding a
   * defining the rules for converting characters into byte sequences and vice versa
   * Examples: UTF-8, UTF-16, ISO-8859-1
 * **Fixed-length vs. Variable-length encodings**:
-  * <ins>Fixed-length encoding</ins>: each character is represented by the same number of bytes
+  * **Fixed-length encoding**: each character is represented by the same number of bytes
     * Example: UTF-32
-  * <ins>Variable-length encoding</ins>: different characters may have different byte lengths
+  * **Variable-length encoding**: different characters may have different byte lengths
     * Example: UTF-8, UTF-16
 
 
