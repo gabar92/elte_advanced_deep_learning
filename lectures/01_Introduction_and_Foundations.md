@@ -520,13 +520,6 @@ Thus we need to map characters into numeric values (codes).
 Character encoding deals with problems by defining a table (mapping) with the corresponding character and its code.
 Here we briefly introduce some of the most prominent character encoding standards created for different requirements.
 
-TODO: give a short understanding behind the motivations of the dynamics.
-Teletype models had 7-bit code.
-As 8-, 16-, and 32-bit (and later 64-bit) computers began to replace previous computers, it became common to use  an 8-bit byte to store each character in memory
-extensions to ASCII, leaving the original character-mapping intact, but adding additional character definitions after the first 128 characters.
-
-
-
 * **Character set**:
   * a defined collection of characters (‘a’, ‘b’, …), symbols (‘$’, ‘♣’, ‘§’’, …), and control codes (NUL ‘\0’, TAB ‘\t’, LF ‘\n’, …)
   * Examples: ASCII character set, Unicode character set.
@@ -547,14 +540,25 @@ extensions to ASCII, leaving the original character-mapping intact, but adding a
     * Example: UTF-32
   * **Variable-length encoding**: different characters may have different byte lengths
     * Example: UTF-8, UTF-16
+* **Single-byte???**:
+  * TODO
 
 
 ### <ins>Character Encoding Standards</ins>:
 
 TODO: write that these are the tables
 
+What are character encoding standards.
+TODO: give a short understanding behind the motivations of the dynamics.
+Teletype models had 7-bit code.
+As 8-, 16-, and 32-bit (and later 64-bit) computers began to replace previous computers, it became common to use 
+an 8-bit byte to store each character in memory extensions to ASCII, leaving the original character-mapping intact,
+but adding additional character definitions after the first 128 characters.
+
+single-byte encodings: okay, but Unicode is more, so there is a need for concrete encodings?
+
 <details>
-<summary><b>ASCII</b>:</summary>
+<summary><b>(Standard) ASCII</b>:</summary>
 
 Code table: https://www.ascii-code.com/ASCII
 
@@ -634,7 +638,7 @@ Code table: https://www.ascii-code.com/ISO-8859-1
 <details>
 <summary><b>ISO 8859-2</b> (Latin-2):</summary>
 
-Coda table: https://www.ascii-code.com/ISO-8859-2
+Code table: https://www.ascii-code.com/ISO-8859-2
 
 </details>
   
@@ -650,12 +654,11 @@ Code table: https://www.ascii-code.com/
 
 </details>
 
-  * in the 1990s
+  * in 1985 with Windows 1.0 (?)
   * it is the most-used single-byte character encoding in the world
   * 8-bit single-byte coded character set
   * Hungarian is not supported completely
     * Windows-1250 supports Hungarian completely
-
 
 <details>
 <summary><b>Unicode</b>:</summary>
@@ -676,12 +679,67 @@ Code table: https://www.ascii-code.com/
   * Unicode text is processed and stored as binary data using one of the several encodings
     * UTF-32, UTF-16, UTF-8
 
-###<ins>Character Encodings</ins>:
+###<ins>Unicode Transformation Formats</ins>:
 
 They define how to translate the standard's abstracted codes for characters into sequences of bytes.
 Defining how Unicode numbers are translated into binary numbers.
 We still need the Unicode code points to fit into just 8 bits (byte), since existing protocols send/receive and read/write 8 bit characters
 UTF stands for Unicode Transformation Format
+
+<details>
+<summary>Example</summary>
+
+```
+Let's produce the different encodings of the string "Unicode".
+
+Step 1: Extracting Unicode code points.
+
+  We can search from the Unicode code table the unique numbers belonging to the characters.
+
+    U: 85 <br>
+    n: 110 <br>
+    i: 105 <br>
+    c: 99 <br>
+    o: 111 <br>
+    d: 100 <br>
+    e: 101 <br>
+
+Step 2: Encoding the code points using different transformation formats.
+
+  UTF-32: the standard uses a fixed-length (32 bits = 4 bytes) to encode characters.
+    
+    U: 00000000 00000000 00000000 01010101
+    n: 00000000 00000000 00000000 01101110
+    i: 00000000 00000000 00000000 01101001
+    c: 00000000 00000000 00000000 01100011
+    o: 00000000 00000000 00000000 01101111
+    d: 00000000 00000000 00000000 01100100
+    e: 00000000 00000000 00000000 01100101
+    
+  UTF-16: the standard uses 
+  
+    U: 00000000 01010101
+    n: 00000000 01101110
+    i: 00000000 01101001
+    c: 00000000 01100011
+    o: 00000000 01101111
+    d: 00000000 01100100
+    e: 00000000 01100101
+
+  UTF-8: the standard uses 
+    
+    U: 01010101
+    n: 01101110
+    i: 01101001
+    c: 01100011
+    o: 01101111
+    d: 01100100
+    e: 01100101
+   
+```
+
+</details>
+
 * **UTF-32**:
   * fixed-length coding
     * the only among UTF-x encodings
@@ -689,9 +747,11 @@ UTF stands for Unicode Transformation Format
   * wasteful
 * **UTF-16**:
   * variable-length encoding
+  * using 1 or 2 bytes for encoding a code point (character)
 * **UTF-8**:
   * variable-length encoding
-  * most frequently used
+  * using 1 - 4 bytes for encoding a code point (character)
+  * the world's most frequently used character encoding
 
 
 ### 3.3 Tokenization and Embeddings
