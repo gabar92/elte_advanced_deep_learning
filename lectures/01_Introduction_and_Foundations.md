@@ -1,7 +1,9 @@
 # Lecture 1: Introduction and Foundations
 
 This material is created for the Natural Language Processing (NLP) section of the Advanced Deep Learning course at ELTE. <br>
-Created by Gábor Kovács (gabar92@renyi.hu).
+The course is held by the Rényi Alfréd Institute of Mathematics. <br>
+Presenters: Melinda Kiss, Zsolt Zombori, Gábor Kovács. <br>
+This syllabus is created by Gábor Kovács (gabar92@renyi.hu).
 
 ## What is this lecture about?
 
