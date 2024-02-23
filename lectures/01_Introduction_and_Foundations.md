@@ -18,29 +18,29 @@ This lecture aims to address the following questions:
 
 
 ## Contents:
-* [Motivation](#motivation)
-  * [Demo of recent NLP related applications](#demo-of-recent-nlp-related-applications)
-  * [Definition of Natural Language Processing (NLP)](#definition-of-natural-langauge-process-nlp)
-  * [Reasons behind the success of NLP](#reasons-behind-the-success-of-nlp)
-* [Bird's Eye View](#birds-eye-view)
-  * [NLP-specific challenges](#nlp-specific-challenges)
-  * [NLP-specific advantages](#nlp-specific-advantages)
-  * [Converging paths: adopting techniques between NLP and CV](#converging-paths-adopting-techniques-between-nlp-and-cv)
-  * [The gist of NLP models: Next word prediction](#the-gist-of-nlp-models-next-word-prediction)
-  * [A list of Tasks and Applications in NLP](#a-list-of-tasks-and-applications-in-nlp)
-* [Details](#details)
-  * [Classical methods (outdated methods)](#classical-methods)
-  * [Character Encodings](#character-encodings)
-  * [Tokenization and Embeddings](#tokenization-and-embeddings)
-    * [Tokenization](#tokenization)
-    * [Embeddings](#embeddings)
-    * [Text embeddings](#text-embeddings)
-* [Additional Resources](#additional-resources)
+* [1. Motivation](#1-motivation)
+  * [1.1 Demo of recent NLP related applications](#11-demo-of-recent-nlp-related-applications)
+  * [1.2 Definition of Natural Language Processing (NLP)](#12-definition-of-natural-langauge-processing-nlp)
+  * [1.3 Reasons behind the success of NLP](#13-reasons-behind-the-success-of-nlp)
+* [2. Bird's Eye View](#2-birds-eye-view)
+  * [2.1 NLP-specific challenges](#21-nlp-specific-challenges)
+  * [2.2 NLP-specific advantages](#22-nlp-specific-advantages)
+  * [2.3 Converging paths: adopting techniques between NLP and CV](#23-converging-paths-adopting-techniques-between-nlp-and-cv)
+  * [2.4 The gist of NLP models: Next word prediction](#24-the-gist-of-nlp-models-next-word-prediction)
+  * [2.5 A list of Tasks and Applications in NLP](#25-a-list-of-tasks-and-applications-in-nlp)
+* [3. Details](#3-details)
+  * [3.1 Classical methods](#31-classical-methods)
+  * [3.2 Character Encodings](#32-character-encodings)
+  * [3.3 Tokenization and Embeddings](#33-tokenization-and-embeddings)
+    * [3.3.1 Tokenization](#331-tokenization)
+    * [3.3.2 Embeddings](#332-embeddings)
+  * [3.4 Text embeddings](#34-text-embeddings)
+* [4. Additional Resources](#4-additional-resources)
 
 
-## Motivation
+## 1. Motivation
 
-### Demo of recent NLP-related applications
+### 1.1 Demo of recent NLP-related applications
 
 The goal of this section is to inspire and motivate by showcasing the latest advancements in AI through a 
 selection of cutting-edge applications related to Natural Language Processing (NLP).
@@ -186,7 +186,7 @@ Differences are highlighted where they matter.
 > * **Undefined terms**: This lecture contains many terms that are not defined. Most of these will be introduced and detailed in subsequent lectures.
 
 
-### Definition of Natural Langauge Processing (NLP)
+### 1.2 Definition of Natural Langauge Processing (NLP)
 
 #### Interdisciplinarity of NLP:
 
@@ -208,7 +208,7 @@ The goal of NLP: enabling computers to understand, interpret, and generate human
 High-quality NLP systems enable humans to seamlessly and efficiently interact with computers 
 for a wide range of tasks through the provision of natural language interface.
 
-### Reasons behind the success of NLP
+### 1.3 Reasons behind the success of NLP
 
 For those not deeply involved in the field, the emergence of ChatGPT might give the impression that 
 Artificial Intelligence suddenly appeared and was swiftly integrated into our daily routines.
@@ -249,11 +249,12 @@ To illustrate one measure of ChatGPT's success, it reached 100 million users fas
 * **Ease of Customization**: With no expertise required, LLMs leverage their inherent context learning abilities to adapt and offer customized solutions to new problems, demonstrating their versatility in tackling complex challenges.
 
 
-## Bird's Eye View
+## 2. Bird's Eye View
 
-### NLP-specific challenges
+### 2.1 NLP-specific challenges
 
-Here, we introduce and walk around a couple of challenges specific to NLP, some of them are being present in other domains as well, some are unique to this field.
+Here, we introduce and walk around a couple of challenges specific to NLP,
+some of them are being present in other domains as well, some are unique to this field.
 The goal is to give reason and understanding why different de-facto models and principles evolved.
 
 * **Discrete data**: NLP deals with text data, which is inherently discrete (we have characters, words, sub-words).
@@ -287,7 +288,7 @@ However, tasks where the generated text does not have a single form, but there c
   * <ins>Solution</ins>: applying proxy measures (e.g. LM objective), or developing task-specific measures handling this challenge well (e.g. BLEU).
 
 
-### NLP-specific advantages
+### 2.2 NLP-specific advantages
 
 * **Abundance of data**: NLP benefits from an almost limitless supply of text data from the web, books, articles, and other digital content, enabling general pre-training of LMs.
 This provides a rich resource for unsupervised and self-supervised learning, reducing the reliance on labeled datasets.
@@ -307,7 +308,7 @@ These general-purpose skills are extremely useful for adapting the model to down
 Similarly, in natural language processing (NLP), the general Language Modeling objective (Next Sentence Prediction), given adequate model size, data, and computational resources, yields robust baseline models that can be seamlessly adapted for various downstream tasks.
 
 
-## Converging paths: adopting techniques between NLP and CV
+## 2.3 Converging paths: adopting techniques between NLP and CV
 
 The fields of Natural Language Processing (NLP) and Computer Vision (CV) each come with their unique strengths and challenges, leading to the creation of distinct techniques and solutions tailored to their situation.
 Over time, these domain-specific approaches have been shared and adapted between the two fields.
@@ -341,7 +342,7 @@ This concept has been adapted in CV, notably through CLIP, which uses embeddings
 
 ### General framework of current models
 
-### The gist of NLP models: Next word prediction
+### 2.4 The gist of NLP models: Next word prediction
 
 <details>
 <summary><b>Language Modeling</b>:</summary>
@@ -379,7 +380,7 @@ Describe language modeling.
   * Connection:
     * Markov property?
 
-### A list of Tasks and Applications in NLP
+### 2.5 A list of Tasks and Applications in NLP
 
 TODO: add reference applications
 
@@ -426,9 +427,9 @@ TODO: add reference applications
 </details>
 
 
-## Details
+## 3. Details
 
-### Classical methods
+### 3.1 Classical methods
 
 There are a couple of terms that are general enough to collect them into a glossary and describe separately.
 Here comes those terms which are general enough to be worth to introduce prior to others, outdated, or could not put into the stream of the following sections.
@@ -469,7 +470,7 @@ The algorithm estimates the relevance of documents to a given search query
 * Skip-gram?
   * wikipedia: TODO
 
-### Character Encodings
+### 3.2 Character Encodings
 
 Characters are symbols but machines understand numeric data (binary data).
 Thus we need to map characters into numeric values (codes).
@@ -600,7 +601,7 @@ UTF stands for Unicode Transformation Format
   * most frequently used
 
 
-### Tokenization and Embeddings
+### 3.3 Tokenization and Embeddings
 
 When working with text, we need to convert human-readable text (strings) into the form which can be processed by Neural Networks.
 Since these models work with numerical vectors, we need a method to perform this mapping.
@@ -631,7 +632,7 @@ There are a couple of engineering decisions we have to decide: what is the size 
 Different approaches and solutions were created during the history of progress to answer these challenges and decisions. Here we introduce a couple of them (the mainstream).
 
 
-### Tokenization
+### 3.3.1 Tokenization
 
 <details>
 <summary><b><ins>Online demos</ins></b></summary>
@@ -813,7 +814,7 @@ Different approaches and solutions were created during the history of progress t
 > * Since LLMs make prices based on the used tokens, using a LLM (e.g. ChatGPT) is more expensive for the Hungarian language than for English.
 
 
-### Embeddings
+### 3.3.2 Embeddings
 
 Tokenization splits our text sequence into tokens (atomic parts), embedding represents these tokens in a high dimensional vector space to map to numeric representation manageable by Language Models.
 
@@ -1170,7 +1171,7 @@ Distributed representations:
       * complicating efforts to improve model transparency and explainability
 
 
-### Text Embeddings
+### 3.4 Text Embeddings
 
 > TL;DR: TODO
 > What is text embedding about. In which domains are used? (RAG)
@@ -1244,7 +1245,7 @@ Features of Text Embeddings:
     * TODO
 
 
-## Additional Resources
+## 4. Additional Resources
 * Videos:
   * [Google: Introduction to Large Language Models (16 min)](https://www.youtube.com/watch?v=zizonToFXDs&pp=ygUVbGFyZ2UgbGFuZ3VhZ2UgbW9kZWxz)
   * [Andrej Karpathy: Intro to Large Language Models (60 min)](https://www.youtube.com/watch?v=zjkBMFhNj_g&t=995s&pp=ygUVbGFyZ2UgbGFuZ3VhZ2UgbW9kZWxz)
