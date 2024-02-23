@@ -736,7 +736,7 @@ Step 2: Encoding the code points using different transformation formats.
      :  00000000 00100000
     π:  00000011 11000000
     †:  00100000 00100000
-    😄: 11011000 00111101 11011110 00000100
+   😄: 11011000 00111101 11011110 00000100
 
   UTF-8: the encoding is variable-length, as code points are encoded with one, two, three or four 8-bit (1 byte) code units. 
 
