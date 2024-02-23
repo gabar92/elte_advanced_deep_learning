@@ -1,20 +1,20 @@
 # Lecture 1: Introduction and Foundations
 
-This material is created for the Natural Language Processing (NLP) section of Advanced Deep Learning course at ELTE. <br>
-This material has been created by Kovács Gábor (gabar92@renyi.hu).
+This material is created for the Natural Language Processing (NLP) section of the Advanced Deep Learning course at ELTE. <br>
+Created by Gábor Kovács (gabar92@renyi.hu).
 
 ## What is this lecture about?
 
-This lecture tries to answer the following questions:
+This lecture aims to address the following questions:
 
-1. What is the current state of Natural Language Processing (NLP) across various applications?
-2. How do we define Natural Language Processing (NLP)?
-3. What has led to the rapid adoption of NLP-based applications?
-4. What are the key tasks and associated applications in NLP?
+1. What is the current state of Natural Language Processing (NLP) in various applications?
+2. How is Natural Language Processing defined?
+3. What factors have contributed to the rapid adoption of NLP-based applications?
+4. What are the key tasks and their associated applications in NLP?
 5. What are the challenges and advantages of NLP, along with common solutions?
-7. How Computer Vision (CV) and NLP inspired each other's best practices?
+7. How Computer Vision (CV) and NLP inspired best practices in each other?
 8. What is the foundational principle underlying nearly every Language Model?
-9. How textual data is represented for Language Model processing?
+9. How is textual data represented for processing by Language Models?
 
 
 ## Contents:
@@ -42,8 +42,12 @@ This lecture tries to answer the following questions:
 
 ### Demo of recent NLP-related applications
 
-The goal of this section is to provide inspiration and motivation by presenting the latest AI advancements through showcasing a selection of cutting-edge NLP-related applications.
-What particularly makes NLP successful is its ability to go beyond mere text processing by utilizing natural language, enabling seamless integration with other modalities (image, sound) as an effective interface.
+The goal of this section is to inspire and motivate by showcasing the latest advancements in AI through a 
+selection of cutting-edge applications related to Natural Language Processing (NLP).
+What makes NLP particularly successful is its ability to extend beyond simple text processing.
+By utilizing natural language, it enables seamless integration with other modalities, 
+such as images and sound, serving as an effective interface.
+
 
 <table style="width: 100%;">
   <!-- Title Row: Text-to-Image generation -->
@@ -177,48 +181,72 @@ What particularly makes NLP successful is its ability to go beyond mere text pro
 
 
 > Caveats:
-> * **Words vs. Sub-words vs. Tokens**: though these terms have different meanings, they are used interchangeably in most of the time.
-> Where the difference matters, it is highlighted.
-> * **Undefined terms**: a lot of undefined terms are in this lecture. Most of them will be introduced in detail in later lectures.
+> * **Words vs. Sub-words vs. Tokens**: Although these terms have distinct meanings, they are often used interchangeably. 
+Differences are highlighted where they matter.
+> * **Undefined terms**: This lecture contains many terms that are not defined. Most of these will be introduced and detailed in subsequent lectures.
 
 
 ### Definition of Natural Langauge Processing (NLP)
 
 #### Interdisciplinarity of NLP:
 
-The Natural Language Processing (NLP) domain sites at the junction of the fields of:
-* **Computer Science**: the study of computer systems, algorithms with the goal of developing technologies and applications to solve complex problems.
-* **Artificial Intelligence**: the study of creating machines capable of performing tasks that normally require human intelligence.
-* **Linguistics**: the study of language and its structure, including the analysis of syntax, semantics, and more, with the aim of understanding how languages are formed, used, and change over time.
+The Natural Language Processing (NLP) domain sites at the junction of several fields:
+* **Computer Science**: the study of computer systems and algorithms with the goal of developing technologies 
+and applications to solve complex problems.
+* **Artificial Intelligence**: the study of creating machines capable of performing tasks that 
+normally require human intelligence.
+* **Linguistics**: the study of language and its structure, including the analysis of syntax, semantics, 
+and more, with the aim of understanding how languages are formed, used, and change over time.
 
 #### Informal definition of NLP:
 
 The goal of NLP: enabling computers to understand, interpret, and generate human language.
-* *Understanding* language: grasping the meaning of words, phrases, or larger units of text.
-* *Interpreting* language: extracting deeper meaning, context, or intent in text and comprehending it.
-* *Generating* text: producing human-like text
+* *Understanding* language: grasping the meaning of words, phrases, or larger units of text
+* *Interpreting* language: extracting deeper meaning, context, or intent from text and comprehending them
+* *Generating* text: producing text that is similar to human-written language
 
-High-quality NLP systems, through the provision of natural language interfaces, enable humans to seamlessly and efficiently leverage computers for a diverse range of useful tasks.
+High-quality NLP systems enable humans to seamlessly and efficiently interact with computers 
+for a wide range of tasks through the provision of natural language interface.
 
 ### Reasons behind the success of NLP
 
-For those who are not deeply involved in the field, with the arrival of ChatGPT it might seem like Artificial Intelligence appeared out of nowhere, and immediately has been integrated into our daily routines.
-However, the development of AI has been a more gradual journey. So, what gives the impression of this abrupt leap in its utilization?
-What are the novel features that Large Language Models (LLMs) have brought to the table that were missing in prior advancements?
+For those not deeply involved in the field, the emergence of ChatGPT might give the impression that 
+Artificial Intelligence suddenly appeared and was swiftly integrated into our daily routines.
+However, the development of AI has been a more gradual journey.
+So, what contributes to the perception of this sudden leap in AI utilization?
+What novel features do Large Language Models (LLMs) like ChatGPT offer that were absent in previous advancements?
 
-Just to highlight one qualitative measure of ChatGPT's success: it reached 100 million users faster than any previous application.
-(At the moment, Meta's Threads leads the leaderboard.)
+To illustrate one measure of ChatGPT's success, it reached 100 million users faster than any other application to date.
+(Currently, Meta's Threads tops the leaderboard.)
 
-Key factors contributing to the success include: [TODO: reorder]
-* Unlike Computer Vision (CV), NLP-based applications offer the most natural and convenient means of interaction through natural language.
-* The simplicity of non-technical communication eliminates the barrier of requiring specialized knowledge for usage.
-* The capability to perform new tasks, such as creating photo-realistic images on any topic without the need for expert Photoshop skills, fosters a sense of achievement and unleashes creativity.
-* Almost any domain can be approached with Natural Language. By enhancing the NLP abilities, we can improve the adaptation of infinite many fields.
-* Support for multiple languages for the same tasks enhances accessibility and global reach.
-* 
-* The performance of LLMs has achieved human lever on many tasks. [TODO]
-* No expertise is needed for LLMs only natural prompting to customize the model to our usage. [TODO]
-* Lastly, the ability of Large Language Models (LLMs) to tackle surprisingly complex tasks and provide sophisticated solutions not just in predefined domains but on customized tasks with available adaptation methods. [TODO]
+<details>
+<summary><b>Leaderboard</b>: </summary>
+
+| Rank | Platform  | Launch | Time to 100M Users |
+|------|-----------|--------|--------------------|
+| 1    | Threads   | 2023   | 5 days             |
+| 2    | ChatGPT   | 2022   | 2 months           |
+| 3    | TikTok    | 2017   | 9 months           |
+ | 4    | WeChat    | 2011   | 1 year, 2 months   |
+| 5    | Instagram | 2010   | 2 years, 6 months  |
+| 6    | Myspace   | 2003   | 3 years            |
+| 7    | WhatsApp  | 2009   | 3 years, 6 months  |
+| 8    | SnapChat  | 2011   | 4 years, 1 month   |
+| 9    | Youtube   | 2005   | 4 years, 1 month   |
+| 10   | Facebook  | 2004   | 4 years, 6 months  |
+
+[Source](https://www.visualcapitalist.com/threads-100-million-users/)
+
+</details>
+
+Key factors contributing to the success include:
+* **Natural and Convenient Interaction**: Unlike Computer Vision (CV), NLP-based applications offer the most natural and convenient means of interaction through natural language, making technology more accessible.
+* **Elimination of Technical Barriers**: The simplicity of communicating in non-technical language eliminates the need for specialized knowledge, broadening the user base.
+* **Unleashing Creativity**: The ability to perform tasks such as creating photo-realistic images on any topic without expert skills fosters a sense of achievement and unleashes creativity.
+* **Versatility across Domains**: Almost any domain can be approached with Natural Language. Enhancing NLP capabilities improves adaptation across countless fields.
+* **Global Accessibility**: Support for multiple languages for the same tasks enhances accessibility and global reach.
+* **Human-Level Performance**: The performance of LLMs has reached human levels on many tasks, demonstrating significant advances in AI capabilities.
+* **Ease of Customization**: With no expertise required, LLMs leverage their inherent context learning abilities to adapt and offer customized solutions to new problems, demonstrating their versatility in tackling complex challenges.
 
 
 ## Bird's Eye View
