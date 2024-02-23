@@ -240,107 +240,153 @@ To illustrate one measure of ChatGPT's success, it reached 100 million users fas
 </details>
 
 <ins>Key factors contributing to the success include</ins>:
-* **Natural and Convenient Interaction**: Unlike Computer Vision (CV), NLP-based applications offer the most natural and convenient means of interaction through natural language, making technology more accessible.
-* **Elimination of Technical Barriers**: The simplicity of communicating in non-technical language eliminates the need for specialized knowledge, broadening the user base.
-* **Unleashing Creativity**: The ability to perform tasks such as creating photo-realistic images on any topic without expert skills fosters a sense of achievement and unleashes creativity.
-* **Versatility across Domains**: Almost any domain can be approached with Natural Language. Enhancing NLP capabilities improves adaptation across countless fields.
+* **Natural and Convenient Interaction**: Unlike Computer Vision (CV), NLP-based applications offer the most 
+natural and convenient means of interaction through natural language, making technology more accessible.
+* **Elimination of Technical Barriers**: The simplicity of communicating in non-technical language eliminates
+the need for specialized knowledge, broadening the user base.
+* **Unleashing Creativity**: The ability to perform tasks such as creating photo-realistic images on any topic
+without expert skills fosters a sense of achievement and unleashes creativity.
+* **Versatility across Domains**: Almost any domain can be approached with Natural Language.
+Enhancing NLP capabilities improves adaptation across countless fields.
 * **Global Accessibility**: Support for multiple languages for the same tasks enhances accessibility and global reach.
-* **Human-Level Performance**: The performance of LLMs has reached human levels on many tasks, demonstrating significant advances in AI capabilities.
-* **Ease of Customization**: With no expertise required, LLMs leverage their inherent context learning abilities to adapt and offer customized solutions to new problems, demonstrating their versatility in tackling complex challenges.
+* **Human-Level Performance**: The performance of LLMs has reached human levels on many tasks,
+demonstrating significant advances in AI capabilities.
+* **Ease of Customization**: With no expertise required, LLMs leverage their inherent context learning abilities
+to adapt and offer customized solutions to new problems, demonstrating their versatility in tackling complex challenges.
 
 
 ## 2. Bird's Eye View
 
 ### 2.1 NLP-specific challenges
 
-Here, we introduce and walk around a couple of challenges specific to NLP,
-some of them are being present in other domains as well, some are unique to this field.
-The goal is to give reason and understanding why different de-facto models and principles evolved.
+Here, we introduce and explore several challenges specific to NLP, 
+noting that while some are common across other domains, others are unique to this field.
+Our aim is to provide insight into why various de-facto models and principles have evolved,
+enhancing understanding of their development.
 
-* **Discrete data**: NLP deals with text data, which is inherently discrete (we have characters, words, sub-words).
-Other domains like Computer Vision (CV) deal with continuous data which has a couple of advantages.
-In terms of representation complexity, discrete symbols do not have a natural, ordered relationship that numerical data in images have, which makes it difficult to represent semantic relationships.
-  * <ins>Solution</ins>: Embeddings: mapping tokens into a continuous vector space, where closeness captures similarities and relationships.
-* **Lack of standard representation**: Opposed to Computer Vision, where the data is inherently encoded by numbers, textual data needs to be transformed / mapped to scalar or vector data.
-This process converts discrete tokens (word, sub-words) into a continuous vector space.
-Difficulties arise when we have to handle how to encode the diverse and complex features of language into a vector format.
-Ambiguity and Polysemy: words can have multiple meanings based on the context, making it hard to represent a rod’s meaning consistently across different uses.
-  * <ins>Solution</ins>: using contextual word embeddings, representations are generated dynamically based on the surrounding text, capturing the meaning.
-Dynamic representations instead of static representations generate embeddings on-the-fly, considering the entire sentence or document.
-* **Lack of inherent structure**: unlike structured data (database tables), freeform text data is unstructured data.
-  * <ins>Solution</ins>:
-* **Sparsity of data**: the discrete nature of text leads to sparsity issues.
-The vast majority of possible word combinations are never observed, making it hard to learn from.
-  * <ins>Solution</ins>: tokenization can reduce the vocabulary size and handle out-of-vocabulary cases.
-* **Variable length of input**: text data comes in variable lengths (unlike images which are typically resized to fixed dimensions.)
-Model architectures are required to handle varying size of the input.
-  * <ins>Solution</ins>: applying RNNs (LSTM, GRU) or Transformer networks which inherently handle sequential input with varying length.
-* **Handling long-range inputs and capturing long-range dependencies**: important information in text can be separated by long distances, which is challenging for being captured.
-Vanilla architectures for modelling sequences (RNNs: LSTMs, GRUs) are limited in capturing long-term dependencies.
-  * <ins>Solution</ins>: using the Transformer architecture which can handle long-range information efficiently.
-Also, there are different trick for limiting the attention mask to reduce the resource-requirements of the model.
-* **Labeling for some tasks is very challenging (costly, hard)**: for those tasks require text generation as output, creating these labeled training examples is extremely challenging.
-The creation of these labels (ground truth output text) frequently requires qualified labelers, and the generation is very laborious.
-This is especially hold for fine-tuning dataset, where high quality is extremely important.
-  * <ins>Solution</ins>: applying different training setup (e.g., RLHF).
-* **Evaluation of downstream tasks**: classification tasks are easy to evaluate.
-However, tasks where the generated text does not have a single form, but there can be multiple perfect outputs are challenging to evaluate.
-  * <ins>Solution</ins>: applying proxy measures (e.g. LM objective), or developing task-specific measures handling this challenge well (e.g. BLEU).
+* **Discrete data**: unlike CV's continuous data, NLP deals with inherently discrete text data
+(characters, words, sub-words), lacking a natural, ordered relationship.
+This complicates representing semantic relationships.
+  * <ins>Solution</ins>: Embeddings convert tokens into a continuous vector space, where vector proximity reflects
+similarities and relationships, facilitating semantic representation.
+* **Lack of standard representation**: textual data, unlike the inherently numerical data of CV,
+must be transformed into scalar or vector formats. 
+This transformation is challenged by language's complexity and the need to encode diverse features into vectors.
+Moreover, words can exhibit ambiguity and polysemy (the coexistence of many possible meanings for a word or phrase),
+complicating consistent representation.
+  * <ins>Solution</ins>: Contextual word embeddings dynamically generate representations based on surrounding text,
+capturing nuanced meanings. These dynamic, rather than static, embeddings consider the broader sentence or
+document context, providing a more accurate representation of words' meanings in different situations.
+* **Lack of inherent structure**: unlike data organized in structured formats like database tables,
+freeform text data is inherently unstructured.
+  * <ins>Solution</ins>: Transformer networks excel at handling unstructured text,
+leveraging self-attention mechanisms to extract relevant information for tasks,
+despite the absence of a clear structure.
+* **Sparsity of data**: the discrete nature of text leads to sparsity;
+most possible word combinations are never observed, complicating the learning process. 
+  * <ins>Solution</ins>: Word Embeddings and Subword Tokenization address sparsity by mapping words to dense vectors
+and breaking words into smaller units, respectively.
+This approach allows for efficient representation of unseen words and captures semantic relationships,
+effectively reducing the impact of sparsity.
+* **Variable length of input**: text data varies in length, in contrast to images that are often resized 
+to uniform dimensions, posing challenges for model design.
+  * <ins>Solution</ins>: Recurrent Neural Networks (RNNs), including LSTM and GRU variants,
+or Transformer networks, are adept at handling sequential input of variable lengths,
+accommodating the dynamic nature of text.
+* **Handling long-range inputs and dependencies**: text can contain important information separated by long distances,
+challenging for sequence modeling architectures like RNNs, LSTMs, and GRUs to capture.
+  * <ins>Solution</ins>: the Transformer architecture efficiently handles long-range information.
+Additionally, optimizing the attention mask can reduce model resource requirements,
+addressing long-term dependency capture.
+* **Challenging labeling for certain tasks**: a lot of text generation tasks require labor-intensive labeling by 
+qualified personnel, making the creation of high-quality training examples particularly challenging.
+  * <ins>Solution</ins>: Reinforcement Learning with Human Feedback (RLHF) streamlines the labeling process
+by shifting from generating the best answer to comparing answers and selecting the better one,
+simplifying model training without extensive labeled datasets.
+* **Evaluating downstream tasks**: while classification tasks are straightforward to evaluate, 
+tasks with multiple valid outputs (e.g., question answering, machine translation) pose evaluation challenges.
+  * <ins>Solution</ins>: proxy measures like the Language Model (LM) objective 
+or task-specific metrics such as BLEU score help evaluate these complex outputs effectively,
+addressing the evaluation challenge.
 
 
 ### 2.2 NLP-specific advantages
 
-* **Abundance of data**: NLP benefits from an almost limitless supply of text data from the web, books, articles, and other digital content, enabling general pre-training of LMs.
-This provides a rich resource for unsupervised and self-supervised learning, reducing the reliance on labeled datasets.
-* **Unsupervised and Self-Supervised Learning (SSL) provide string general-purpose models**: Simple learning techniques, such as predicting the next word (token) or predicting missing words (tokens), provide models with great general capabilities.
-Later these models can be fine-tuned on a significantly smaller dataset with significantly smaller resources to specialize to different tasks.
-* **Transfer learning efficacy**: NLP models pre-trained on large corpora in an unsupervised or self-supervised manner learn general language modeling properties.
-These models then can be fine-tuned on a wide range of downstream tasks with relatively small datasets, to function in different modes
-* **Emergent properties**: these properties are not explicitly trained for but emerge as we scale up models, datasets, and computations.
-These general-purpose skills are extremely useful for adapting the model to downstream tasks.
-  * **In-Context Learning** (ICL): Large language models (LLMs) gain the ability to understand and respond to queries based on the context provided within the input text.
-  This allows them to perform tasks without explicit prior training on those tasks, showcasing a deep understanding of language and context.
-  * **Few-shot and Zero-shot learning**: as models become larger and more sophisticated, they demonstrate the remarkable ability to generalize from very few examples (few-shot) or even no examples (zero-shot) of a particular task.
-  This capability reduces the need for large, task-specific datasets and extensive fine-tuning, making NLP models more versatile and resource-efficient.
-  * **Chain-of-Thought prompting** (CoT): An emergent property where models can generate intermediate steps or reasoning paths when solving complex problems or answering questions.
-  This not only makes the models' outputs more interpretable but also enhances their problem-solving abilities by mimicking human-like reasoning processes.
-* **General pre-trained model**: In the realm of computer vision (CV), the pursuit of training models with sufficiently general features that require minimal fine-tuning for downstream applications is an active area of research.
-Similarly, in natural language processing (NLP), the general Language Modeling objective (Next Sentence Prediction), given adequate model size, data, and computational resources, yields robust baseline models that can be seamlessly adapted for various downstream tasks.
+By examining the advantages and the favorable position of NLP, we gain insight into the reasons behind 
+the application of certain techniques and their success. 
+This perspective helps to unravel the mechanisms driving the field's advancements.
+
+* **Abundance of data**: NLP benefits from an almost limitless supply of text data from the web,
+books, articles, and other digital content, enabling the general pre-training of language models (LMs).
+* **Unsupervised and Self-Supervised Learning (SSL)**: Unsupervised Learning and Self-Supervised Learning techniques
+can achieve remarkable success in the field of NLP by leveraging the extensive amounts of unlabeled data available.
+By employing the de-facto technique of Language Modeling (aka. Next Word Prediction), these approaches result in
+the development of foundation models endowed with impressive general capabilities.
+* **Efficacy of Transfer Learning**: by pre-training on vast text corpora, NLP models develop broad language capabilities.
+This foundational knowledge enables efficient adaptation to specific tasks such as dialogue generation or
+question answering through adaptation tuning. Furthermore, the models can be fine-tuned on much smaller,
+domain-specific datasets for custom tasks, while preserving their general abilities.
+* **Emergent properties**: these properties, which are not explicitly trained for, arise as models, datasets,
+and computational resources are scaled up. Such general-purpose skills prove invaluable for adapting models
+to specific downstream tasks.
+  * **In-Context Learning** (ICL): Large language models (LLMs) develop the capability to comprehend and 
+respond to queries based on the context provided in the input text.
+This enables them to undertake tasks without prior explicit training, demonstrating a profound understanding
+of language and context. 
+  * **Few-shot and Zero-shot learning**: as models grow larger and more sophisticated,
+they exhibit an exceptional ability to generalize from very few examples (few-shot)
+or even no examples (zero-shot) of a task. This reduces the need for large, task-specific datasets
+and extensive fine-tuning, enhancing the versatility and resource efficiency of NLP models. 
+  * **Chain-of-Thought prompting** (CoT): this emergent property enables models to generate intermediate steps
+or reasoning paths when solving complex problems or answering questions, making outputs more interpretable
+and improving final accuracy.
 
 
 ## 2.3 Converging paths: adopting techniques between NLP and CV
 
-The fields of Natural Language Processing (NLP) and Computer Vision (CV) each come with their unique strengths and challenges, leading to the creation of distinct techniques and solutions tailored to their situation.
-Over time, these domain-specific approaches have been shared and adapted between the two fields.
-Here, we delve into a few techniques that have been shared and adapted between these 2 fields, highlighting their background, motivation, and cross-domain application:
+The fields of Natural Language Processing (NLP) and Computer Vision (CV) possess unique strengths 
+and face distinct challenges, prompting the development of specialized techniques and solutions for each.
+In this discussion, we explore several techniques that have been shared and adopted between these two fields,
+highlighting their origins, motivations, and applications across domains.
 
 <ins>CV techniques adopted in NLP</ins>:
 * **Two-stage training procedure: Pre-training then Fine-tuning**:
-  * The two-stage training procedure was popularized in CV with the development of models like AlexNet and VGG.
-The network is first pre-trained on a large, generic dataset (like ImageNet) and then fine-tuned on a smaller, domain-specific dataset.
-This approach leverages the generic features learned during pre-training, which are applicable across a wide-range of visual tasks.
-This methodology was later adopted by the NLP community with models like BERT and GPT.
-Here, language models are pre-trained on vast amounts of text data to learn a general understanding of language and then fine-tuned for specific tasks.
+  * Originating in Computer Vision with models like AlexNet and VGG, this method involves initial pre-training 
+on a large, generic dataset (e.g., ImageNet) followed by fine-tuning on a smaller, domain-specific dataset.
+This capitalizes on the generic features learned during pre-training, which are broadly applicable across
+various visual tasks. The NLP field later embraced this methodology with the introduction of models such
+as BERT and GPT, where language models are pre-trained on extensive text data to grasp a general language
+understanding before being fine-tuned for particular tasks.
   * Differences between the two domains:
-    * In CV both the pre-training and fine-tuning are supervised learning (classification).
-    * However, in NLP the pre-training is usually unsupervised or self-supervised learning (next word prediction, or missing word prediction) while the fine-tuning is supervised (downstream task’s objective).
-Fine-tuning in CV typically affects an additional linear layer at the top of the backbone model (?). In NLP, fine-tuning extends for the entire network.
+    * In CV, both the pre-training and fine-tuning stages typically involve supervised learning, 
+focusing on classification tasks. This distinction often leads to the approach being referred to as Transfer Learning.
+    * In contrast, NLP often employs unsupervised or self-supervised learning 
+(e.g., next word prediction, missing word prediction) for pre-training, with fine-tuning tailored to 
+supervised tasks specific to the downstream application. 
+While fine-tuning in CV might predominantly involve adding and adjusting a linear layer atop the core model, 
+NLP fine-tuning usually encompasses adjustments across the entire network.
 
 <ins>NLP techniques adopted in CV</ins>:
-* **Unsupervised / Self-Supervised Learning**: Unsupervised and Self-Supervised Learning in NLP involves learning patterns from unlabelled text data.
-Since there is abundant text on the web which can be used to learn general language modeling during a pre-training phase.
-Frequently used objectives are language modeling (next word prediction) (GPT) and masked language modeling (BERT).
-  * Unsupervised and Self-Supervised Learning techniques found their way into CV as well.
-Techniques like Contrastive Learning (CL), where the model learns by comparing pairs of images to understand if they are similar or different, have shown great promise in learning robust visual representations without the need for labeled data.
-* **Transformer architecture**: the Transformer architecture revolutionized NLP by providing a mechanism (self-attention) that allows models to weigh the importance of different words in a sentence.
-This architectures forms the backbone of many state-of-the-art NLP models (e.g., BERT, GPT), enabling to capture long-range dependencies in text.
-  * The Transformer architecture has been adapted for CV tasks, leading to the development of Vision Transformers (ViT).
-The input image is divided into patches, and the transformer processes these patches as sequences similar to words in a sentence.
-* **Embeddings**: embeddings transform words or phrases into vector representations in NLP, capturing semantic meanings efficiently.
-This concept has been adapted in CV, notably through CLIP, which uses embeddings to link images with textual descriptions in a shared vector space. This approach enables intuitive tasks like image retrieval and generation based on text, illustrating the seamless integration of NLP techniques in visual understanding and multimodal applications.
-
-
-### General framework of current models
+* **Unsupervised / Self-Supervised Learning**: In NLP, this involves learning from unlabeled text data, 
+using the vast amount of text available on the web for general language modeling during pre-training.
+Popular methods include language modeling (next word prediction, as in GPT) and masked language modeling (BERT).
+  * These techniques have also made their way into CV. Methods such as Contrastive Learning (CL),
+where models learn robust visual representations by comparing pairs of images 
+to determine their similarity or difference, have proven effective without needing labeled data.
+* **Transformer architecture**: Revolutionizing NLP with the self-attention mechanism,
+which allows models to assess the relevance of different words within a sentence,
+Transformers form the backbone of leading NLP models like BERT and GPTs,
+appropriate for capturing long-range dependencies in text.
+  * This architecture has been adapted for CV through the development of Vision Transformers (ViT),
+where an input image is split into patches processed as sequences, akin to how words in a sentence are handled,
+facilitating the application of Transformer principles to visual tasks. 
+* **Embeddings**: In NLP, embeddings convert words or phrases into vector representations,
+capturing their semantic meanings efficiently.
+  * This concept has been successfully adapted in CV, notably through innovations like CLIP,
+which employs embeddings to associate images with textual descriptions in a unified vector space.
+This allows for intuitive applications such as image retrieval and generation based on text descriptions,
+demonstrating the effective cross-disciplinary integration of NLP techniques into visual understanding
+and multimodal tasks.
 
 ### 2.4 The gist of NLP models: Next word prediction
 
@@ -382,41 +428,38 @@ Describe language modeling.
 
 ### 2.5 A list of Tasks and Applications in NLP
 
-TODO: add reference applications
+This section lists some key tasks and applications within NLP that are widely used and foundational
+to understanding the field. It's important to recognize that these tasks and applications often overlap
+and are not always distinct, reflecting the interconnected nature of NLP techniques and their practical implementations.
 
-* Classification:
-  * Word / Token classification:
-    * Named Entity Recognition (NER)
-  * Text classification:
-    * Spam detection
-    * Sentiment Analysis
-  * Document classification:
-* Question Answering (QA):
-  * Assistant
-  * Reading comprehension
-* Machine Translation:
-* Summarization:
-* Conversation:
-  * Dialogue system / Chatbot
-* Embedding learning:
-  * Word embedding
-  * Sentence embedding
-  * Document embedding
-* Information Retrieval (IR):
-  * Search Engines
-  * Retrival Augmented Generation (RAG)
-* Text Generation:
-* Natural Language Understanding:
-* Code Generation:
-* Multimodal:
-  * Visual Question Answering (VQA)
-  * Text-to-Image
-  * Image-to-Text
-  * Video-to-Text
-  * Text-to-Video
-  * Audio-to-Text
-* Prompt Design and Prompt Engineering: 
-
+* **Classification**: categorizing text into predefined classes.
+  * **Word / Token classification**: identifying specific types of entities within text
+    * **Named Entity Recognition (NER)**: identifying names, places, and organizations
+  * **Text classification**: determining the nature of shorter texts
+    * **Spam detection**: filtering out spam emails
+    * **Sentiment Analysis**: determining if the text is positive, negative, or neutral
+  * **Document classification**: categorizing entire documents into predefined categories
+* **Question Answering (QA)**: providing answers to questions
+* **Machine Translation**: translating text from one langauge to another
+* **Summarization**: condensing a longer text into a shorter summary while retaining key information
+* **Dialogue system / Chatbot**: systems designed to converse with humans, such as customer service bots
+* **Embedding learning**: creating dense vector representations of text
+  * **Word embedding**: mapping words to vectors (e.g., Word2Vec)
+  * **Sentence embedding**: generating vector representations for sentences
+  * **Document embedding**: creating vector representations for entire documents
+* **Information Retrieval (IR)**: finding relevant information from a large dataset
+  * **Search Engines**: e.g., Google, Bing
+  * **Retrival Augmented Generation (RAG)**: systems that retrieve information to aid in generating responses
+* **Text Generation**: automatically producing text, ranging from sentences to entire documents
+* **Natural Language Understanding (NLU)**: systems designed to comprehend human language in its natural form
+* **Code Generation**: automatically generating programming code from natural langauge descriptions
+* **Multimodal**: combining text with other data types
+  * **Visual Question Answering (VQA)**
+  * **Text-to-Image** and **Image-to-Text**
+  * **Text-to-Video** and **Video-to-Text**
+  * **Text-to-Audio** and **Audio-to-Text**
+  * **Text-to-Scene** and **Text-to-3D**
+* **Prompt Design** and **Prompt Engineering**: crafting inputs (prompts) to guide Language Models in generating specific outputs
 
 <details>
 <summary><b><ins>References</ins></b></summary>
@@ -506,11 +549,7 @@ extensions to ASCII, leaving the original character-mapping intact, but adding a
     * Example: UTF-8, UTF-16
 
 
-
-
-
 **Character Encoding Standards**:
-**Character Sets**: ?
 
 <details>
 <summary><b>ASCII</b> (American Standard Code for Information Interchange):</summary>
@@ -1256,5 +1295,4 @@ Features of Text Embeddings:
   * [A survey of Large Language Models (2023)](https://arxiv.org/abs/2303.18223)
 
 # TODO list:
-* TODO: add chapter numbers
 * TODO: add history between demo and why so successful
