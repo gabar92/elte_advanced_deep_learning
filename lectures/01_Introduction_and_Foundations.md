@@ -696,17 +696,17 @@ Step 1: Extracting Unicode code points.
 
   We can search from the Unicode code table the unique numbers belonging to the characters.
 
-    U: 85
-    n: 110
-    i: 105
-    c: 99
-    o: 111
-    d: 100
-    e: 101
-     : 32
-    π: 960
-    †: 8224
-    😄: 128516
+    U:     85
+    n:    110
+    i:    105
+    c:     99
+    o:    111
+    d:    100
+    e:    101
+     :     32
+    π:    960
+    †:   8224
+   😄: 128516
 
 Step 2: Encoding the code points using different transformation formats.
 
@@ -722,7 +722,7 @@ Step 2: Encoding the code points using different transformation formats.
      :  00000000 00000000 00000000 00100000
     π:  00000000 00000000 00000011 11000000
     †:  00000000 00000000 00100000 00100000
-    😄: 00000000 00000001 11110110 00000100
+   😄: 00000000 00000001 11110110 00000100
     
   UTF-16: the encoding is variable-length, as code points are encoded with one or two 16-bit (2 bytes) code units.
 
@@ -750,7 +750,7 @@ Step 2: Encoding the code points using different transformation formats.
      :  00100000
     π:  11001111 10000000
     †:  11100010 10000000 10100000
-    😄: 11110000 10011111 10011000 10000100
+   😄: 11110000 10011111 10011000 10000100
    
 ```
 
