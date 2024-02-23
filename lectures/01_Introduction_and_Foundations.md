@@ -996,9 +996,13 @@ Different approaches and solutions were created during the history of progress t
   * Decoder
 * Models: ALBERT, XLNet, T5
 
-> #### Side note:
-> * Tokenizers are usually trained on English datasets, or multi-language datasets where english text is overrepresented. Due to this, English text is handled more efficiently, which in practice means that the same sentence in english will be tokenized into fewer tokens than the hungarian translation of that sentence. (Suppose a translation consists of the same number of words and characters.)
-> * Since LLMs make prices based on the used tokens, using a LLM (e.g. ChatGPT) is more expensive for the Hungarian language than for English.
+> **Side note**:
+> Tokenizers are usually trained on English datasets, or multi-language datasets where english text is overrepresented.
+> Due to this, English text is handled more efficiently, which in practice means that the same sentence in english 
+> will be tokenized into fewer tokens than the hungarian translation of that sentence.
+> Since LLMs make prices based on the used tokens, using a LLM (e.g. ChatGPT) is more expensive 
+> for the Hungarian language than for English.
+> Unfortunately, this results in a smaller effective context for input text.
 
 
 ### 3.3.2 Embeddings
