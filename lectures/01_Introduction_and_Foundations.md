@@ -220,7 +220,9 @@ To illustrate one measure of ChatGPT's success, it reached 100 million users fas
 (Currently, Meta's Threads tops the leaderboard.)
 
 <details>
-<summary><b>Leaderboard</b>: </summary>
+<summary><b>Leaderboard</b></summary>
+
+[Source](https://www.visualcapitalist.com/threads-100-million-users/)
 
 | Rank | Platform  | Launch | Time to 100M Users |
 |------|-----------|--------|--------------------|
@@ -232,10 +234,8 @@ To illustrate one measure of ChatGPT's success, it reached 100 million users fas
 | 6    | Myspace   | 2003   | 3 years            |
 | 7    | WhatsApp  | 2009   | 3 years, 6 months  |
 | 8    | SnapChat  | 2011   | 4 years, 1 month   |
-| 9    | Youtube   | 2005   | 4 years, 1 month   |
+| 9    | YouTube   | 2005   | 4 years, 1 month   |
 | 10   | Facebook  | 2004   | 4 years, 6 months  |
-
-[Source](https://www.visualcapitalist.com/threads-100-million-users/)
 
 </details>
 
