@@ -489,52 +489,75 @@ and are not always distinct, reflecting the interconnected nature of NLP techniq
 
 ### 3.1 Classical methods
 
-There are a couple of terms that are general enough to collect them into a glossary and describe separately.
-Here comes those terms which are general enough to be worth to introduce prior to others, outdated, or could not put into the stream of the following sections.
+Here are a few terms that are broad enough to merit their inclusion in a glossary and warrant separate descriptions.
+These terms are sufficiently general to be introduced ahead of others, may be considered outdated,
+or do not fit seamlessly into the narrative of the subsequent sections.
 
-* **Tokenization**: the process of splitting text into individual units called tokens, which can be words, phrases, or symbols
+* **Tokenization**: the process of breaking down text into its basic 'atomic' units, such as words, phrases, or symbols,
+or other elements, called tokens, which can then be used for further analysis or processing.
 
-* **Stemming**: the process of reducing words to their base or root form. Example: running, rungs, and ran → run
+* **Stemming**: the process of reducing words to their base or root form by chopping off the ends of words,
+often leading to incomplete or incorrect word forms, but it is computationally less complex (than lemmatization).
+Example: running, runs, and ran → run. Stemming might reduce the word "better" to "bet", 
+while lemmatization would correctly identify its lemma as "good"-
 
-* **Lemmatization**: similar to stemming, but lemmatization also reduces words to their base form, but it does so by using a vocabulary and morphological analysis of words, aiming to remove inflectional endings only and return the base or dictionary form of a word, which is known as the lemma. It is more accurate than stemming as it uses a knowledge base to obtain the correct base forms
+* **Lemmatization**: similar to stemming, lemmatization also reduces words to their base form.
+However, it does so  by utilizing a vocabulary and morphological analysis, aiming to only remove inflectional endings 
+and return the word to its base or dictionary form, known as the lemma.
+Lemmatization is more precise than stemming, as it relies on a knowledge base to determine the correct base forms.
+Example: "am", "are", and "is" are all lemmatized to "be".
 
-* **Chunking**: aka. shallow parsing, chunking is the process of extracting phrases from unstructured text and grouping together the words into chunks based on their part of speech tags
+* **Part of Speech (PoS) tagging**: the process of assigning a part of speech to each word in a text
+(e.g., noun, verb, adjective) based on its definition and its contexts within a sentence.
+It helps in understanding the grammatical structure of sentences and the roles of words in sentences.
 
-* **Stop Word removal**: words that are filtered out before or after processing of natural language data (text) because they are insignificant
+* **Chunking** (also known as shallow parsing): chunking is the process of extracting phrases from unstructured text
+and grouping words into chunks based on their parts of speech.
+Chunking works on top of POS tagging, basically it means grouping of words / tokens into chunks.
+Example: "A diligent student studied late in the quiet library."
+Subject: "A diligent student"; Action: "studied late"; Location: "in the quiet library".
 
-* **Embedding**: what value to assign, vector database
+* **Named Entity Recognition (NER)**: identifying and classifying named entities in text into predefined categories
+(e.g., names of persons, organizations, locations).
+It is essential for information extraction tasks to identify important elements in the text.
 
+* **Stop Word removal**: a preprocessing step involves eliminating common words, such as "that", "is", or "at"
+from text data. These words are removed because they occur frequently in the langauge and usually do not contribute
+significant information to the meaning of a text.
+Example: "The dog sits in the door." --> "dog sits door".
 
-* **Part of Speech (PoS) tagging**: assigning parts of speech to each word in the text (e.g., noun, verb, adj), based on its definition and contexts
+* **Parsing**: the process of analyzing a text, conforming to the rules of a formal grammar.
+It often involves the syntactic analysis of text, where the goal is to understand the grammatical structure of sentences,
+identifying subjects, predicates, and objects, and how they relate to each other.
+This can involve constructing a parse tree that represents the syntactic structure of the sentence according to
+a given grammar.
 
-* **Named Entity Recognition (NER)**: identifying and classifying named entities in text into predefined categories (e.g., names of persons, organizations, locations).
-It is essential for information extraction tasks to identify important elements in the text
+* **Embedding**: a technique where words or tokens from a vocabulary are mapped to vectors of real numbers, 
+creating a dense and continuous vector space. Each word / token is represented by a point in this space, with
+semantically similar words being located closer to each other.
 
-
-* **Bag of Words**: a kind of representation of a text, getting by transforming it into fixed-length vectors by counting how many times each word appears.
-It disregards the order of words but allows for the comparison of different texts based on their content.
-(maybe put into hand-crafted embeddings)
+* **Bag of Words**: a simple text representation technique, where a text is represented as the bag (multiset) of its 
+words, disregarding grammar and even word order but keeping multiplicity.
+The BoW model is mainly used in document classification, where the frequency of each word is used as a feature.
 
 * **n-grams**: continuous sequences of n items from a given sample of text or speech.
 They help in capturing the context of words in a document by considering a contiguous sequence of items.
-Useful for prediction and classification tasks
+Useful for prediction and classification tasks.
 
 * **BM25**: Best Match 25 algorithm, is a ranking algorithm used by search engines in information retrieval.
 The algorithm estimates the relevance of documents to a given search query
 
-TODO:
-  * Parsing
-  * Skip-gram?
 
 ### 3.2 Character Encodings
 
-Characters are symbols but machines understand numeric data (binary data).
-Thus we need to map characters into numeric values (codes).
-Character encoding deals with problems by defining a table (mapping) with the corresponding character and its code.
-Here we briefly introduce some of the most prominent character encoding standards created for different requirements.
+Characters are symbols, while machines understand numeric data (binary data).
+Therefore, we need to map characters to numeric values (codes).
+Character encodings addresses these issues by defining a table (mapping) that associates each token with its code point.
+Here, we briefly introduce some of the most prominent character encoding standards, each created to meet specific requirement.
 
 * **Character set**:
   * a defined collection of characters (‘a’, ‘b’, …), symbols (‘$’, ‘♣’, ‘§’’, …), and control codes (NUL ‘\0’, TAB ‘\t’, LF ‘\n’, …)
+  * it defines the characters that are recognized and utilized by a computer system or network
   * Examples: ASCII character set, Unicode character set.
 * **Character encoding**:
   * the process of assigning numbers (code point) to a character set
@@ -543,31 +566,41 @@ Here we briefly introduce some of the most prominent character encoding standard
 * **Character encoding standard**:
   * a specific character encoding
   * Examples: ASCII, Unicode
-  * think of it as a table, which enumerates characters supported, and their belonging unique numbers (code points)
-* **Encoding Scheme**:
-  * specifying how the code points are represented in binary
-  * defining the rules for converting characters into byte sequences and vice versa
-  * Examples: UTF-8, UTF-16, ISO-8859-1
+  * think of character encoding standard as a table, that pairs characters with their corresponding unique numbers (code points).
 * **Fixed-length vs. Variable-length encodings**:
   * **Fixed-length encoding**: each character is represented by the same number of bytes
     * Example: UTF-32
   * **Variable-length encoding**: different characters may have different byte lengths
     * Example: UTF-8, UTF-16
-* **Single-byte???**:
-  * TODO
 
 
 ### <ins>Character Encoding Standards</ins>:
 
-What are character encoding standards.
-TODO: give a short understanding behind the motivations of the dynamics.
-Teletype models had 7-bit code.
-As 8-, 16-, and 32-bit (and later 64-bit) computers began to replace previous computers, it became common to use 
-an 8-bit byte to store each character in memory extensions to ASCII, leaving the original character-mapping intact,
-but adding additional character definitions after the first 128 characters.
+> This section introduces various character encoding standards essential for digital communication.
+It aims to contextualize their development against the backdrop of technological advancements and emerging global demands.
+> 
+> In the 1960s, ASCII was introduced with a 7-bit encoding scheme, capable of representing up to 128 characters - 
+sufficient for teletypes and early computing to standardize English letters.
+As technology evolved, the 8-bit byte became standard, leading to the creation of Extended ASCII, 
+which expanded the capacity to include up to 256 characters. However, characters beyond 128 lacked standardization,
+leading to diverse standards for different languages.
+A prominent standard is the ISO/IEC 8859 series, including Latin-1 for Western European languages and Latin-2 for
+Central European Languages.
+>
+> Yet, the limitations of these 8-bit encodings became clear with the internet's rise, 
+highlighting the need for a universal character set.
+These requirements for a more inclusive and comprehensive encoding system led to the development of Unicode.
+Unlike the 256-character limit of 8-bit encodings, Unicode offers unique code points for nearly every character
+used across most of the languages. As of now, it supports over 150,000 characters, with the capacity for further
+expansion as new characters and languages are incorporated.
+> 
+> This character set size is far superior to the limits of what can be represented within 8 bits.
+Since many existing protocols and systems for storing and transmitting text were designed to support
+8-bit code words, there was a need for methods to encode this range of code points with sequences of 8-bit code words.
+To this end, three primary encoding formats were introduced: UTF-32, UTF-16, and UTF-8.
+Among these, UTF-8 has become the most widely adopted, providing efficient backward compatibility with ASCII.
 
-single-byte encodings: okay, but Unicode is more, so there is a need for concrete encodings?
-
+ 
 <details>
 <summary><b>(Standard) ASCII</b>:</summary>
 
@@ -595,15 +628,14 @@ Samples from the ASCII code table:
 | 126                         | ~         | Tilde            |
 | 127                         | DEL       | Delete           |
 
-
 </details>
 
   * ASCII stands for American Standard Code for Information Interchange
-    * to cover the english alphabet
-  * in 1963
-  * using 7-bit code points
-    * can represent 128 different characters
-    * technical limitations (telegraph, teletype machines) were 7-bit teleprinters
+    * designed to represent the English alphabet
+  * introduced in 1963
+  * utilizes 7-bit code points
+    * capable of representing 128 different characters
+    * developed for 7-bit teletype machines
 
 <details>
 <summary><b>extended ASCII</b></summary>
@@ -612,11 +644,11 @@ Coda table: https://www.ascii-code.com/
 
 </details>
 
-  * computers and peripherals standardized on 8-bit bytes in the 1970s
-    * new microprocessors (1970s) preferred to work with power of 2
-  * using 8-bit code points
-    * can represent 256 different characters
-  * characters 128-255 were never standardized
+  * in the 1970s, computers and peripherals standardized on 8-bit bytes
+    * new microprocessors introduced in the 1970s preferred to work with powers of 2
+  * utilizes 8-bit code points
+    * capable of representing 256 different characters
+  * the characters 128-255 were not standardized universally, leading to varied implementations across different systems
 
 <details>
 <summary><b>ISO/IEC 8859</b>:</summary>
@@ -625,11 +657,15 @@ https://en.wikipedia.org/wiki/ISO/IEC_8859
 
 </details>
 
-  * in 1987
-  * series of standards for 8-bit character encodings:
-    * 15 (+1 abandoned) standards:
-      * e.g., ISO/IEC 8859-1 (Latin-1); ISO/IEC 8859-2 (Latin-2); ISO/IEC 8859-16
-  * Motivation: most other languages that use Latin alphabets need additional symbols not covered by ASCII
+  * introduced in 1987
+  * a series of standards for 8-bit character encodings:
+    * 15 parts (+1 part that was abandoned), such as:
+      * ISO/IEC 8859-1 (Latin-1)
+      * ISO/IEC 8859-2 (Latin-2)
+      * ...
+      * ISO/IEC 8859-16
+  * the motivation behind these standards was to accommodate the needs of most other languages that use the Latin
+alphabet, requiring addition symbols not covered by ASCII
   * 8-bit single-byte coded character sets
 
 <details>
@@ -641,9 +677,9 @@ Code table: https://www.ascii-code.com/ISO-8859-1
 
   * Latin alphabet no. 1
   * covers most Western European languages
-    * Complete coverage: English, Irish, Italian, Norwegian, Portuguese, Scots, Spanish, Swedish, ...
-    * Incomplete coverage: Hungarian, Danish, Dutch, French, German
-      * Hungarian: lacks a couple of hungarian letters ('ő', 'ű', 'Ő', ''Ű')
+    * provides complete coverage for languages including English, Irish, Italian, Norwegian, Portuguese, Scots, Spanish, ...
+    * offers incomplete coverage for Hungarian, Danish, Dutch, French, German
+      * for example, Hungarian is missing a few specific letters ('ő', 'ű', 'Ő', ''Ű')
   * 8-bit single-byte coded character set
 
 <details>
@@ -655,7 +691,7 @@ Code table: https://www.ascii-code.com/ISO-8859-2
   
   * Latin alphabet no. 2
   * covers most Central or Eastern European languages
-    * Complete coverage: Hungarian, Croatian, Czech, Finnish, German, Polish, Romanian, ...
+    * provides complete coverage for Hungarian, Croatian, Czech, Finnish, German, Polish, Romanian, ...
   * 8-bit single-byte coded character set
 
 <details>
@@ -665,9 +701,8 @@ Code table: https://www.ascii-code.com/
 
 </details>
 
-  * in 1985 with Windows 1.0 (?)
-  * it is the most-used single-byte character encoding in the world
-  * 8-bit single-byte coded character set
+  * introduced in 1985 with Windows 1.0 (?)
+  * it is the most-used 8-bit single-byte character encoding in the world
   * Hungarian is not supported completely
     * Windows-1250 supports Hungarian completely
 
@@ -678,24 +713,19 @@ Code table: https://www.ascii-code.com/
 
 </details>
 
-  * in the late 1980s
-  * designed to support written text in all the world's major writing systems
-    * symbols, emoji
+  * introduced in the late 1980s
+  * designed to support written text in all the world's major writing systems, including symbols and emojis
   * can represent 1,114,112 characters
-  * Currently: version 15.1
-    * 149,813 characters
-  * compatible with ASCII
-    * first 128 Unicode points are the same as ASCII
-  * Unicode code points are officially written in hexadecimal
+  * the current version, as of the last update, is 15.1, which includes 149,813 characters
+  * compatible with ASCII; the first 128 code points in Unicode are identical to ASCII, ensuring backward compatibility
   * Unicode text is processed and stored as binary data using one of the several encodings
     * UTF-32, UTF-16, UTF-8
 
 ### <ins>Unicode Transformation Formats</ins>:
 
-They define how to translate the standard's abstracted codes for characters into sequences of bytes.
-Defining how Unicode numbers are translated into binary numbers.
-We still need the Unicode code points to fit into just 8 bits (byte), since existing protocols send/receive and read/write 8 bit characters
-UTF stands for Unicode Transformation Format
+Unicode Transformation Formats (UTF) define how Unicode code points are translated into binary numbers (8-bit bytes).
+We still need to fit the Unicode code points into just 8 bits (a byte), because existing protocols send, receive, read, 
+and write characters as 8-bit entities.read/write 8 bit characters.
 
 <details>
 <summary>Example</summary>
@@ -775,17 +805,28 @@ Step 2: Encoding the code points using different transformation formats.
 </details>
 
 * **UTF-32**:
-  * fixed-length coding
-    * the only among UTF-x encodings
-  * 4 bytes
-  * wasteful
+  * the encoding uses a fixed-length format, where each code point (character) is represented using 4 bytes (or 32 bits)
+  * this approach simplifies certain computing operations because every character is the same size, 
+making it easier to calculate the position of a particular character within a sequence
+  * the method is often considered wasteful in terms of storage and bandwidth, 
+especially for texts where the majority of characters could be represented with fewer bytes, e.g. Latin characters.
 * **UTF-16**:
-  * variable-length encoding
-  * using 1 or 2 bytes for encoding a code point (character)
+  * the encoding employs a variable-length encoding scheme, which means it can use either 1 or 2 units 
+(each unit being 2 bytes) for encoding a code point
+  * this encoding strikes a balance between the simplicity of fixed-length encoding and the efficiency of 
+variable-length encoding
+  * it is particularly efficient for texts containing a mix of characters that are common in languages that can be
+mostly represented within the first 2-byte unit, but it requires more space for characters outside of this range,
+which are encoded using pairs of 2-byte units (surrogate pairs)
 * **UTF-8**:
-  * variable-length encoding
-  * using 1 - 4 bytes for encoding a code point (character)
-  * the world's most frequently used character encoding
+  * the encoding is a variable-length encoding system, capable of using 1 to 4 bytes for encoding a code point,
+depending on the character's complexity
+  * this encoding is designed to be backward compatible with ASCII, meaning that ASCII text is also 
+valid UTF-8 encoded text, which uses just one byte for the ASCII character set
+  * UTF-8 is the most flexible and space-efficient encoding for a wide range of languages, making it the world's 
+most frequently used character encoding
+  * it is especially advantageous for web content and software development, where efficiency and compatibility with
+diverse character sets are crucial
 
 
 ### 3.3 Tokenization and Embeddings
