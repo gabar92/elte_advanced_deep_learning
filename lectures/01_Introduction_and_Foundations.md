@@ -919,29 +919,29 @@ content that can fit within the context length of modern Transformer-based langu
       * challenges in handling typos: diversity → diwersity
           * adding a new token for each typo?
           * using a special <UNK> unknown token
-    * Sub-word-based tokenization:
-      * falling between character-based and word-based segmentations
-        * leveraging the benefits of both character-based and word-based methods
-      * text is divided into tokens, which may be a single character, a complete word, a subword, or strings that 
-        include consecutive characters from adjacent words (walk;ing; on the; street)
-      * the frequency of common character sequences (sub-words) in a corpus determines their inclusion in the token vocabulary
-      * Pros:
-        * offers a balance with an intermediate vocabulary size
-        * typos are handled in an efficient way
-          * all the letters are included as entries
-        * results in text being split into fewer tokens, leading to more efficient use of context size.
-        * more frequent words or subwords are included in the vocabulary
-          * frequently used words should not be split but have an individual token, while rare words should be
-          decomposed into more tokens
-        * can capture semantic meaning in individual tokens
-        * different forms of words share common tokens:
-          * rain --> [rain]
-          * bow --> [bow]
-          * rainbow --> [rain; bow]
-      * Cons:
-        * requires detailed design decisions:
-          * the optimal size for the token vocabulary
-          * learning the vocabulary items from a corpus
+  * Sub-word-based tokenization:
+    * falling between character-based and word-based segmentations
+      * leveraging the benefits of both character-based and word-based methods
+    * text is divided into tokens, which may be a single character, a complete word, a subword, or strings that 
+      include consecutive characters from adjacent words (walk;ing; on the; street)
+    * the frequency of common character sequences (sub-words) in a corpus determines their inclusion in the token vocabulary
+    * Pros:
+      * offers a balance with an intermediate vocabulary size
+      * typos are handled in an efficient way
+        * all the letters are included as entries
+      * results in text being split into fewer tokens, leading to more efficient use of context size.
+      * more frequent words or subwords are included in the vocabulary
+        * frequently used words should not be split but have an individual token, while rare words should be
+        decomposed into more tokens
+      * can capture semantic meaning in individual tokens
+      * different forms of words share common tokens:
+        * rain --> [rain]
+        * bow --> [bow]
+        * rainbow --> [rain; bow]
+    * Cons:
+      * requires detailed design decisions:
+        * the optimal size for the token vocabulary
+        * learning the vocabulary items from a corpus
 * Open Vocabulary Problem and Out of Vocabulary (OOV) words:
   * the issue of rare words, the constant evolution of language, and the presence of typos present challenges
     in ensuring comprehensive coverage by the tokenization vocabulary
