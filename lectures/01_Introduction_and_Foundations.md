@@ -967,36 +967,35 @@ content that can fit within the context length of modern Transformer-based langu
 
 </details>
 
-* BPE originally is a data compression technique
-* adopted for text tokenization in Natural Language Processing in 2015
-* Title of the paper: Neural Machine Translation of Rare Words with Subword Units
-* basically solving the rare words problem for tokenization
-* sub-word based tokenization method, balancing the granularity of language representations
-* an initial solution for the problem of encoding the rare words
-* the fundamental idea is to replace often occurring character pairs with a new, single token, enhancing the model’s efficiency in representing complex words or phrases
-* How it works?
-  * starting with each character in the training data treated as a separate token
-  * counting the frequency of each adjacent character (or byte) pair in the dataset
-  * merging the most frequent adjacent character pair into a new token (merged items are kept as well)
-  * the process of counting and merging continues until reaching a specified vocabulary size
-* Models using this method:
-  * RoBERTa, GPT-2, …
-* proven to be effective in handling morphologically rich languages and improving the generalization capability of models to unseen words
-* the vocabulary sizes for BPE typically ranges from 10K - 100K subword units
-* Versions:
-  * character-based or byte-based implementations of BPE
-  * Problem with the character-based implementation of BPE:
-    * unicode characters can account for a sizeable portion of this vocabulary when modeling large and diverse corpora
-    * the implementation would require including the full space of Unicode symbols in order to model all Unicode strings, which would result in a base vocabulary of over 130,000 tokens before any multi-symbol tokens are added
+* fundamentally a data compression technique that was adopted for text tokenization in NLP in 2015
+  * introduced in the paper: Neural Machine Translation of Rare Words with Subword Units
+* the technique primarily addresses the challenge of tokenizing rare words, 
+  offering a sub-word-based tokenization method that strikes a balance in the granularity of language representations
+* the core concept involves substituting frequently occurring character pairs with a new, single token
+* The process of BPE:
+  * it begins by treating each character in the training data as an individual token
+  * the frequency of each adjacent character (or byte) pair within the dataset is calculated
+  * the most frequent adjacent character pair is merged into a new token, while the original pairs are also retained
+  * this counting and merging procedure is repeated until the vocabulary reaches a specified size
+* Models using BPE: RoBERTa, GPT-2 [TODO - update]
+* the method demonstrated its effectiveness in handling morphologically rich languages and enhancing the generalization 
+  capability of models to unseen words
+* there are 2 versions of BPE: character-based and byte-based implementations
+  * Character-based implementation of BPE:
+    * the primary drawback of character-based BPE stems from its reliance on Unicode characters as the foundation for
+      its base vocabulary. This approach necessitates including the entire range of Unicode symbols to model all
+      Unicode strings, leading to a base vocabulary of  approximately 150,000 tokens before adding any 
+      multi-symbol tokens.
   * Byte-based implementation of BPE: (RoBERTa paper [1], GPT-2 paper [2])
-    * using bytes instead of unicode characters as the base subword units
-    * byte-level version of BPE only requires a base vocabulary of size 256
-    * directly applying BPE to the byte sequence results in a suboptimal merges due to BPE using a greedy frequency based heuristic for building the token vocabulary
-      * resulting in a suboptimal allocation of limited vocabulary slots and model capacity
-      * “dog”, “dog.”, “dog,”, “dog!”, …
-      * to avoid this: prevent BPE from merging across character categories for any byte sequence
-      * exception is for spaces which significantly improves the compression efficiency
-    * making it possible to learn a subword vocabulary of a modest size (50K units), that can still encode any input text without introducing any “unknown” tokens
+    * the byte-based implementation of BPE utilizes bytes instead of Unicode characters for its base subword units,
+      requiring only a base vocabulary size of 256. This approach significantly reduces the initial vocabulary size
+      compared to character-based BPE. However, directly applying BPE to byte sequences can lead to suboptimal merges
+      due to its greedy merging technique, often resulting in punctuation marks being merged with adjacent words 
+      (e.g., "dog" becoming "dog.", "dog,", etc.). To mitigate this issue, the implementation can be adjusted 
+      to prevent BPE from merging across different character categories within any byte sequence.
+      Consequently, this method enables the learning of a relatively small subword vocabulary, around 50,000 units, 
+      while still being capable of encoding any input text, without the need to resort to using any 
+      "unknown" (UNK) tokens.
 
 <details>
 <summary><b>WordPiece</b> (Google) [2016]:</summary>
@@ -1006,17 +1005,18 @@ content that can fit within the context length of modern Transformer-based langu
 
 </details>
 
-* a subword tokenization algorithm
-* special word boundary symbols used
-* data-driven approach is used to generate the wordpiece model
-* similar to BPE
-* WordPiece first initializes the vocabulary to include every character present in the training data corpus
-* progressively learns a given number of merge rules
-* BPE: choosing the most frequent symbol pair
-* WordPiece: choosing that symbol pair, that maximizes the likelihood of the training data once added to the vocabulary
-* evaluating what it loses by merging 2 symbols to ensure it’s worth it
-* Models: BERT, DistillBERT, Electra
-
+* WordPiece is a subword tokenization algorithm that incorporates special word boundary symbols and employs a 
+  data-driven approach to develop its model, bearing similarities to Byte Pair Encoding (BPE).
+* The process of WordPiece:
+  * initially, WordPiece starts with a vocabulary that includes every character found in the training data corpus
+  * it then progressively learns a specific number of merge rules
+    * differing from BPE in its selection criteria for merging symbols: while BPE selects the most frequent 
+      symbol pair for merging, WordPiece opts for the symbol pair whose inclusion in the vocabulary
+      maximizes the likelihood of the training data. This method involves evaluating the impact of merging 
+      two symbols to ensure the merge contributes positively to the model's performance. 
+      Essentially, WordPiece assesses the trade-off in information loss against the benefit of a 
+      more streamlined vocabulary.
+* Models using WordPiece: BERT, DistillBERT, and Electra
 
 <details>
 <summary><b>Unigram</b> (Google) [2018]:</summary>
@@ -1025,20 +1025,26 @@ content that can fit within the context length of modern Transformer-based langu
 
 </details>
 
-* BPE and WordPiece is based on merge rules
-* a subword tokenization algorithm
-* initializing the base vocabulary to a large number of symbols and progressively trims down each symbol to obtain a smaller vocabulary
-* the base vocabulary could correspond to all pre-tokenized words and the most common substrings
-* at each step: Unigram algorithm defines a loss (often defined as log-likelihood) over the training data given the current vocabulary and a unigram language model
-* for each symbol in the vocabulary, the algorithm computes how mch the overall loss would increase if the symbol was to be removed from the vocabulary
-* removing p percent of the symbols whose loss increase is the lowers (least affecting the overall loss over the training data)
-* the process is repeated until the desired vocabulary size is reached
-* since Unigram is not based on merge rules, the algorithm has several ways of tokenizing new text after training
-* the algorithm simply picks the most likely tokenization in practice
-* probabilities of each possible tokenization can be computed
-* Unigram saves the probability of each token in the training corpus 
-* Models: not used directly for any of the models, but it’s used in conjunction with SentencePiece
-* TODO
+* Unigram is a subword tokenization algorithm that diverges from the merge rules-based approaches of BPE and WordPiece
+* The process of Unigram:
+  * instead of starting with individual characters and progressively merging them, Unigram begins with a 
+    large base vocabulary that might include all pre-tokenized words along with the most common substrings. 
+  * this initial vocabulary is then progressively trimmed down to achieve a smaller, more efficient set
+  * at each iteration, the Unigram algorithm evaluates a loss function, often defined as the log-likelihood, 
+    over the training data given the current vocabulary and a unigram language model
+    * it calculates the potential increase in overall loss for each symbol if it were to be removed from the vocabulary
+  * symbols that would result in the smallest increase in loss — thus least affecting the model's performance — 
+    are progressively pruned, removing a specified percentage of symbols at each step
+  * this process continues until the vocabulary reaches the desired size.
+* Unlike BPE and WordPiece, Unigram is not constrained by merge rules, allowing for multiple potential tokenizations
+  of new text after training
+* Unigram maintains the probability of each token occurring in the training corpus, which helps in determining
+  the most probable tokenization for new inputs.
+* although Unigram is not directly used in named models like BERT or GPT, it is an integral part of the 
+  SentencePiece library, which is utilized in various NLP applications to enable language-agnostic tokenization, 
+  facilitating the training and deployment of models across different languages without the need for customized 
+  tokenization processes. This makes Unigram especially valuable in scenarios where the training data encompasses 
+  a wide range of languages and character sets.
 
 <details>
 <summary><b>SentencePiece</b> (Google) [2018]:</summary>
@@ -1048,20 +1054,26 @@ content that can fit within the context length of modern Transformer-based langu
 
 </details>
 
-* previous tokenization methods have the same problem: it is assumed that the input text uses spaces to separate words
-* not all languages use spaces to separate words
-* one possible choice: using language specific tokenizer (e.g., XLM model)
-* solving this problem more generally: SentencePiece
-* treating the input as a raw input stream, thus including the space in the set of characters to use
-* then using the BPE or unigram algorithm to construct the appropriate vocabulary
-* language independent subword tokenized and detokenizer
-* language agnostic approach
-* 4 components:
-  * Normalizer
-  * Trainer
-  * Encoder
-  * Decoder
-* Models: ALBERT, XLNet, T5
+* SentencePiece addresses a fundamental limitation inherent in previous tokenization methods:
+  * the assumption that input text relies on spaces to delineate words
+  * this assumption does not hold for many languages, leading to the need for language-specific tokenizers in 
+    models like XLM
+* SentencePiece offers a more universal solution by treating the input as a raw stream of characters, 
+  incorporating spaces as part of the character set.
+* This approach allows for the application of either the Byte Pair Encoding (BPE) or Unigram algorithms to construct
+  a suitable vocabulary without presupposing word boundaries based on spaces.
+* as a language-independent subword tokenizer and detokenizer, SentencePiece adopts a language-agnostic approach
+  to tokenization, making it uniquely suited for processing text from any language
+  * this capability is particularly valuable for training large-scale multilingual models, as it simplifies the 
+  preprocessing pipeline and ensures consistent handling of diverse languages, including those without clear
+  word boundaries marked by spaces
+* Its architecture comprises four main components:
+  * Normalizer: Prepares the text for tokenization by standardizing it, potentially removing variations that do not affect the meaning but could complicate the tokenization process.
+  * Trainer: Applies the chosen algorithm (BPE or Unigram) to learn the optimal subword vocabulary from the raw input stream.
+  * Encoder: Converts input text into a sequence of tokens using the generated subword vocabulary.
+  * Decoder: Reconstructs the original text from the sequence of tokens, ensuring that the tokenization process is reversible.
+* Models using SentencePiece: ALBERT, XLNet, and T5
+
 
 > **Side note**:
 > Tokenizers are usually trained on English datasets, or multi-language datasets where english text is overrepresented.
@@ -1071,6 +1083,39 @@ content that can fit within the context length of modern Transformer-based langu
 > for the Hungarian language than for English.
 > Unfortunately, this results in a smaller effective context for input text.
 
+<details>
+<summary><b>List of models and their tokenizers</b>:</summary>
+
+| Model         | Tokenizer                 |
+|---------------|---------------------------|
+| ALBERT        | SentencePiece             |
+| BART          | BPE                       |
+| BERT          | WordPiece                 |
+| BLIP          | WordPiece                 |
+| Chinchilla    | SentencePiece             |
+| CLIP          | BPE                       |
+| DALL-E        | BPE                       |
+| DeBERTa       | BPE                       |
+| Flamingo      | WordPiece                 |
+| GPT           | BPE                       |
+| GPT-2         | BPE                       |
+| GPT-3         | BPE                       |
+| GPT-4         | BPE                       |
+| InstructGPT   | BPE                       |
+| LaMDA         | SentencePiece (BPE-based) |
+| Layout-LM     | WordPiece                 |
+| Layout-XLM    | SentencePiece             |
+| LLama         | SentencePiece (BPE-based) |
+| Llama-2       | SentencePiece (BPE-based) |
+| PaLM          | SentencePiece             |
+| RoBERTa       | BPE                       |
+| StructBERT    | WordPiece                 |
+| T5            | SentencePiece             |
+| UniLM         | WordPiece                 |
+| XLNet         | SentencPiece              |
+| XLM-RoBERTa   | SentencePiece             |
+
+</details>
 
 ### 3.3.2 Embeddings
 
@@ -1516,7 +1561,6 @@ Features of Text Embeddings:
 
 # TODO list:
 * TODO: add history between demo and why so successful
-
 
 
 Jokes:
