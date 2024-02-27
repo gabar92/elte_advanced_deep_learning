@@ -863,7 +863,8 @@ This structure is developed during training, utilizing a large corpus to capture
 * <ins>Dictionary</ins>: the outcome of the tokenization and embedding processes, consisting of a mapping between 
 unique tokens (whether characters, words, or sub-words) and their vector representations in the learned vector space.
 Critical engineering decisions include determining the dictionary's size (the number of distinct tokens) and the 
-dimensionality of the embedding space (the size of each token's vector representation). 
+dimensionality of the embedding space (the size of each token's vector representation). The typical vocabulary size 
+of state-of-the-art tokenizations currently ranges between 50,000 to 100,000 tokens.
 
 Throughout the history of NLP and machine learning, various approaches and solutions have been developed to address
 the challenges and decisions involved in processing text for neural networks. 
