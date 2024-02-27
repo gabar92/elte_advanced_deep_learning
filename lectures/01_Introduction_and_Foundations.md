@@ -831,33 +831,43 @@ diverse character sets are crucial
 
 ### 3.3 Tokenization and Embeddings
 
-When working with text, we need to convert human-readable text (strings) into the form which can be processed by Neural Networks.
-Since these models work with numerical vectors, we need a method to perform this mapping.
-However, there are a couple of design decisions we have to make: which part of the text should be represented by a single vector: a character, a word, or something between?
-Tokenization is dealing with this problem.
-How to map the tokens to vector representations?
-What features of the text do we want to capture by the vector space?
-The topic of embeddings focuses on these considerations.
+
+When processing text for neural networks, we must convert strings into a numerical format these models can understand.
+This necessitates deciding whether a single vector should represent a character, a word, or an intermediate entity,
+a challenge addressed by tokenization. Additionally, we must determine how to map these tokens to vector 
+representations and identify the text attributes we aim to encapsulate within the vector space. 
+This area of study, known as embeddings, delves into these critical considerations.
 
 **Summary and Glossary**:
 
 Mapping text into vector representations:
-* <ins>Text</ins>: a complex assembly of words and sentences, characterized by a well-defined structure that encapsulates a lot of connections and relationships between different parts.
-* <ins>Vectors</ins>: Neural Networks require scalar values (vectors, matrices, tensors) as input data. 
-So we have to transform textual data into vector represented data by not leaving the structure and rich information encoded in.
-We want a vector belonging to a token (e.g. a word) to contain the meaning of that word.
-* <ins>Vector space</ins>: each token has a vector representation which vectors are in a (vector) space.
-This space has a dimensionality, where different dimensions or directions can represent a semantic notion, meaning.
-Also words with similar meaning can reside near to each other in this vector space.
-* <ins>Tokenization</ins>: we need to split input text into tokens (atomic parts).
-Each token will have a belonging vector.
-* <ins>Token</ins>: the atomic part that the Language Model will use an entry of the input sequence.
-* <ins>Embedding</ins>: each token has a belonging value in the vector space, which is called embedding.
-This mapping usually is learned: the structure is formed during a training by taking the information of a large text collection (corpora).
-* <ins>Dictionary</ins>: at the end of tokenization and embedding process, we will have a dictionary (a key - value mapping pair), where the keys are unique tokens (characters, words, sub-words), and the value is the embedding vector representation in the learned vector space.
-There are a couple of engineering decisions we have to decide: what is the size of the dictionary (how many different tokens we have)? What is the dimension size of the embedding vector space (how big the vector representation of a token)?
+* <ins>Text</ins>: the unprocessed, original form of written content, consisting of a long sequence of characters.
+This sequence forms words and sentences, creating a complex web of meaning through its structure and the intricate
+relationships among its components.
+* <ins>Vectors</ins>: Neural networks interpret textual data through scalar values such as vectors, matrices, and tensors.
+To maintain the rich structure and information inherent in text, we transform it into vector representations,
+aiming for each vector to encapsulate the meaning of its corresponding token (e.g., a word).
+* <ins>Vector space</ins>: in this context, each token is represented by a vector within a multidimensional space.
+The dimensions of this space can capture semantic properties, allowing tokens with similar meanings to be positioned
+closely together, thereby facilitating the representation of semantic relationships.
+* <ins>Tokenization</ins>: this process involves breaking down the input text into its basic units, or tokens,
+each of which is assigned a corresponding vector representation. A central challenge within tokenization is determining
+the optimal points at which to divide the text. This decision directly influences the granularity of the analysis
+and the subsequent interpretation of the text's meaning.
+* <ins>Token</ins>: the fundamental, atomic element processed by the language model, serving as an input unit.
+Tokens can be characters, words, or sub-words. Each token is associated with a corresponding embedding, a vector
+representation that neural networks can process. This makes tokens the basic building blocks for language models,
+bridging the gap between raw text and the numerical inputs required by neural networks.
+* <ins>Embedding</ins>: a token's vector representation within the vector space, typically acquired through learning.
+This structure is developed during training, utilizing a large corpus to capture the distributional semantics of the language.
+* <ins>Dictionary</ins>: the outcome of the tokenization and embedding processes, consisting of a mapping between 
+unique tokens (whether characters, words, or sub-words) and their vector representations in the learned vector space.
+Critical engineering decisions include determining the dictionary's size (the number of distinct tokens) and the 
+dimensionality of the embedding space (the size of each token's vector representation). 
 
-Different approaches and solutions were created during the history of progress to answer these challenges and decisions. Here we introduce a couple of them (the mainstream).
+Throughout the history of NLP and machine learning, various approaches and solutions have been developed to address
+the challenges and decisions involved in processing text for neural networks. 
+Here, we introduce some of the mainstream methodologies that have significantly impacted the field.
 
 
 ### 3.3.1 Tokenization
@@ -872,63 +882,78 @@ Different approaches and solutions were created during the history of progress t
 
 </details>
 
-**Considerations**: there are a couple decisions we have to make, and a few problems we have to solve during constructing the tokenization process.
-* What size should the final tokenization dictionary have?
-  * small dictionary is storage efficient
-  * larger dictionary can capture more structure
-  * it is a trade-off
-* On which level should we split the text? Or from the opposite direction, on which level should we group characters together?
+**Considerations**: when constructing the tokenization process, several critical decisions and challenges must be 
+addressed to ensure the effectiveness and efficiency of the resulting system.
+These considerations shape the design and implementation of the tokenization strategy, impacting its ability 
+to accurately represent and process textual data.
+* **Size of the tokenization vocabulary**: the size of the final tokenization vocabulary is fundamental decision with
+implications for storage efficiency and the ability to capture the structure of the text. 
+  * a smaller vocabulary is more storage-efficient but may not capture as much of the text's structure
+  * larger vocabulary can capture more nuances and details of the text but requires more storage space
+  * balancing these factors is essential, as it involves a trade-off between efficiency and expressive power
+  * a smaller vocabulary for tokenization leads to increased token usage, thereby reducing the amount of textual
+content that can fit within the context length of modern Transformer-based language models.
+* **Level of text splitting**: deciding the granularity at which to split the text or, conversely, the level at which
+                               to group characters together is crucial
   * Character-based tokenization: we split the text to tokens character by character (each character is an individual token)
     * Pros:
-      * small vocabulary: English alphabet consists of 26 characters
-      * typos are handled: diversity → diwersity
-      * there are no missing keys in the dictionary
+      * small vocabulary size, as the English alphabet has only 26 characters
+      * better handling of typos due to the minimal unit of text being considered
+        * diversity → diwersity
+      * eliminates the issue of missing keys in the dictionary / vocabulary
     * Cons:
-      * characters lack semantic information: a word has meaning, but a character itself does not
-      * splitting a general text into character-based tokens results in a longer token sequence
-  * Word-based tokenization:   we split the text to tokens word by word (each word is an individual token)
+      * characters on their own lack semantic information, making it difficult to capture meaning
+        * tokens are embedded in a vector space that captures semantic relationships,
+          a complexity that individual letters alone cannot represent.
+      * results in longer sequences when splitting general text, which can be less efficient to process
+  * Word-based tokenization: we split the text to tokens word by word (each word is an individual token)
     * Pros:
-      * words contain a lot of semantic and contextual information
-      * splitting a general text into word-based tokens results in a shorter token sequence
+      * words carry significant semantic and contextual information
+      * results in shorter sequences, which can be more straightforward to manage
     * Cons:
-      * vocabulary size can be pretty large: English contains around 170 000 words
-      * handling different forms of words: run, runs, ran
-      * What happens to typos? diversity → diwersity
-        * missing key in the dictionary
-        * adding a new token for each typo?
-        * using an special <UNK> unknown token
+      * the vocabulary size can become very large, encompassing potentially hundreds of thousands of words
+        * English langauge contains around 170,000 words
+      * challenges in handling different forms of words: run, runs, ran
+        * adding a new token for each form?
+      * challenges in handling typos: diversity → diwersity
+          * adding a new token for each typo?
+          * using a special <UNK> unknown token
     * Sub-word-based tokenization:
-      * somewhere between character-based and word-based split
-      * we split text to tokens where a token can be a single character, a complete word, or a part of a word (subword), even strings containing consecutive characters of more neighboring words (walking on the street)
-      * frequency of common character sequences (sub-words) in a corpus is used to decide which will be part of the token dictionary
-      * taking advantages of the previous methods
+      * falling between character-based and word-based segmentations
+        * leveraging the benefits of both character-based and word-based methods
+      * text is divided into tokens, which may be a single character, a complete word, a subword, or strings that 
+        include consecutive characters from adjacent words (walk;ing; on the; street)
+      * the frequency of common character sequences (sub-words) in a corpus determines their inclusion in the token vocabulary
       * Pros:
-        * intermediate vocabulary size
-        * typos are handled
-        * intermediate sequence length
-        * hybrid keys in the token dictionary
-        * all the letters are included as entries
-        * more frequent words and form of words are included as entries
-        * frequently used words should not be split but have an individual token, while rare words should be decomposed into more tokens
-      * individual tokens can have semantic meaning
-      * different forms of words share common tokens:
-        * rain, bow, rainbow
+        * offers a balance with an intermediate vocabulary size
+        * typos are handled in an efficient way
+          * all the letters are included as entries
+        * results in text being split into fewer tokens, leading to more efficient use of context size.
+        * more frequent words or subwords are included in the vocabulary
+          * frequently used words should not be split but have an individual token, while rare words should be
+          decomposed into more tokens
+        * can capture semantic meaning in individual tokens
+        * different forms of words share common tokens:
+          * rain --> [rain]
+          * bow --> [bow]
+          * rainbow --> [rain; bow]
       * Cons:
-        * we have to make these design decision detailed above
-        * picking a good size for the token dictionary
-        * creating the keys (strings) part of the token dictionary
+        * requires detailed design decisions:
+          * the optimal size for the token vocabulary
+          * learning the vocabulary items from a corpus
 * Open Vocabulary Problem and Out of Vocabulary (OOV) words:
-  * there are rare words (longtail distribution) which may not occur in our corpus
-  * new words can appear, language evolves with time
-  * typos are probably not in our corpus
-* TODO: add somewhere
-  * the larger the vocabulary, the less the tokens we split a text, the larger the sequence we can put into the context
-  * 
-* Examples for special tokens:
-  * \<UNK>: representing unknown tokens
+  * the issue of rare words, the constant evolution of language, and the presence of typos present challenges
+    in ensuring comprehensive coverage by the tokenization vocabulary
+    * challenges of the long-tail distribution of text: a vast number of unique terms are used infrequently,
+      complicating the creation of a comprehensive yet efficient token vocabulary and potentially leading to
+      suboptimal representation of rare words or phrases
+  * strategies to address OOV words include the use of special tokens and considerations for 
+    dynamically updating the vocabulary
+* Special tokens:
+  * \<UNK>: representing unknown tokens (e.g., OOV words)
   * \<SEP>: separating different parts of the sequence
-  * \<BOS>: indicating the beginning of the sequence / sentence
-  * \<EOS>: indicating the end of the sequence / sentence
+  * \<BOS>: indicating the beginning of the sequence
+  * \<EOS>: indicating the end of the sequence
 
 
 ### Tokenization methods
