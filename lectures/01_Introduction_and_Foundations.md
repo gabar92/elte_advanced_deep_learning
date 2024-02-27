@@ -1512,7 +1512,7 @@ Features of Text Embeddings:
   * [Jeff Bezos: Large Language Models (10 min)](https://www.youtube.com/watch?v=e4FXX4yX0nA)
   * [Andrej Karpathy: Let's build the GPT Tokenizer](https://www.youtube.com/watch?v=zduSFxRajkE)
 * Papers:
-  * [A survey of Large Language Models (2023)](https://arxiv.org/abs/2303.18223)
+  * [A survey of Large Language Models (2023) (134 min)](https://arxiv.org/abs/2303.18223)
 
 # TODO list:
 * TODO: add history between demo and why so successful
