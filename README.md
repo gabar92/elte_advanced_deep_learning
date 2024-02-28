@@ -90,29 +90,17 @@ This lecture tries to answer the following questions:* What are the general arch
 
 ### Content of the lecture:
 
-n-grams
+### 1. Language Modeling
 
-General architectures:
-* Sequence-to-Sequence (seq2seq) models
-* Encoder-Decoder architectures
+1.1 **Definition and Purpose**: 
+  * introducing language modeling task / objective
+  * interpretation:  predicting the next word in a sequence 
+    setting the stage for understanding its significance in NLP.
+  * direct application of it: text prediction, auto-completion
+  * powerfulness: GPT-series use only this
 
-Problems with previous model architectures:
-* RNNs: LSTMs, GRUs
-* CNNs
-* sequence lengths: memory, vanishing / exploding gradients
-
-Models:
-* attention mechanism
-* Transformers
-  * BERT
-  * GPT
-
-Data:
-* unsupervised
-* supervised
-
-Objectives:
-* LM
+1.2 Objectives and variants of Language Modeling:
+* Langauge Modeling (LM)
 * Shallow LM
 * Masked LM (MLM)
 * Next Sentence Prediction (NSP)
@@ -121,43 +109,129 @@ Objectives:
   * Masked Visual LM (MVLM)
   * Text-Image Alignment (TIA)
   * Text-Image Matching (TIM)
-  
-Scaling laws (sneak peek):
-* increasing only data and model size can increase performance in a predictable way
 
-Emerging properties (? - scaling is not for LLMs?)
-* In-context Learning
-* Zero-shot / Few-shot abilities
-* Chain-of-Thought prompting
+1.3 - Decoding strategies:
+* the model usually predicts the distribution of the next token over the vocabulary
+  * we need to pick a value
+* How to pick?
+  * beam search
+  * most probable
+  * random sampling
+  * k-sampling
+  * p sampling
 
-Evaluation metrics:
+### 2. Models
+
+General architectures:
+* Sequence-to-Sequence (seq2seq) models
+* Encoder-Decoder architectures
+
+Evolution of model families:
+* statistical:
+  * n-grams
+  * problems with statistical methods
+* Neural Networks (shallow):
+  * RNNs: LSTMs, GRUs
+  * ConvNets
+  * problems with shallow NN methods:
+    * vanishing / exploding gradients
+    * limited memory for long sequences
+* Transformers:
+  * Attention mechanism:
+    * motivation
+    * types:
+      * self-attention
+      * cross-attention
+  * Task-related motivation: Translation
+    * why an attention-based model is desired?
+  * introducing Transformer architecture
+    * Encoder part:
+      * what is its role
+      * on what kinds of tasks does it perform well
+    * Decoder part:
+      * what is its role
+      * on what kinds of tasks does it perform well
+    * smaller parts:
+      * Self-Attention, Cross-Attention, Feed-Forward NN, Residual connection, Softmax, etc...
+  * Advantages:
+    * What makes transformers so powerful?
+      * parallel
+      * modular
+      * scalable
+        * scaling properties / scaling laws
+          * Large Language Models (LLMs)
+      * long-term dependency modeled in constant time
+      * efficient optimization of levels due to residual connections
+    * How did the Transformer architecture shaped the domain?
+      * scaling data and model for NLP
+      * overtaking AI
+  * Disadvantages:
+    * quadratic scaling in input length
+    * Solutions:
+      * sparse transformers
+      * efficient transformers
+* Transformer-based models:
+  * BERT
+    * encoder-only Transformer
+  * GPT
+    * decoder-only Transformer
+* Multimodal Transformers:
+  * image
+  * only mentioning (details in Lecture 4)
+
+### 3. Training from the data's perspective
+
+3.1 Unsupervised Learning
+
+3.2 Supervised Learning
+
+3.3 Self-Supervised Learning
+
+### 4. Training stages of Language Models:
+
+4.1 Pre-training:
+* data aspects: large scale data on the internet
+
+4.2 Fine-tuning:
+* data aspects: high-quality labeled data is needed
+
+4.3 Instruction tuning
+* discussed in Lecture 3
+
+4.4 Alignment tuning 
+* discussed in Lecture 3
+
+### 5. Evaluation:
+
+5.1 Evaluation metrics
 * difficulties
+* cross-entropy
+* Perplexity
 * Edit distance
 * CER
 * WER
 * RETAS
-* Perplexity
   
-Benchmarks:
+5.2 Benchmark datasets:
 * GLUE
 * SQuAD
 * RACE
 
-Decoding strategies:
-* beam search
-* most probable
-* random sampling
-* k-sampling
-* p sampling
+### 6. Frameworks
 
-Training:
-* pre-training
-* fine-tuning
-* instruction tuning
-* alignment
+6.1 Libraries:
+* PyCharm
+* TensorFlow
+* Hugging Face - Transformers
 
-Resources:
-* libraries
+
+### 7. Sneak peek for next Lecture (Large Language Models - LLMs)
+* Scaling laws (sneak peek):
+  * increasing only data and model size can increase performance in a predictable way
+* Emerging properties (? - scaling is not for LLMs?)
+  * In-context Learning
+  * Zero-shot / Few-shot abilities
+  * Chain-of-Thought prompting
 
 ---
 
@@ -231,6 +305,10 @@ Prompt Design and Prompt Engineering: (we may should put this into lecture 3)
 * Zero-shot learning
 * chain of thoughts
 
+Ethical and Societal Implications: Addressing the ethical considerations of language model development and deployment, including bias, fairness, and misuse.
+
+Interpretability and Explainability: The importance of making language models interpretable and the current state of research in explainable AI for NLP.
+
 Third party frameworks:
 * Google
 * AWS
@@ -289,3 +367,4 @@ LLMs as Operating Systems:
   * Andrej Karpathy's video
 
 Why these models generalize?
+* a couple of assumptions
