@@ -1112,7 +1112,7 @@ content that can fit within the context length of modern Transformer-based langu
 | StructBERT    | WordPiece                 |
 | T5            | SentencePiece             |
 | UniLM         | WordPiece                 |
-| XLNet         | SentencPiece              |
+| XLNet         | SentencePiece             |
 | XLM-RoBERTa   | SentencePiece             |
 
 </details>
@@ -1554,7 +1554,6 @@ Features of Text Embeddings:
   * [Andrej Karpathy: Intro to Large Language Models (60 min)](https://www.youtube.com/watch?v=zjkBMFhNj_g&t=995s&pp=ygUVbGFyZ2UgbGFuZ3VhZ2UgbW9kZWxz)
   * [Google: Introduction to Generative AI (22 min)](https://www.youtube.com/watch?v=G2fqAlgmoPo)
   * [Harvard University: Large Language Models and The End of Programming (67 min)](https://www.youtube.com/watch?v=JhCl-GeT4jw)
-  * [Jeff Bezos: Large Language Models (10 min)](https://www.youtube.com/watch?v=e4FXX4yX0nA)
   * [Andrej Karpathy: Let's build the GPT Tokenizer (134 min)](https://www.youtube.com/watch?v=zduSFxRajkE)
 * Papers:
   * [A survey of Large Language Models (2023)](https://arxiv.org/abs/2303.18223)
