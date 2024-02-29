@@ -92,14 +92,14 @@ This lecture tries to answer the following questions:* What are the general arch
 
 ### 1. Language Modeling
 
-1.1 **Definition and Purpose**: 
+#### 1.1 Definition and Purpose: 
   * introducing language modeling task / objective
   * interpretation:  predicting the next word in a sequence 
     setting the stage for understanding its significance in NLP.
   * direct application of it: text prediction, auto-completion
   * powerfulness: GPT-series use only this
 
-1.2 Objectives and variants of Language Modeling:
+#### 1.2 Objectives and variants of Language Modeling:
 * Langauge Modeling (LM)
 * Shallow LM
 * Masked LM (MLM)
@@ -110,23 +110,24 @@ This lecture tries to answer the following questions:* What are the general arch
   * Text-Image Alignment (TIA)
   * Text-Image Matching (TIM)
 
-1.3 - Decoding strategies:
+#### 1.3 - Decoding strategies:
 * the model usually predicts the distribution of the next token over the vocabulary
   * we need to pick a value
 * How to pick?
   * beam search
-  * most probable
+  * deterministic
   * random sampling
+  * temperature-scaled random sampling (softmax)
   * k-sampling
   * p sampling
 
 ### 2. Models
 
-General architectures:
+#### 2.1 General architectures:
 * Sequence-to-Sequence (seq2seq) models
 * Encoder-Decoder architectures
 
-Evolution of model families:
+#### 2.2 Evolution of model families:
 * statistical:
   * n-grams
   * problems with statistical methods
@@ -181,29 +182,28 @@ Evolution of model families:
 
 ### 3. Training from the data's perspective
 
-3.1 Unsupervised Learning
+#### 3.1 Unsupervised Learning
 
-3.2 Supervised Learning
+#### 3.2 Supervised Learning
 
-3.3 Self-Supervised Learning
+#### 3.3 Self-Supervised Learning
+
 
 ### 4. Training stages of Language Models:
 
-4.1 Pre-training:
+#### 4.1 Pre-training:
 * data aspects: large scale data on the internet
-
-4.2 Fine-tuning:
+#### 4.2 Fine-tuning:
 * data aspects: high-quality labeled data is needed
-
-4.3 Instruction tuning
+#### 4.3 Instruction tuning
+* discussed in Lecture 3
+#### 4.4 Alignment tuning 
 * discussed in Lecture 3
 
-4.4 Alignment tuning 
-* discussed in Lecture 3
 
 ### 5. Evaluation:
 
-5.1 Evaluation metrics
+#### 5.1 Evaluation metrics
 * difficulties
 * cross-entropy
 * Perplexity
@@ -212,14 +212,14 @@ Evolution of model families:
 * WER
 * RETAS
   
-5.2 Benchmark datasets:
+#### 5.2 Benchmark datasets:
 * GLUE
 * SQuAD
 * RACE
 
 ### 6. Frameworks
 
-6.1 Libraries:
+#### 6.1 Libraries:
 * PyCharm
 * TensorFlow
 * Hugging Face - Transformers
