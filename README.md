@@ -114,12 +114,12 @@ This lecture tries to answer the following questions:* What are the general arch
 * the model usually predicts the distribution of the next token over the vocabulary
   * we need to pick a value
 * How to pick?
-  * beam search
   * deterministic
   * random sampling
-  * temperature-scaled random sampling (softmax)
+  * temperature-scaled random sampling
   * k-sampling
   * p sampling
+  * beam search
 
 ### 2. Models
 
@@ -204,18 +204,11 @@ This lecture tries to answer the following questions:* What are the general arch
 ### 5. Evaluation:
 
 #### 5.1 Evaluation metrics
-* difficulties
-* cross-entropy
-* Perplexity
-* Edit distance
-* CER
-* WER
-* RETAS
+* description of the difficulties
+* Metrics: cross-entropy, Perplexity, Edit distances, CER, WER, RETAS, BLEU ...
   
 #### 5.2 Benchmark datasets:
-* GLUE
-* SQuAD
-* RACE
+* GLUE, SQuAD, RACE, ...
 
 ### 6. Frameworks
 
