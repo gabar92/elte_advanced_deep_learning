@@ -204,11 +204,40 @@ This lecture tries to answer the following questions:* What are the general arch
 ### 5. Evaluation:
 
 #### 5.1 Evaluation metrics
+* What are evaluation metrics?
+  * Evaluation metrics are quantitative tools used to measure the performance or effectiveness of a model, system,
+    or process against a set of criteria or standards. These metrics provide a way to assess the quality, accuracy,
+    efficiency, or any other relevant attribute of the subject being evaluated.
 * description of the difficulties
-* Metrics: cross-entropy, Perplexity, Edit distances, CER, WER, RETAS, BLEU ...
-  
+* Metrics:
+  * **Cross Entropy**: a measure of the difference between the predicted distribution and the actual distribution of the data
+  * **Perplexity**: a measure of the predictive power of a language model, calculated by the probability of a word given the context
+  * **Edit distance**: qualifying the dissimilarity between 2 strings by measuring the minimum number of operations required to transform one string into the other (insertion, deletion, and substitution)
+    * **Levenshtein distance**: a specific type of editdistance
+  * **CER** (Character Error Rate): measuring error at the character level
+  * **WER** (Word Error Rate): measuring the difference between the recognized words and the predicted words
+  * **Accuracy**: a straightforward metric measuring the proportion of correct predictions out of the total predictions
+  * **F1 Score**: a metric that combines precision and recall, commonly used in classification
+    * **Precision**:
+    * **Recall**:
+  * **BLEU** (Bilingual Evaluation Understudy): a precision-based metric used for evaluating the quality of text
+  * **ROUGE** (Recall-Oriented Understudy for Gist Evaluation): a recall-based metric used for evaluating automatic summarization and machine translation
+  * **METEOR**: a metric that incorporates recall, precision, and additional semantic matching based on stems and paraphrasing
+  * **BERTScore**: a metric that matches words/phrases using BERT contextual embeddings and provides token-level granularity
+  * **RETAS**: 
+
 #### 5.2 Benchmark datasets:
-* GLUE, SQuAD, RACE, ...
+* What are benchmarks?
+  * Benchmarks are standard points of reference against which the performance of a model, system, or process can be 
+    compared or assessed. Benchmarks often consist of predefined datasets, tasks, or a set of performance metrics
+    that have been widely accepted by a community or industry as a basis for comparison. They enable the evaluation of
+    different systems or models under consistent conditions to ensure comparability of results.
+
+* Benchmarks:
+  * GLUE
+  * SuperGLUE
+  * SQuAD
+  * RACE
 
 ### 6. Frameworks
 
