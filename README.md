@@ -209,7 +209,7 @@ This lecture tries to answer the following questions:* What are the general arch
     or process against a set of criteria or standards. These metrics provide a way to assess the quality, accuracy,
     efficiency, or any other relevant attribute of the subject being evaluated.
 * description of the difficulties
-* Metrics:
+* <ins>Metrics</ins>:
   * **Cross Entropy**: a measure of the difference between the predicted distribution and the actual distribution of the data
   * **Perplexity**: a measure of the predictive power of a language model, calculated by the probability of a word given the context
   * **Edit distance**: qualifying the dissimilarity between 2 strings by measuring the minimum number of operations required to transform one string into the other (insertion, deletion, and substitution)
@@ -233,11 +233,11 @@ This lecture tries to answer the following questions:* What are the general arch
     that have been widely accepted by a community or industry as a basis for comparison. They enable the evaluation of
     different systems or models under consistent conditions to ensure comparability of results.
 
-* Benchmarks:
-  * GLUE
-  * SuperGLUE
-  * SQuAD
-  * RACE
+* <ins>Benchmarks</ins>:
+  * **GLUE**:
+  * **SuperGLUE**:
+  * **SQuAD**:
+  * **RACE**:
 
 ### 6. Frameworks
 
