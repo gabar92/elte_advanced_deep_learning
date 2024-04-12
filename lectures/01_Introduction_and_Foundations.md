@@ -22,7 +22,7 @@ This lecture aims to address the following questions:
 ## Contents:
 * [1. Motivation](#1-motivation)
   * [1.1 Demo of recent NLP related applications](#11-demo-of-recent-nlp-related-applications)
-  * [1.2 Definition of Natural Language Processing (NLP)](#12-definition-of-natural-langauge-processing-nlp)
+  * [1.2 Definition of Natural Language Processing (NLP)](#12-definition-of-natural-language-processing-nlp)
   * [1.3 Reasons behind the success of NLP](#13-reasons-behind-the-success-of-nlp)
 * [2. Bird's Eye View](#2-birds-eye-view)
   * [2.1 NLP-specific challenges](#21-nlp-specific-challenges)
@@ -188,7 +188,7 @@ Differences are highlighted where they matter.
 > * **Undefined terms**: This lecture contains many terms that are not defined. Most of these will be introduced and detailed in subsequent lectures.
 
 
-### 1.2 Definition of Natural Langauge Processing (NLP)
+### 1.2 Definition of Natural Language Processing (NLP)
 
 #### Interdisciplinarity of NLP:
 
@@ -420,7 +420,7 @@ Describe Language Modeling.
 </details>
 
 I am not sure if this is the right place for n-grams. But maybe this is the least wrong.
-I can introduce it as a restriction to get an approximation for both the langauge modeling objective 
+I can introduce it as a restriction to get an approximation for both the language modeling objective 
 and the chain-rule applied on the joint distribution.
 
   * General meaning of n-gram:
@@ -455,7 +455,7 @@ and are not always distinct, reflecting the interconnected nature of NLP techniq
     * **Sentiment Analysis**: determining if the text is positive, negative, or neutral
   * **Document classification**: categorizing entire documents into predefined categories
 * **Question Answering (QA)**: providing answers to questions
-* **Machine Translation**: translating text from one langauge to another
+* **Machine Translation**: translating text from one language to another
 * **Summarization**: condensing a longer text into a shorter summary while retaining key information
 * **Dialogue system / Chatbot**: systems designed to converse with humans, such as customer service bots
 * **Embedding learning**: creating dense vector representations of text
@@ -467,7 +467,7 @@ and are not always distinct, reflecting the interconnected nature of NLP techniq
   * **Retrival Augmented Generation (RAG)**: systems that retrieve information to aid in generating responses
 * **Text Generation**: automatically producing text, ranging from sentences to entire documents
 * **Natural Language Understanding (NLU)**: systems designed to comprehend human language in its natural form
-* **Code Generation**: automatically generating programming code from natural langauge descriptions
+* **Code Generation**: automatically generating programming code from natural language descriptions
 * **Multimodal**: combining text with other data types
   * **Visual Question Answering (VQA)**
   * **Text-to-Image** and **Image-to-Text**
@@ -522,7 +522,7 @@ Subject: "A diligent student"; Action: "studied late"; Location: "in the quiet l
 It is essential for information extraction tasks to identify important elements in the text.
 
 * **Stop Word removal**: a preprocessing step involves eliminating common words, such as "that", "is", or "at"
-from text data. These words are removed because they occur frequently in the langauge and usually do not contribute
+from text data. These words are removed because they occur frequently in the language and usually do not contribute
 significant information to the meaning of a text.
 Example: "The dog sits in the door." --> "dog sits door".
 
@@ -913,7 +913,7 @@ content that can fit within the context length of modern Transformer-based langu
       * results in shorter sequences, which can be more straightforward to manage
     * Cons:
       * the vocabulary size can become very large, encompassing potentially hundreds of thousands of words
-        * English langauge contains around 170,000 words
+        * English language contains around 170,000 words
       * challenges in handling different forms of words: run, runs, ran
         * adding a new token for each form?
       * challenges in handling typos: diversity → diwersity
@@ -1395,7 +1395,7 @@ Distributed representations:
       * the same word can get different representations based on the actual context
       * can handle complex linguistic nuances
       * In contrast: traditional embeddings provide a single static representation for each word regardless of its context
-    * Leverages Deep Learning: uses deep learning models trained on large-scale machine translation tasks, benefiting from the nuanced understanding of langauge
+    * Leverages Deep Learning: uses deep learning models trained on large-scale machine translation tasks, benefiting from the nuanced understanding of language
     * Complementary to Static Embeddings: CoVe are often used in combination with static embeddings like GloVE, providing both the efficiency of static representations and the contextual awareness of CoVe
     * Rich Representations: captures deeper semantic and syntactic information than static embeddings
   * Cons:
@@ -1560,9 +1560,7 @@ Features of Text Embeddings:
 
 # TODO list:
 * TODO: add history between demo and why so successful
-
-
-Jokes:
-- Why did the LLM refuse to play hide and seek with the dataset? 
-- It was too good at finding patterns!
+* TODO: add typical embedding dimension size
+* TODO: mention that removing parts of the embeddings dimensions from back, retains performance mostly (maybe it is added already)
+* TODO: add typical sizes of the words of different languages
 
