@@ -241,10 +241,18 @@ This lecture tries to answer the following questions:* What are the general arch
 
 ### 6. Frameworks
 
-#### 6.1 Libraries:
+#### 6.1 Frameworks:
 * PyCharm
 * TensorFlow
+
+#### 6.2 Libraries:
 * Hugging Face - Transformers
+* NLTK (Natural Language Toolkit)
+* spaCy
+
+#### 6.2 Model Hubs:
+* Hugging Face models
+* TODO
 
 
 ### 7. Sneak peek for next Lecture (Large Language Models - LLMs)
