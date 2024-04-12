@@ -100,7 +100,7 @@ This lecture tries to answer the following questions:* What are the general arch
   * powerfulness: GPT-series use only this
 
 #### 1.2 Objectives and variants of Language Modeling:
-* Langauge Modeling (LM)
+* Language Modeling (LM)
 * Shallow LM
 * Masked LM (MLM)
 * Next Sentence Prediction (NSP)
