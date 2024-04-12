@@ -4,6 +4,19 @@
 
 Implement the Byte-Pair Encoding (BPE) algorithm in Python.
 
+### Assessment
+
+It is likely that there will be one task from each of the four lectures,
+which will become progressively more difficult, and this will be reflected in the available points (5, 10, 15, 20).
+Since 20 points can be earned from the NLP section, everyone decides how to achieve the maximum number of points.
+
+This task is worth 5 points.
+
+### Dates
+
+* Release data: April 12, 2024
+* Due date: end of the semester
+
 ### The process of the BPE algorithm:
 
 1. Initializing the vocabulary with the characters as individual tokens occurring in the dataset.
