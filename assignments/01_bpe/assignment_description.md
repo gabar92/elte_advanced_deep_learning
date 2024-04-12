@@ -4,7 +4,7 @@
 
 Implement the Byte-Pair Encoding (BPE) algorithm in Python.
 
-### The process of the BPE algorithm
+### The process of the BPE algorithm:
 
 1. Initialize the vocabulary with the characters as individual tokens occurring in the dataset.
 2. Calculating the frequency of each adjacent character (or byte) within the dataset.
