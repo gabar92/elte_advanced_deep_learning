@@ -40,21 +40,22 @@ vocabulary, tokenized_text = bpe(text, max_vocabulary_size)
 
 ## Clarifications:
 
-* **When we have more tokens during tokenization which should be used?**
+* **When we have more potential tokens during tokenization which should be used?**
   * we opt for the longest token
-  * we tokenized from left to right
+  * we tokenize from left to right
   * Example:
     * we want to tokenize the ‘apple’ text
-    * we have the tokens: ‘a’, ‘p’, ‘l’, ‘e’, ‘ap’, ‘app’
-    * tokenization: ‘app’, ‘l’, ‘e’
-* **If we have more token pairs with max frequency, which one to merge?**
-  * that one which occurs first in the sequence (from left to right)
+    * the vocabulary contains the following tokens: {‘a’: 0, ‘p’: 1, ‘l’: 2, ‘e’: 3, ‘ap’: 4, ‘app’: 5}
+    * the proper tokenization is: [5, 2, 3] (aka. app | l | e)
+* **If we have more token pairs with the same maximal frequency, which pair should be merged?**
+  * that one which occurs first in the text to tokenize (from left to right)
   * Example:
     * text: ‘aaabbb’
-    * tokens: ‘a’, ‘b’
-    * tokenized_text: ‘a’, ‘a’, ‘a’, ‘b, ‘b’, ‘b’
+    * vocabulary: {‘a’: 0, ‘b’: 1}
+    * tokenized_text: [0, 0, 0, 1, 1, 1, ] (aka. a | a | a | b | b | b)
     * token pairs frequencies: (‘a’, ‘a’): 2, (‘a’, ‘b’): 1, (‘b’, ‘b’): 2
     * (‘a’,’a’) token pair is merged to ‘aa’
+    * updated vocabulary: {‘a’: 0, ‘b’: 1, ‘aa’: 2}
 
 
 ## Example solution
