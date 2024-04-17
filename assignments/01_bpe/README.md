@@ -53,9 +53,10 @@ vocabulary, tokenized_text = bpe(text, max_vocabulary_size)
 
 ## Clarifications:
 
-* **The order of the tokens matter in the vocabulary.**
-  * The first token should have the code point 0, the second 1, and so on.
-  * The order of the tokens in the vocabulary should be the same as the order of the tokens in the text.
+* **The order of the tokens matters in the vocabulary.**
+  * The first token should have the code point 0, the second should have 1, and so on.
+  * For the initial vocabulary: the order of the tokens in the vocabulary should be the same as the order of their 
+    first appearance in the text.
   * The order of the merged tokens in the vocabulary should be the same as the order of the merging.
 * **When we have more potential tokens during tokenization which should be used?**
   * we opt for the longest token
