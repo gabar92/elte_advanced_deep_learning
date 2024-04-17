@@ -20,6 +20,7 @@ INPUT_LIST = [
     'Once upon a time, in a land far far away',
     'What is the capital of France?',
     'Translate the following text to German: "How are you?"',
+    '',
 ]
 
 
