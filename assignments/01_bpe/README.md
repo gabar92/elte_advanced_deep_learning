@@ -15,7 +15,7 @@ This task is worth 5 points.
 ### Dates
 
 * Release data: April 12, 2024
-* Due date: end of the semester
+* Due date: May 17, 2024
 
 ### The process of the BPE algorithm:
 
