@@ -19,8 +19,7 @@ In this assignment, you will implement the Multi-Head Self-Attention mechanism,
 a core component of Transformer models, which have revolutionized the field of natural language processing.
 Your task is to develop a modular Python code that breaks down the Multi-Head Self-Attention mechanism
 into distinct, reusable functions.
-This implementation will help you understand the underlying operations of attention mechanisms 
-in deep learning architectures.
+This implementation will help you understand the underlying operations of the attention mechanism.
 
 ## Implementation details:
 
@@ -29,15 +28,15 @@ in deep learning architectures.
 Recommended functions to implement:
 
 1. `create_qkv()`:
-* This function calculates the query, key, and value matrices from the input data using respective weight matrices, 
-  setting the foundation for attention calculations.
+   * This function calculates the query, key, and value matrices from the input data using respective weight matrices, 
+     setting the foundation for attention calculations.
 2. `scaled_dot_product_attention()`:
-* This function performs the attention mechanism by computing scaled dot-product scores between queries and keys,
-  applying softmax to these scores, and then using them to obtain a weighted sum of the values.
+   * This function performs the attention mechanism by computing scaled dot-product scores between queries and keys,
+     applying softmax to these scores, and then using them to obtain a weighted sum of the values.
 3. `multi_head_self_attention()`:
-* This function manages the complete multi-head attention process.
-  It splits the input into multiple heads, processes each through the attention mechanism independently,
-  and then concatenates the results from all heads to produce the final output.
+   * This function manages the complete multi-head attention process.
+     It splits the input into multiple heads, processes each through the attention mechanism independently,
+     and then concatenates the results from all heads to produce the final output.
 
 ### Code skeleton
 
