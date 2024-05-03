@@ -87,5 +87,32 @@ def multi_head_attention(
     
     # implementation
     
-    return concat_output
+    return output
+
+
+def main():
+    """
+    Main function, orchestrating the process.
+    """
+
+    # input data
+    inputs = np.random.rand(1, 5, 32)
+
+    # parameters
+    hidden_dim = 32
+    num_heads = 4
+
+    # randomly initialize weights for Q, K, V
+    weights_q = np.random.rand(hidden_dim, hidden_dim)
+    weights_k = np.random.rand(hidden_dim, hidden_dim)
+    weights_v = np.random.rand(hidden_dim, hidden_dim)
+
+    # calculate multi_head_attention's output
+    attention_output = multi_head_attention(inputs, weights_q, weights_k, weights_v, num_heads)
+
+
+if __name__ == "__main__":
+  
+    main()
+
 ```
