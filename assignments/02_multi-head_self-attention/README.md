@@ -38,7 +38,7 @@ Recommended functions to implement:
      It splits the input into multiple heads, processes each through the attention mechanism independently,
      and then concatenates the results from all heads to produce the final output.
 
-### Architecture as a hint
+### Architecture of the Multi-Head Self-Attention mechanism
 
 <img src="multi-head_self-attention.png" alt="Architecture of the Multi-Head Self-Attention mechanism" width="568" height="326">
 
