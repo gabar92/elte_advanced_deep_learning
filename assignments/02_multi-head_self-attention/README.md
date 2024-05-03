@@ -41,6 +41,10 @@ Recommended functions to implement:
 ### Code skeleton
 
 ```python
+"""
+Script implementing the Multi-Head Self-Attention mechanism of the Transformer.
+"""
+
 import numpy as np
 
 
