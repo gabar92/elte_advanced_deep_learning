@@ -40,7 +40,8 @@ Recommended functions to implement:
 
 ### Architecture as a hint
 
-![Architecture of the Multi-Head Self-Attention mechanism](multi-head_self-attention.png)
+<img src="multi-head_self-attention.png" alt="Architecture of the Multi-Head Self-Attention mechanism" width="1136" height="652">
+
 
 
 ### Code skeleton
