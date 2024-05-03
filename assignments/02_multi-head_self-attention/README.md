@@ -43,7 +43,13 @@ Recommended functions to implement:
 ```python
 import numpy as np
 
-def create_qkv(inputs, weights_q, weights_k, weights_v):
+
+def create_qkv(
+    inputs: np.ndarray,
+    weights_q: np.ndarray,
+    weights_k: np.ndarray,
+    weights_v: np.ndarray
+) -> tuple:
     """
     Compute queries, keys, and values from the input tensor.
     """
@@ -52,7 +58,13 @@ def create_qkv(inputs, weights_q, weights_k, weights_v):
     
     return Q, K, V
 
-def scaled_dot_product_attention(Q, K, V, scale):
+
+def scaled_dot_product_attention(
+    Q: np.ndarray,
+    K: np.ndarray,
+    V: np.ndarray,
+    scale: float
+) -> np.ndarray:
     """
     Compute the scaled dot product attention.
     """
@@ -61,7 +73,14 @@ def scaled_dot_product_attention(Q, K, V, scale):
 
     return output
 
-def multi_head_attention(inputs, weights_q, weights_k, weights_v, num_heads):
+
+def multi_head_attention(
+    inputs: np.ndarray,
+    weights_q: np.ndarray,
+    weights_k: np.ndarray,
+    weights_v: np.ndarray,
+    num_heads: int
+) -> np.ndarray:
     """
     Compute multi-head self-attention.
     """
