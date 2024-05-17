@@ -18,7 +18,7 @@ This task is worth 5 points.
 
 ### Overview
 
-For this task, use existing literature and other resources to compile 2-3 best-practice methods for each of the following topics. 
+For this task, use existing literature and other resources to compile 2-3 best-practice methods for each of the topics. 
 
 Summarize each method briefly in 1-2 sentences, and include a prominent article (preferably a key paper) for each method.
 
