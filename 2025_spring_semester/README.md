@@ -48,14 +48,14 @@ the main goal is to localize NLP’s core issues and highlight the opportunities
 
 1. **NLP-specific challenges**:
    * Introducing the challenges of the NLP domain to get an understanding of the solutions provided by techniques introduced later:
-     * Discrete data - Lack of a standard representation - Lack of an inherent structure - Sparsity of data -
-       Variable length of input - Handling long-range inputs and capturing long-range dependencies -
-       Labeling for some tasks is very challenging - Evaluation of downstream tasks
+     * Discrete data ▪ Lack of a standard representation ▪ Lack of an inherent structure ▪ Sparsity of data -
+       Variable length of input ▪ Handling long-range inputs and capturing long-range dependencies -
+       Labeling for some tasks is very challenging ▪ Evaluation of downstream tasks
 
 2. **NLP-specific advantages**:
    * Highlighting those traits of NLP that can be leveraged:
-     * Abundance of data - Unsupervised and self-supervised learning provide strong general-purpose models -
-       Transfer learning efficacy - Emergent properties
+     * Abundance of data ▪ Unsupervised and self-supervised learning provide strong general-purpose models -
+       Transfer learning efficacy ▪ Emergent properties
 
 3. **Converging paths: adopting techniques between NLP and CV**:
    * Delineating a couple of best practices adopted between CV and NLP fields:
@@ -76,32 +76,32 @@ This part starts to introduce the methods that are worth knowing.
 1. **Classical methods**:
    * Introducing a couple of terms that are worth knowing but either break the continuity of the flow,
      are outdated, or should be defined a priori:
-     * Tokenization 🟩 Stemming 🟩 Lemmatization 🟩 Chunking ▪️ Stop word removal ▪️ Embedding ║ 
-       Part-of-Speech (PoS) tagging 🔹 Named Entity Recognition (NER) 🔹 Bag of Words (BoW) ║
-       N-grams ◾️ BM25 ◾️ Skip-gram
+     * Tokenization ▪ Stemming ▪ Lemmatization ▪ Chunking ▪ Stop word removal ▪ Embedding ▪ 
+       Part-of-Speech (PoS) tagging ▪ Named Entity Recognition (NER) ▪ Bag of Words (BoW) ▪
+       N-grams ▪ BM25 ▪ Skip-gram
 
 2. **Character Encodings**:
    * Introducing important character encoding terms appearing in tokenization as well:
-     * Character set - Character encoding standard - Fixed-length or variable-length -
-       ASCII - Extended ASCII - Unicode - UTF-32 - UTF-16 - UTF-8
+     * Character set ▪ Character encoding standard ▪ Fixed-length or variable-length ▪
+       ASCII ▪ Extended ASCII ▪ Unicode ▪ UTF-32 ▪ UTF-16 ▪ UTF-8
 
 3. **Tokenization and Embeddings**:
    * Explaining the steps and considerations regarding transforming human-readable text into the form appropriate for Language Models:
-     * Text - Vectors - Vector space - Tokenization - Token - Embedding - Dictionary
+     * Text ▪ Vectors ▪ Vector space ▪ Tokenization ▪ Token ▪ Embedding ▪ Dictionary
    * **Tokenization**:
      * Outlining design questions raised during tokenizer construction:
-       * Size of the vocabulary - Character-, word-, or subword-based tokenization -
-         Open vocabulary problem - Out-of-Vocabulary (OOV) words; Special tokens
+       * Size of the vocabulary ▪ Character-, word-, or subword-based tokenization -
+         Open vocabulary problem ▪ Out-of-Vocabulary (OOV) words; Special tokens
      * Tokenization methods:
-       * Byte-Pair Encoding (BPE) - WordPiece - Unigram - SentencePiece
+       * Byte-Pair Encoding (BPE) ▪ WordPiece ▪ Unigram ▪ SentencePiece
    * **Embeddings**:
      * Classical methods:
-       * One-hot encoding - Bag-of-Words (BoW) - Term Frequency - Inverse Document Frequency (TF-IDF)
+       * One-hot encoding ▪ Bag-of-Words (BoW) ▪ Term Frequency ▪ Inverse Document Frequency (TF-IDF)
      * Deep Learning-based methods:
-       * Distributed Representations - Word2Vec - GloVe - CoVe - ELMo - BERT
+       * Distributed Representations ▪ Word2Vec ▪ GloVe ▪ CoVe ▪ ELMo ▪ BERT
    * **Text Embeddings**:
      * Introducing embeddings for entire sentences (text), which have nice applications in different tasks
-       * Semantic Search - Anomaly Detection - Recommendations - Retrieval-Augmented Generation (RAG), ...
+       * Semantic Search ▪ Anomaly Detection ▪ Recommendations ▪ Retrieval-Augmented Generation (RAG), ...
 
 
 ### Additional Resources
