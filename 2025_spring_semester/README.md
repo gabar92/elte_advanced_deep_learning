@@ -48,13 +48,13 @@ the main goal is to localize NLP’s core issues and highlight the opportunities
 
 1. **NLP-specific challenges**:
    * Introducing the challenges of the NLP domain to get an understanding of the solutions provided by techniques introduced later:
-     * Discrete data ▪ Lack of a standard representation ▪ Lack of an inherent structure ▪ Sparsity of data -
-       Variable length of input ▪ Handling long-range inputs and capturing long-range dependencies -
+     * Discrete data ▪ Lack of a standard representation ▪ Lack of an inherent structure ▪ Sparsity of data ▪ 
+       Variable length of input ▪ Handling long-range inputs and capturing long-range dependencies ▪ 
        Labeling for some tasks is very challenging ▪ Evaluation of downstream tasks
 
 2. **NLP-specific advantages**:
    * Highlighting those traits of NLP that can be leveraged:
-     * Abundance of data ▪ Unsupervised and self-supervised learning provide strong general-purpose models -
+     * Abundance of data ▪ Unsupervised and self-supervised learning provide strong general-purpose models ▪ 
        Transfer learning efficacy ▪ Emergent properties
 
 3. **Converging paths: adopting techniques between NLP and CV**:
@@ -90,8 +90,8 @@ This part starts to introduce the methods that are worth knowing.
      * Text ▪ Vectors ▪ Vector space ▪ Tokenization ▪ Token ▪ Embedding ▪ Dictionary
    * **Tokenization**:
      * Outlining design questions raised during tokenizer construction:
-       * Size of the vocabulary ▪ Character-, word-, or subword-based tokenization -
-         Open vocabulary problem ▪ Out-of-Vocabulary (OOV) words; Special tokens
+       * Size of the vocabulary ▪ Character-, word-, or subword-based tokenization ▪ 
+         Open vocabulary problem ▪ Out-of-Vocabulary (OOV) words ▪ Special tokens
      * Tokenization methods:
        * Byte-Pair Encoding (BPE) ▪ WordPiece ▪ Unigram ▪ SentencePiece
    * **Embeddings**:
