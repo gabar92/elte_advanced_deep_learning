@@ -5,9 +5,9 @@ of the **Advanced Deep Learning** course at ELTE.
 
 ---
 
-## <ins>Lecture 1: Introduction and Foundations</ins>
+# <ins>Lecture 1: Introduction and Foundations</ins>
 
-### What is this lecture about?
+## What is this lecture about?
 
 This lecture tries to answer the following questions:
 
@@ -23,9 +23,13 @@ This lecture tries to answer the following questions:
    2. Can machines truly ‘understand’ language, or is it just an elaborate trick?
 
 
-### Content of the lecture:
+## Content of the lecture:
 
-1. <ins>Motivation</ins>: this part is intended to give some motivation and interest in the topic of Natural Language Processing and Large Language Models.
+### Motivation
+
+This part is intended to give some motivation and interest in the topic of Natural Language Processing
+and Large Language Models.
+
    1. **Demo of recent NLP-related applications**:
       * Showcasing a couple of recent applications and products which use NLP-related cutting-edge AI advancements
    2. **Definition of Natural Language Processing**:
@@ -35,9 +39,11 @@ This lecture tries to answer the following questions:
       * Focusing on the background factors that made recent NLP-related AI products such successful and quickly adopted
 
 
-2. <ins>Bird's Eye View</ins>: this part starts approaching the field through background knowledge in learnt domains 
-                                (Computer vision) and introduce the general considerations to lay the ground for techniques
-                                introduced later. 
+### Bird's Eye View
+
+This part starts approaching the field through background knowledge in learnt domains (Computer vision) 
+and introduce the general considerations to lay the ground for techniques introduced later. 
+
    1. **NLP-specific challenges**:
       * Introducing the challenges of NLP domain get an understanding of the solutions provided later introduced techniques
         * List of challenges: discrete data; lack of standard representation; lack of inherent structure; sparsity of data;
@@ -57,7 +63,10 @@ This lecture tries to answer the following questions:
         * Providing a list of the better known NLP tasks with a couple of applications
 
 
-3. <ins>Details</ins>: this part starts to introduce the methods that are worth knowing
+### Details
+
+This part starts to introduce the methods that are worth knowing.
+
    1. **Classical methods**:
        * Introducing a couple of terms are worth knowing but wither breaking the continuity of the flow,
          are outdated or should be defined a priori
@@ -83,8 +92,9 @@ This lecture tries to answer the following questions:
          * List of the tasks: semantic search, anomaly detection, recommendations, retrieval-augmented generation, ...
 
 
-4. <ins>Additional Resources</ins>:
-    * providing a couple of interesting sources (mainly must-see Youtube videos)
+### Additional Resources
+
+Providing a couple of interesting sources (mainly must-see Youtube videos).
 
 ---
 
