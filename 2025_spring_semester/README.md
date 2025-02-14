@@ -76,9 +76,9 @@ This part starts to introduce the methods that are worth knowing.
 1. **Classical methods**:
    * Introducing a couple of terms that are worth knowing but either break the continuity of the flow,
      are outdated, or should be defined a priori:
-     * Tokenization - Stemming - Lemmatization - Chunking - Stop word removal - Embedding - 
-       Part-of-Speech (PoS) tagging - Named Entity Recognition (NER) - Bag of Words (BoW)  -
-       N-grams - BM25 - Skip-gram
+     * Tokenization ■ Stemming ■ Lemmatization ■ Chunking ■ Stop word removal ■ Embedding ■ 
+       Part-of-Speech (PoS) tagging ■ Named Entity Recognition (NER) ■ Bag of Words (BoW)  ■
+       N-grams ■ BM25 ■ Skip-gram
 
 2. **Character Encodings**:
    * Introducing important character encoding terms appearing in tokenization as well:
