@@ -55,7 +55,7 @@ vocabulary, tokenized_text = bpe(text, max_vocabulary_size)
     first appearance in the text.
   * The order of the merged tokens in the vocabulary should be the same as the order of the merging.
 * **When we have more potential tokens during tokenization which should be used?**
-  * we opt for the longest token
+  * we opt for the longest tokengit status
   * we tokenize from left to right
   * Example:
     * we want to tokenize the ‘apple’ text
